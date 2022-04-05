@@ -1,0 +1,11 @@
+baseurl  = "https://psuvtk.github.io/"
+languageCode = "zh-cn"
+
+title = "技术的细节"
+
+theme = "cactus"
+
+
+[params]
+  description = "愚昧山峰, 刻意练习"
+  author = "Kristoffer.Song"
