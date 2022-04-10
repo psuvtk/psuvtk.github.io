@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 技术的细节</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 05 Apr 2022 19:20:45 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 23:17:43 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Trace32 调试技巧</title>
+      <link>https://psuvtk.github.io/posts/2.-trace_32/</link>
+      <pubDate>Sun, 10 Apr 2022 23:17:43 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/2.-trace_32/</guid>
+      <description>Trace32 官方文档
+脚本语言 Practise 通过修改当前指令实现SMC调用   右键 Assembly Here.
+  利用 psci reset 发起复位请求
+  ldr r0, =0x84000009 smc #0 进入OS后无法设置寄存器 Answer: MMU设置后, 不能再通过原来的命令进行实地址访问, 需要增加EA前缀;
+Data.Set EA:&amp;amp;addr 0x1234 </description>
+    </item>
+    
     <item>
       <title>Linux IO 函数</title>
       <link>https://psuvtk.github.io/posts/1.-linux_io_macro/</link>
