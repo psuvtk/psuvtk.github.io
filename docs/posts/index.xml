@@ -6,7 +6,28 @@
     <description>Recent content in Posts on 技术的细节</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 10 Apr 2022 23:17:43 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Aug 2022 22:25:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>coredump文件的生成及文件格式</title>
+      <link>https://psuvtk.github.io/posts/5.-linux_coredump%E7%9A%84%E7%94%9F%E6%88%90%E5%8F%8A%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</link>
+      <pubDate>Sun, 14 Aug 2022 22:25:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/5.-linux_coredump%E7%9A%84%E7%94%9F%E6%88%90%E5%8F%8A%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</guid>
+      <description>内核版本: linux-5.16.16
+从代码入手分析coredump文件格式 </description>
+    </item>
+    
+    <item>
+      <title>Coder_tools</title>
+      <link>https://psuvtk.github.io/posts/4.-%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</link>
+      <pubDate>Mon, 18 Jul 2022 23:38:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/4.-%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</guid>
+      <description>VSCode :: 编辑器即IDE
+Tabby :: 终端工具
+MobaXTerm :: 远程工具</description>
+    </item>
+    
     <item>
       <title>Trace32 调试技巧</title>
       <link>https://psuvtk.github.io/posts/2.-trace_32/</link>
