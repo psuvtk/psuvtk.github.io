@@ -6,7 +6,21 @@
     <description>Recent content in Posts on 技术的细节</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 14 Aug 2022 22:25:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Sep 2022 13:56:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>{OpenGrok引擎浏览开源代码</title>
+      <link>https://psuvtk.github.io/posts/1.-opengrok/</link>
+      <pubDate>Mon, 12 Sep 2022 13:56:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/1.-opengrok/</guid>
+      <description>[TOC]
+阅读大型源码项目除传统的Souce Insight、Scitools Understand等付费PC端工具，基于Web的{OpenGrok 和Elixir Cross Reference也是相当惊艳，方便躺在床上用ipad阅读源代码。作为开源工具，不仅免费而且支持用户自己搭建。如下为{OpenGrok的界面:
+另外，二者都提供许多常见的大型项目(https://github.com/oracle/opengrok/wiki/Installations 以及https://elixir.bootlin.com/)，足够使用并且免除动手搭建的麻烦。但毕竟是国外网站，偶尔访问速度上不去，故自己动手搭建一套还是非常有用的。OpenGrok的源码方式安装还是蛮麻烦的，所以使用官方的Docker镜像并且自己写了个小脚本方便进行管理。
+1. Debian/Ubuntu系统搭建{OpenGrok 博主使用的是Debian系统，所以包管理器为apt，如果你使用其它系统或者想要改变端口或者源码目录，简单修改脚本即可。 (1). 安装 Docker / Opengrok
+./opengrok.sh install 该命令做了如下工作: 删除已存在的Docker、启用https、加入docker的官方gpg密钥、校验密钥、添加稳定源、安装Docker社区版、安装opengrok/docker image、创建opengrok目录。
+sudo apt remove docker docker-engine docker.io containerd runc curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - sudo apt-key fingerprint 0EBFCD88 sudo add-apt-repository \ 	&amp;#34;deb [arch=amd64] https://download.docker.com/linux/debian \ $(lsb_release -cs)\ stable&amp;#34; sudo apt update sudo apt-get install -y docker-ce docker-ce-cli containerd.io sudo docker pull opengrok/docker sudo mkdir -p $GROKPATH/etc sudo mkdir -p $GROKPATH/data sudo mkdir -p $GROKPATH/src (2).</description>
+    </item>
+    
     <item>
       <title>coredump文件的生成及文件格式</title>
       <link>https://psuvtk.github.io/posts/5.-linux_coredump%E7%9A%84%E7%94%9F%E6%88%90%E5%8F%8A%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</link>
@@ -18,37 +32,19 @@
     </item>
     
     <item>
-      <title>Coder_tools</title>
-      <link>https://psuvtk.github.io/posts/4.-%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</link>
+      <title>实用工具</title>
+      <link>https://psuvtk.github.io/posts/3.-coder_tools/</link>
       <pubDate>Mon, 18 Jul 2022 23:38:47 +0800</pubDate>
       
-      <guid>https://psuvtk.github.io/posts/4.-%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</guid>
+      <guid>https://psuvtk.github.io/posts/3.-coder_tools/</guid>
       <description>VSCode :: 编辑器即IDE
 Tabby :: 终端工具
-MobaXTerm :: 远程工具</description>
-    </item>
-    
-    <item>
-      <title>Trace32 调试技巧</title>
-      <link>https://psuvtk.github.io/posts/2.-trace_32/</link>
-      <pubDate>Sun, 10 Apr 2022 23:17:43 +0800</pubDate>
-      
-      <guid>https://psuvtk.github.io/posts/2.-trace_32/</guid>
-      <description>Trace32 官方文档
-脚本语言 Practise 通过修改当前指令实现SMC调用   右键 Assembly Here.
-  利用 psci reset 发起复位请求
-  ldr r0, =0x84000009 smc #0 进入OS后无法设置寄存器 Answer: MMU设置后, 不能再通过原来的命令进行实地址访问, 需要增加EA前缀;
-Data.Set EA:&amp;amp;addr 0x1234 </description>
-    </item>
-    
-    <item>
-      <title>Linux IO 函数</title>
-      <link>https://psuvtk.github.io/posts/1.-linux_io_macro/</link>
-      <pubDate>Tue, 05 Apr 2022 19:20:45 +0800</pubDate>
-      
-      <guid>https://psuvtk.github.io/posts/1.-linux_io_macro/</guid>
-      <description>arch\arm64\include\asm\io.h
-/* * Relaxed I/O memory access primitives. These follow the Device memory * ordering rules but do not guarantee any ordering relative to Normal memory * accesses. */ #define readb_relaxed(c)	({ u8 __r = __raw_readb(c); __r; }) #define readw_relaxed(c)	({ u16 __r = le16_to_cpu((__force __le16)__raw_readw(c)); __r; }) #define readl_relaxed(c)	({ u32 __r = le32_to_cpu((__force __le32)__raw_readl(c)); __r; }) #define readq_relaxed(c)	({ u64 __r = le64_to_cpu((__force __le64)__raw_readq(c)); __r; })  #define writeb_relaxed(v,c)	((void)__raw_writeb((v),(c))) #define writew_relaxed(v,c)	((void)__raw_writew((__force u16)cpu_to_le16(v),(c))) #define writel_relaxed(v,c)	((void)__raw_writel((__force u32)cpu_to_le32(v),(c))) #define writeq_relaxed(v,c)	((void)__raw_writeq((__force u64)cpu_to_le64(v),(c)))  /* * I/O memory access primitives.</description>
+MobaXTerm :: 远程工具
+oh-my-zsh ::
+opengrok :: 代码浏览器,用于阅读源码
+BandZip :: 压缩
+Beyond Compare :: 比较工具
+cloc :: 统计代码行数</description>
     </item>
     
   </channel>
