@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 技术的细节</title>
+    <title>Posts on 浅尝辄止</title>
     <link>https://psuvtk.github.io/posts/</link>
-    <description>Recent content in Posts on 技术的细节</description>
+    <description>Recent content in Posts on 浅尝辄止</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 12 Sep 2022 13:56:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Oct 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小吊梨汤</title>
+      <link>https://psuvtk.github.io/posts/9.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/</link>
+      <pubDate>Wed, 12 Oct 2022 20:18:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/9.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/</guid>
+      <description> 秋梨 银耳 百合 橘皮 葛根 话梅 枸杞 黄冰糖  </description>
+    </item>
+    
+    <item>
+      <title>MTD子系统与JFFS2文件系统</title>
+      <link>https://psuvtk.github.io/posts/7.spi_nor/</link>
+      <pubDate>Thu, 06 Oct 2022 20:18:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/7.spi_nor/</guid>
+      <description>遗留问题: controller目录
+&amp;ndash; drivers\mtd\spi-nor\controllers\intel-spi.c https://lwn.net/Articles/692383/</description>
+    </item>
+    
     <item>
       <title>{OpenGrok引擎浏览开源代码</title>
       <link>https://psuvtk.github.io/posts/1.-opengrok/</link>
@@ -32,6 +51,15 @@ sudo apt remove docker docker-engine docker.io containerd runc curl -fsSL https:
     </item>
     
     <item>
+      <title>MTD子系统与JFFS2文件系统</title>
+      <link>https://psuvtk.github.io/posts/6.-mtd/</link>
+      <pubDate>Sun, 14 Aug 2022 22:25:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/6.-mtd/</guid>
+      <description>int mtd_device_parse_register(struct mtd_info *mtd, const char * const *types,struct mtd_part_parser_data *parser_data,const struct mtd_partition *parts,int nr_parts);</description>
+    </item>
+    
+    <item>
       <title>实用工具</title>
       <link>https://psuvtk.github.io/posts/3.-coder_tools/</link>
       <pubDate>Mon, 18 Jul 2022 23:38:47 +0800</pubDate>
@@ -45,6 +73,15 @@ opengrok :: 代码浏览器,用于阅读源码
 BandZip :: 压缩
 Beyond Compare :: 比较工具
 cloc :: 统计代码行数</description>
+    </item>
+    
+    <item>
+      <title>QEMU ARM单板</title>
+      <link>https://psuvtk.github.io/posts/8.-qemu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/8.-qemu/</guid>
+      <description>..\qemu-system-arm.exe -M vexpress-a9 -m 512M -dtb vexpress-v2p-ca9.dtb -kernel zImage -nographic -sd ./a9rootfs.ext3 -append &amp;quot;root=/dev/mmcblk0 rw console=ttyAMA0 init=/sbin/init&amp;quot;</description>
     </item>
     
   </channel>

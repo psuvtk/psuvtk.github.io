@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "WHO AM I"
 date: 2022-04-05T19:28:46+08:00
 draft: false
 ---
@@ -8,7 +8,13 @@ draft: false
 27 (1995~)
 
 
-## 履历
+## 教育背景
+2014.9 ~ 2018.7     本科        哈尔滨工业大学(威海)        电子信息工程
+
+2018.9 ~ 2020.6     硕士        哈尔滨工业大学(威海)        电子与通信工程
+
+
+## 工作履历
 底层软件工程师、系统工程师(SE) @ 华为技术有限公司
 
 
@@ -21,16 +27,37 @@ draft: false
 
 
 ## 语言
-精通C语言, 熟悉C++\ASM\Python\Lua\Shell编程语言
+精通C语言;
+熟练使用C++11, 了解C++14\17\20;
+熟练使用Python语言;
+熟练使用Shell编程;
+
+
+
+
+## 2022 年第3季度目标
+1. 网络子系统 网卡驱动
+2. spi-nor 驱动、MTD子系统、jffs2文件系统
+
+
+
+
+
+
+
 
 
 ## 嵌入式技能
-1. 内核驱动开发，ethernet(MAC)、epsi\localbus\uart
+1. 内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI 
 2. 熟悉GIC
 3. 熟悉Linux Kernel, 阅读xx模块源码
 4. 熟悉Qemu, 能够基于Qemu完成单板外设仿真;
 5. CoreDump分析、熟悉问题定位与分析能力
 6. （Not Yet）熟悉安全启动、了解TF-A、optee实现；
+
+
+
+1. 熟悉 SPI-NOR/MTD 子系统
 
 
 ## 通用软件技能

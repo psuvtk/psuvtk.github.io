@@ -3,36 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 实用工具 | 浅尝辄止</title>
+  <title> QEMU ARM单板 | 浅尝辄止</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="实用工具" />
-<meta property="og:description" content="VSCode :: 编辑器即IDE
-Tabby :: 终端工具
-MobaXTerm :: 远程工具
-oh-my-zsh ::
-opengrok :: 代码浏览器,用于阅读源码
-BandZip :: 压缩
-Beyond Compare :: 比较工具
-cloc :: 统计代码行数" />
+  <meta property="og:title" content="QEMU ARM单板" />
+<meta property="og:description" content="..\qemu-system-arm.exe -M vexpress-a9 -m 512M -dtb vexpress-v2p-ca9.dtb -kernel zImage -nographic -sd ./a9rootfs.ext3 -append &quot;root=/dev/mmcblk0 rw console=ttyAMA0 init=/sbin/init&quot;" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://psuvtk.github.io/posts/3.-coder_tools/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-18T23:38:47&#43;08:00" />
-<meta property="article:modified_time" content="2022-07-18T23:38:47&#43;08:00" />
+<meta property="og:url" content="https://psuvtk.github.io/posts/8.-qemu/" /><meta property="article:section" content="posts" />
+
+
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="实用工具"/>
-<meta name="twitter:description" content="VSCode :: 编辑器即IDE
-Tabby :: 终端工具
-MobaXTerm :: 远程工具
-oh-my-zsh ::
-opengrok :: 代码浏览器,用于阅读源码
-BandZip :: 压缩
-Beyond Compare :: 比较工具
-cloc :: 统计代码行数"/>
+<meta name="twitter:title" content="QEMU ARM单板"/>
+<meta name="twitter:description" content="..\qemu-system-arm.exe -M vexpress-a9 -m 512M -dtb vexpress-v2p-ca9.dtb -kernel zImage -nographic -sd ./a9rootfs.ext3 -append &quot;root=/dev/mmcblk0 rw console=ttyAMA0 init=/sbin/init&quot;"/>
 
   
   
@@ -79,15 +65,9 @@ cloc :: 统计代码行数"/>
     <span id="actions">
       <ul>
         
-        <li>
-          <a class="icon" href=" https://psuvtk.github.io/about/">
-            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
-          </a>
-        </li>
-        
         
         <li>
-          <a class="icon" href="https://psuvtk.github.io/posts/6.-mtd/">
+          <a class="icon" href="https://psuvtk.github.io/about/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -118,47 +98,47 @@ cloc :: 统计代码行数"/>
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&text=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&text=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&title=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&is_video=false&description=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&is_video=false&description=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="mailto:?subject=QEMU%20ARM%e5%8d%95%e6%9d%bf&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&title=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&title=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&name=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7&description=VSCode%20%3a%3a%20%e7%bc%96%e8%be%91%e5%99%a8%e5%8d%b3IDE%0aTabby%20%3a%3a%20%e7%bb%88%e7%ab%af%e5%b7%a5%e5%85%b7%0aMobaXTerm%20%3a%3a%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e5%85%b7%0aoh-my-zsh%20%3a%3a%0aopengrok%20%3a%3a%20%e4%bb%a3%e7%a0%81%e6%b5%8f%e8%a7%88%e5%99%a8%2c%e7%94%a8%e4%ba%8e%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81%0aBandZip%20%3a%3a%20%e5%8e%8b%e7%bc%a9%0aBeyond%20Compare%20%3a%3a%20%e6%af%94%e8%be%83%e5%b7%a5%e5%85%b7%0acloc%20%3a%3a%20%e7%bb%9f%e8%ae%a1%e4%bb%a3%e7%a0%81%e8%a1%8c%e6%95%b0">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&name=QEMU%20ARM%e5%8d%95%e6%9d%bf&description=..%5cqemu-system-arm.exe%20-M%20vexpress-a9%20-m%20512M%20-dtb%20vexpress-v2p-ca9.dtb%20-kernel%20zImage%20-nographic%20-sd%20.%2fa9rootfs.ext3%20-append%20%26quot%3broot%3d%2fdev%2fmmcblk0%20rw%20console%3dttyAMA0%20init%3d%2fsbin%2finit%26quot%3b%0d">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&t=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&t=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -175,13 +155,13 @@ cloc :: 统计代码行数"/>
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        实用工具
+        QEMU ARM单板
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2022-07-18 23:38:47 &#43;0800 CST" itemprop="datePublished">2022-07-18</time>
+          <time datetime="0001-01-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">0001-01-01</time>
           
         </div>
         
@@ -193,15 +173,8 @@ cloc :: 统计代码行数"/>
 
   
     <div class="content" itemprop="articleBody">
-      <p>VSCode  :: 编辑器即IDE</p>
-<p>Tabby :: 终端工具</p>
-<p>MobaXTerm :: 远程工具</p>
-<p>oh-my-zsh ::</p>
-<p>opengrok :: 代码浏览器,用于阅读源码</p>
-<p>BandZip :: 压缩</p>
-<p>Beyond Compare :: 比较工具</p>
-<p>cloc :: 统计代码行数</p>
-
+      <pre><code>..\qemu-system-arm.exe -M vexpress-a9 -m 512M -dtb vexpress-v2p-ca9.dtb -kernel zImage -nographic -sd ./a9rootfs.ext3 -append &quot;root=/dev/mmcblk0 rw console=ttyAMA0 init=/sbin/init&quot;
+</code></pre>
     </div>
   </article>
 
@@ -240,47 +213,47 @@ cloc :: 统计代码行数"/>
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&text=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&text=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&title=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&is_video=false&description=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&is_video=false&description=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="mailto:?subject=QEMU%20ARM%e5%8d%95%e6%9d%bf&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&title=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&title=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&name=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7&description=VSCode%20%3a%3a%20%e7%bc%96%e8%be%91%e5%99%a8%e5%8d%b3IDE%0aTabby%20%3a%3a%20%e7%bb%88%e7%ab%af%e5%b7%a5%e5%85%b7%0aMobaXTerm%20%3a%3a%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e5%85%b7%0aoh-my-zsh%20%3a%3a%0aopengrok%20%3a%3a%20%e4%bb%a3%e7%a0%81%e6%b5%8f%e8%a7%88%e5%99%a8%2c%e7%94%a8%e4%ba%8e%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81%0aBandZip%20%3a%3a%20%e5%8e%8b%e7%bc%a9%0aBeyond%20Compare%20%3a%3a%20%e6%af%94%e8%be%83%e5%b7%a5%e5%85%b7%0acloc%20%3a%3a%20%e7%bb%9f%e8%ae%a1%e4%bb%a3%e7%a0%81%e8%a1%8c%e6%95%b0">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&name=QEMU%20ARM%e5%8d%95%e6%9d%bf&description=..%5cqemu-system-arm.exe%20-M%20vexpress-a9%20-m%20512M%20-dtb%20vexpress-v2p-ca9.dtb%20-kernel%20zImage%20-nographic%20-sd%20.%2fa9rootfs.ext3%20-append%20%26quot%3broot%3d%2fdev%2fmmcblk0%20rw%20console%3dttyAMA0%20init%3d%2fsbin%2finit%26quot%3b%0d">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&t=%e5%ae%9e%e7%94%a8%e5%b7%a5%e5%85%b7">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f8.-qemu%2f&t=QEMU%20ARM%e5%8d%95%e6%9d%bf">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>
