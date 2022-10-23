@@ -13,7 +13,8 @@
       <pubDate>Wed, 19 Oct 2022 20:18:47 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/posts/11.-i2c%E6%80%BB%E7%BA%BF/</guid>
-      <description> 时钟延展 总线挂死 GPIO模拟I2C时序 检测总线是否空闲 发送START // 确保总线空闲  // 前置是否需要延时？  SDA := 1 SCL := 1 // 延时多少 // START 符号 SDA := 0 SCL := 1 // T_hd;sta &amp;gt; 4.0 us us_delay(4) // SCL := 0 // T_low &amp;gt; 4.7, us_delay(1) 学习文档  UM10204(I2C-bus specification and user manual) Texas Instruments   </description>
+      <description>时钟延展 总线挂死 I2C子系统 Linux内核实现 TODO
+软件模拟I2C(GPIO模拟) 检测总线是否空闲 发送START // 确保总线空闲 // HOW TO us_delay(4); // 额外的  SDA=1;SCL=1; // 是否需要延时？延时多少  // START 符号 SDA=0;SCL=1; // T_hd;sta &amp;gt; 4.0 us us_delay(4); SDA=0;SCL=0; 发送 // T_low &amp;gt; 4.7, T_high &amp;gt; 4.0us SCL = 0; us_delay(5); // 数据 SDA = xx; // T_su;dat &amp;gt; 250ns us_delay(1); // 拉高SCL SCL = 1; // T_high &amp;gt; 4.0us us_delay(4); // 拉低SCL SCL = 0; // T_high &amp;gt; 4.</description>
     </item>
     
     <item>
