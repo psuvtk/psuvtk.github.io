@@ -9,8 +9,8 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="MTD子系统与JFFS2文件系统" />
-<meta property="og:description" content="遗留问题: controller目录
-&ndash; drivers\mtd\spi-nor\controllers\intel-spi.c https://lwn.net/Articles/692383/" />
+<meta property="og:description" content="遗留问题: 从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组成；
+# SPDX-License-Identifier: GPL-2.0 spi-nor-objs	:= core.o sfdp.o swp.o otp.o sysfs.o spi-nor-objs	&#43;= atmel.o spi-nor-objs	&#43;= catalyst.o spi-nor-objs	&#43;= eon.o spi-nor-objs	&#43;= esmt.o spi-nor-objs	&#43;= everspin.o spi-nor-objs	&#43;= fujitsu.o spi-nor-objs	&#43;= gigadevice.o spi-nor-objs	&#43;= intel.o spi-nor-objs	&#43;= issi.o spi-nor-objs	&#43;= macronix.o spi-nor-objs	&#43;= micron-st.o spi-nor-objs	&#43;= spansion.o spi-nor-objs	&#43;= sst.o spi-nor-objs	&#43;= winbond.o spi-nor-objs	&#43;= xilinx.o spi-nor-objs	&#43;= xmc.o obj-$(CONFIG_MTD_SPI_NOR)	&#43;= spi-nor.o obj-$(CONFIG_MTD_SPI_NOR)	&#43;= controllers/ &ndash; drivers\mtd\spi-nor\controllers\intel-spi.c https://lwn.net/Articles/692383/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://psuvtk.github.io/posts/7.spi_nor/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-06T20:18:47&#43;08:00" />
@@ -19,8 +19,8 @@
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MTD子系统与JFFS2文件系统"/>
-<meta name="twitter:description" content="遗留问题: controller目录
-&ndash; drivers\mtd\spi-nor\controllers\intel-spi.c https://lwn.net/Articles/692383/"/>
+<meta name="twitter:description" content="遗留问题: 从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组成；
+# SPDX-License-Identifier: GPL-2.0 spi-nor-objs	:= core.o sfdp.o swp.o otp.o sysfs.o spi-nor-objs	&#43;= atmel.o spi-nor-objs	&#43;= catalyst.o spi-nor-objs	&#43;= eon.o spi-nor-objs	&#43;= esmt.o spi-nor-objs	&#43;= everspin.o spi-nor-objs	&#43;= fujitsu.o spi-nor-objs	&#43;= gigadevice.o spi-nor-objs	&#43;= intel.o spi-nor-objs	&#43;= issi.o spi-nor-objs	&#43;= macronix.o spi-nor-objs	&#43;= micron-st.o spi-nor-objs	&#43;= spansion.o spi-nor-objs	&#43;= sst.o spi-nor-objs	&#43;= winbond.o spi-nor-objs	&#43;= xilinx.o spi-nor-objs	&#43;= xmc.o obj-$(CONFIG_MTD_SPI_NOR)	&#43;= spi-nor.o obj-$(CONFIG_MTD_SPI_NOR)	&#43;= controllers/ &ndash; drivers\mtd\spi-nor\controllers\intel-spi.c https://lwn.net/Articles/692383/"/>
 
   
   
@@ -75,7 +75,7 @@
         
         
         <li>
-          <a class="icon" href="https://psuvtk.github.io/posts/9.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/">
+          <a class="icon" href="https://psuvtk.github.io/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -141,7 +141,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f7.spi_nor%2f&name=MTD%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%8eJFFS2%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f&description=%e9%81%97%e7%95%99%e9%97%ae%e9%a2%98%3a%20controller%e7%9b%ae%e5%bd%95%0a%26ndash%3b%20drivers%5cmtd%5cspi-nor%5ccontrollers%5cintel-spi.c%20https%3a%2f%2flwn.net%2fArticles%2f692383%2f">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f7.spi_nor%2f&name=MTD%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%8eJFFS2%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f&description=%e9%81%97%e7%95%99%e9%97%ae%e9%a2%98%3a%20%e4%bb%8espi-nor%e7%9b%ae%e5%bd%95%e7%9a%84Makefile%e5%8f%af%e4%bb%a5%e7%9c%8b%e5%87%ba%e7%9b%ae%e5%bd%95%e4%b8%8b%e6%96%87%e4%bb%b6%e7%9a%84%e5%85%b3%e7%b3%bb%2c%20%e5%8f%af%e4%bb%a5%e7%9c%8b%e5%87%baspi-nor%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%bb%e8%a6%81%e7%94%b1%e6%a0%b8%e5%bf%83%e3%80%81%e6%8e%a7%e5%88%b6%e5%99%a8%e4%bb%a5%e5%8f%8aFLASH%e5%8e%82%e5%95%86%e7%bb%84%e6%88%90%ef%bc%9b%0a%23%20SPDX-License-Identifier%3a%20GPL-2.0%20spi-nor-objs%09%3a%3d%20core.o%20sfdp.o%20swp.o%20otp.o%20sysfs.o%20spi-nor-objs%09%2b%3d%20atmel.o%20spi-nor-objs%09%2b%3d%20catalyst.o%20spi-nor-objs%09%2b%3d%20eon.o%20spi-nor-objs%09%2b%3d%20esmt.o%20spi-nor-objs%09%2b%3d%20everspin.o%20spi-nor-objs%09%2b%3d%20fujitsu.o%20spi-nor-objs%09%2b%3d%20gigadevice.o%20spi-nor-objs%09%2b%3d%20intel.o%20spi-nor-objs%09%2b%3d%20issi.o%20spi-nor-objs%09%2b%3d%20macronix.o%20spi-nor-objs%09%2b%3d%20micron-st.o%20spi-nor-objs%09%2b%3d%20spansion.o%20spi-nor-objs%09%2b%3d%20sst.o%20spi-nor-objs%09%2b%3d%20winbond.o%20spi-nor-objs%09%2b%3d%20xilinx.o%20spi-nor-objs%09%2b%3d%20xmc.o%20obj-%24%28CONFIG_MTD_SPI_NOR%29%09%2b%3d%20spi-nor.o%20obj-%24%28CONFIG_MTD_SPI_NOR%29%09%2b%3d%20controllers%2f%20%26ndash%3b%20drivers%5cmtd%5cspi-nor%5ccontrollers%5cintel-spi.c%20https%3a%2f%2flwn.net%2fArticles%2f692383%2f">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -186,10 +186,70 @@
   
     <div class="content" itemprop="articleBody">
       <h2 id="遗留问题">遗留问题:</h2>
-<p>controller目录</p>
-<p>&ndash; drivers\mtd\spi-nor\controllers\intel-spi.c
-<a href="https://lwn.net/Articles/692383/">https://lwn.net/Articles/692383/</a></p>
+<p>从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组成；</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># SPDX-License-Identifier: GPL-2.0</span>
 
+spi-nor-objs			:<span style="color:#f92672">=</span> core.o sfdp.o swp.o otp.o sysfs.o
+spi-nor-objs			+<span style="color:#f92672">=</span> atmel.o
+spi-nor-objs			+<span style="color:#f92672">=</span> catalyst.o
+spi-nor-objs			+<span style="color:#f92672">=</span> eon.o
+spi-nor-objs			+<span style="color:#f92672">=</span> esmt.o
+spi-nor-objs			+<span style="color:#f92672">=</span> everspin.o
+spi-nor-objs			+<span style="color:#f92672">=</span> fujitsu.o
+spi-nor-objs			+<span style="color:#f92672">=</span> gigadevice.o
+spi-nor-objs			+<span style="color:#f92672">=</span> intel.o
+spi-nor-objs			+<span style="color:#f92672">=</span> issi.o
+spi-nor-objs			+<span style="color:#f92672">=</span> macronix.o
+spi-nor-objs			+<span style="color:#f92672">=</span> micron-st.o
+spi-nor-objs			+<span style="color:#f92672">=</span> spansion.o
+spi-nor-objs			+<span style="color:#f92672">=</span> sst.o
+spi-nor-objs			+<span style="color:#f92672">=</span> winbond.o
+spi-nor-objs			+<span style="color:#f92672">=</span> xilinx.o
+spi-nor-objs			+<span style="color:#f92672">=</span> xmc.o
+obj-<span style="color:#66d9ef">$(</span>CONFIG_MTD_SPI_NOR<span style="color:#66d9ef">)</span>	+<span style="color:#f92672">=</span> spi-nor.o
+
+obj-<span style="color:#66d9ef">$(</span>CONFIG_MTD_SPI_NOR<span style="color:#66d9ef">)</span>	+<span style="color:#f92672">=</span> controllers/
+
+</code></pre></div><p>&ndash; drivers\mtd\spi-nor\controllers\intel-spi.c
+<a href="https://lwn.net/Articles/692383/">https://lwn.net/Articles/692383/</a></p>
+<p>&ndash; drivers\mtd\spi-nor\controllers\hisi-sfc.c
+对应的<code>Hi3519</code>芯片, 该芯片的设备树并没有开源，需要对应的SDK开发包才能看到。</p>
+<p>初始化顺序</p>
+<p>FILE :: <code>include\linux\init.h</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/*
+</span><span style="color:#75715e"> * Early initcalls run before initializing SMP.
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * Only for built-in code, not modules.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#75715e">#define early_initcall(fn)		__define_initcall(fn, early)
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/*
+</span><span style="color:#75715e"> * A &#34;pure&#34; initcall has no dependencies on anything else, and purely
+</span><span style="color:#75715e"> * initializes variables that couldn&#39;t be statically initialized.
+</span><span style="color:#75715e"> *
+</span><span style="color:#75715e"> * This only exists for built-in code, not for modules.
+</span><span style="color:#75715e"> * Keep main.c:initcall_level_names[] in sync.
+</span><span style="color:#75715e"> */</span>
+<span style="color:#75715e">#define pure_initcall(fn)		__define_initcall(fn, 0)
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define core_initcall(fn)		__define_initcall(fn, 1)
+</span><span style="color:#75715e">#define core_initcall_sync(fn)		__define_initcall(fn, 1s)
+</span><span style="color:#75715e">#define postcore_initcall(fn)		__define_initcall(fn, 2)
+</span><span style="color:#75715e">#define postcore_initcall_sync(fn)	__define_initcall(fn, 2s)
+</span><span style="color:#75715e">#define arch_initcall(fn)		__define_initcall(fn, 3)
+</span><span style="color:#75715e">#define arch_initcall_sync(fn)		__define_initcall(fn, 3s)
+</span><span style="color:#75715e">#define subsys_initcall(fn)		__define_initcall(fn, 4)
+</span><span style="color:#75715e">#define subsys_initcall_sync(fn)	__define_initcall(fn, 4s)
+</span><span style="color:#75715e">#define fs_initcall(fn)			__define_initcall(fn, 5)
+</span><span style="color:#75715e">#define fs_initcall_sync(fn)		__define_initcall(fn, 5s)
+</span><span style="color:#75715e">#define rootfs_initcall(fn)		__define_initcall(fn, rootfs)
+</span><span style="color:#75715e">#define device_initcall(fn)		__define_initcall(fn, 6)
+</span><span style="color:#75715e">#define device_initcall_sync(fn)	__define_initcall(fn, 6s)
+</span><span style="color:#75715e">#define late_initcall(fn)		__define_initcall(fn, 7)
+</span><span style="color:#75715e">#define late_initcall_sync(fn)		__define_initcall(fn, 7s)
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define __initcall(fn) device_initcall(fn)
+</span></code></pre></div>
     </div>
   </article>
 
@@ -267,7 +327,7 @@
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f7.spi_nor%2f&name=MTD%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%8eJFFS2%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f&description=%e9%81%97%e7%95%99%e9%97%ae%e9%a2%98%3a%20controller%e7%9b%ae%e5%bd%95%0a%26ndash%3b%20drivers%5cmtd%5cspi-nor%5ccontrollers%5cintel-spi.c%20https%3a%2f%2flwn.net%2fArticles%2f692383%2f">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f7.spi_nor%2f&name=MTD%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%8eJFFS2%e6%96%87%e4%bb%b6%e7%b3%bb%e7%bb%9f&description=%e9%81%97%e7%95%99%e9%97%ae%e9%a2%98%3a%20%e4%bb%8espi-nor%e7%9b%ae%e5%bd%95%e7%9a%84Makefile%e5%8f%af%e4%bb%a5%e7%9c%8b%e5%87%ba%e7%9b%ae%e5%bd%95%e4%b8%8b%e6%96%87%e4%bb%b6%e7%9a%84%e5%85%b3%e7%b3%bb%2c%20%e5%8f%af%e4%bb%a5%e7%9c%8b%e5%87%baspi-nor%e5%ad%90%e7%b3%bb%e7%bb%9f%e4%b8%bb%e8%a6%81%e7%94%b1%e6%a0%b8%e5%bf%83%e3%80%81%e6%8e%a7%e5%88%b6%e5%99%a8%e4%bb%a5%e5%8f%8aFLASH%e5%8e%82%e5%95%86%e7%bb%84%e6%88%90%ef%bc%9b%0a%23%20SPDX-License-Identifier%3a%20GPL-2.0%20spi-nor-objs%09%3a%3d%20core.o%20sfdp.o%20swp.o%20otp.o%20sysfs.o%20spi-nor-objs%09%2b%3d%20atmel.o%20spi-nor-objs%09%2b%3d%20catalyst.o%20spi-nor-objs%09%2b%3d%20eon.o%20spi-nor-objs%09%2b%3d%20esmt.o%20spi-nor-objs%09%2b%3d%20everspin.o%20spi-nor-objs%09%2b%3d%20fujitsu.o%20spi-nor-objs%09%2b%3d%20gigadevice.o%20spi-nor-objs%09%2b%3d%20intel.o%20spi-nor-objs%09%2b%3d%20issi.o%20spi-nor-objs%09%2b%3d%20macronix.o%20spi-nor-objs%09%2b%3d%20micron-st.o%20spi-nor-objs%09%2b%3d%20spansion.o%20spi-nor-objs%09%2b%3d%20sst.o%20spi-nor-objs%09%2b%3d%20winbond.o%20spi-nor-objs%09%2b%3d%20xilinx.o%20spi-nor-objs%09%2b%3d%20xmc.o%20obj-%24%28CONFIG_MTD_SPI_NOR%29%09%2b%3d%20spi-nor.o%20obj-%24%28CONFIG_MTD_SPI_NOR%29%09%2b%3d%20controllers%2f%20%26ndash%3b%20drivers%5cmtd%5cspi-nor%5ccontrollers%5cintel-spi.c%20https%3a%2f%2flwn.net%2fArticles%2f692383%2f">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

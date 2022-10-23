@@ -6,14 +6,30 @@
     <description>Recent content on 浅尝辄止</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Oct 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Oct 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>小吊梨汤</title>
-      <link>https://psuvtk.github.io/posts/9.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/</link>
-      <pubDate>Wed, 12 Oct 2022 20:18:47 +0800</pubDate>
+      <title>I2C总线</title>
+      <link>https://psuvtk.github.io/posts/11.-i2c%E6%80%BB%E7%BA%BF/</link>
+      <pubDate>Wed, 19 Oct 2022 20:18:47 +0800</pubDate>
       
-      <guid>https://psuvtk.github.io/posts/9.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/</guid>
-      <description> 秋梨 银耳 百合 橘皮 葛根 话梅 枸杞 黄冰糖  </description>
+      <guid>https://psuvtk.github.io/posts/11.-i2c%E6%80%BB%E7%BA%BF/</guid>
+      <description> 时钟延展 总线挂死 GPIO模拟I2C时序 检测总线是否空闲 发送START // 确保总线空闲  // 前置是否需要延时？  SDA := 1 SCL := 1 // 延时多少 // START 符号 SDA := 0 SCL := 1 // T_hd;sta &amp;gt; 4.0 us us_delay(4) // SCL := 0 // T_low &amp;gt; 4.7, us_delay(1) 学习文档  UM10204(I2C-bus specification and user manual) Texas Instruments   </description>
+    </item>
+    
+    <item>
+      <title>SPI总线</title>
+      <link>https://psuvtk.github.io/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Wed, 19 Oct 2022 20:18:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/</guid>
+      <description>SPI 同步通信协议 如何实现一主多从？ 通过多个片选，每个片选对应一个从机
+MOSI MISO
+I2C 同步通信协议
+如何实现一主多从？ 通过使用多个从机地址
+开漏结构 &amp;lt;-&amp;gt; 数据双向传输
+SCL SDA
+典型速率: 100Kbps, 400Kbpx, 3.4Mbps
+UART 异步通信协议 慢 115200</description>
     </item>
     
     <item>
@@ -22,8 +38,8 @@
       <pubDate>Thu, 06 Oct 2022 20:18:47 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/posts/7.spi_nor/</guid>
-      <description>遗留问题: controller目录
-&amp;ndash; drivers\mtd\spi-nor\controllers\intel-spi.c https://lwn.net/Articles/692383/</description>
+      <description>遗留问题: 从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组成；
+# SPDX-License-Identifier: GPL-2.0 spi-nor-objs	:= core.o sfdp.o swp.o otp.o sysfs.o spi-nor-objs	+= atmel.o spi-nor-objs	+= catalyst.o spi-nor-objs	+= eon.o spi-nor-objs	+= esmt.o spi-nor-objs	+= everspin.o spi-nor-objs	+= fujitsu.o spi-nor-objs	+= gigadevice.o spi-nor-objs	+= intel.o spi-nor-objs	+= issi.o spi-nor-objs	+= macronix.o spi-nor-objs	+= micron-st.o spi-nor-objs	+= spansion.o spi-nor-objs	+= sst.o spi-nor-objs	+= winbond.o spi-nor-objs	+= xilinx.o spi-nor-objs	+= xmc.o obj-$(CONFIG_MTD_SPI_NOR)	+= spi-nor.o obj-$(CONFIG_MTD_SPI_NOR)	+= controllers/ &amp;ndash; drivers\mtd\spi-nor\controllers\intel-spi.c https://lwn.net/Articles/692383/</description>
     </item>
     
     <item>
@@ -38,25 +54,6 @@
 1. Debian/Ubuntu系统搭建{OpenGrok 博主使用的是Debian系统，所以包管理器为apt，如果你使用其它系统或者想要改变端口或者源码目录，简单修改脚本即可。 (1). 安装 Docker / Opengrok
 ./opengrok.sh install 该命令做了如下工作: 删除已存在的Docker、启用https、加入docker的官方gpg密钥、校验密钥、添加稳定源、安装Docker社区版、安装opengrok/docker image、创建opengrok目录。
 sudo apt remove docker docker-engine docker.io containerd runc curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add - sudo apt-key fingerprint 0EBFCD88 sudo add-apt-repository \ 	&amp;#34;deb [arch=amd64] https://download.docker.com/linux/debian \ $(lsb_release -cs)\ stable&amp;#34; sudo apt update sudo apt-get install -y docker-ce docker-ce-cli containerd.io sudo docker pull opengrok/docker sudo mkdir -p $GROKPATH/etc sudo mkdir -p $GROKPATH/data sudo mkdir -p $GROKPATH/src (2).</description>
-    </item>
-    
-    <item>
-      <title>coredump文件的生成及文件格式</title>
-      <link>https://psuvtk.github.io/posts/5.-linux_coredump%E7%9A%84%E7%94%9F%E6%88%90%E5%8F%8A%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</link>
-      <pubDate>Sun, 14 Aug 2022 22:25:47 +0800</pubDate>
-      
-      <guid>https://psuvtk.github.io/posts/5.-linux_coredump%E7%9A%84%E7%94%9F%E6%88%90%E5%8F%8A%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</guid>
-      <description>内核版本: linux-5.16.16
-从代码入手分析coredump文件格式 </description>
-    </item>
-    
-    <item>
-      <title>MTD子系统与JFFS2文件系统</title>
-      <link>https://psuvtk.github.io/posts/6.-mtd/</link>
-      <pubDate>Sun, 14 Aug 2022 22:25:47 +0800</pubDate>
-      
-      <guid>https://psuvtk.github.io/posts/6.-mtd/</guid>
-      <description>int mtd_device_parse_register(struct mtd_info *mtd, const char * const *types,struct mtd_part_parser_data *parser_data,const struct mtd_partition *parts,int nr_parts);</description>
     </item>
     
     <item>
@@ -86,21 +83,8 @@ cloc :: 统计代码行数</description>
 2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 电子与通信工程
 工作履历 底层软件工程师、系统工程师(SE) @ 华为技术有限公司
 工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言; 熟练使用C++11, 了解C++14\17\20; 熟练使用Python语言; 熟练使用Shell编程;
-2022 年第3季度目标  网络子系统 网卡驱动 spi-nor 驱动、MTD子系统、jffs2文件系统  嵌入式技能   内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI
-  熟悉GIC
-  熟悉Linux Kernel, 阅读xx模块源码
-  熟悉Qemu, 能够基于Qemu完成单板外设仿真;
-  CoreDump分析、熟悉问题定位与分析能力
-  （Not Yet）熟悉安全启动、了解TF-A、optee实现；</description>
-    </item>
-    
-    <item>
-      <title>QEMU ARM单板</title>
-      <link>https://psuvtk.github.io/posts/8.-qemu/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://psuvtk.github.io/posts/8.-qemu/</guid>
-      <description>..\qemu-system-arm.exe -M vexpress-a9 -m 512M -dtb vexpress-v2p-ca9.dtb -kernel zImage -nographic -sd ./a9rootfs.ext3 -append &amp;quot;root=/dev/mmcblk0 rw console=ttyAMA0 init=/sbin/init&amp;quot;</description>
+2022 年第3季度目标  网络子系统 网卡驱动 spi-nor 驱动、MTD子系统、jffs2文件系统  嵌入式技能  内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI 熟悉GIC 熟悉Linux Kernel, 阅读xx模块源码 熟悉Qemu, 能够基于Qemu完成单板外设仿真; CoreDump分析、熟悉问题定位与分析能力 （Not Yet）熟悉安全启动、了解TF-A、optee实现；  精通MCU开发, 基于Cortex-M4, Cortex-M23系列单片机内核 熟悉I2C总线
+ 熟悉 SPI-NOR/MTD 子系统 熟悉内核编译、裁剪 熟悉  通用软件技能 ELF文件格式、</description>
     </item>
     
   </channel>

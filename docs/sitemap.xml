@@ -2,26 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://psuvtk.github.io/posts/</loc>
-    <lastmod>2022-10-12T20:18:47+08:00</lastmod>
+    <loc>https://psuvtk.github.io/posts/11.-i2c%E6%80%BB%E7%BA%BF/</loc>
+    <lastmod>2022-10-19T20:18:47+08:00</lastmod>
   </url><url>
-    <loc>https://psuvtk.github.io/posts/9.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/</loc>
-    <lastmod>2022-10-12T20:18:47+08:00</lastmod>
+    <loc>https://psuvtk.github.io/posts/</loc>
+    <lastmod>2022-10-19T20:18:47+08:00</lastmod>
+  </url><url>
+    <loc>https://psuvtk.github.io/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/</loc>
+    <lastmod>2022-10-19T20:18:47+08:00</lastmod>
   </url><url>
     <loc>https://psuvtk.github.io/</loc>
-    <lastmod>2022-10-12T20:18:47+08:00</lastmod>
+    <lastmod>2022-10-19T20:18:47+08:00</lastmod>
   </url><url>
     <loc>https://psuvtk.github.io/posts/7.spi_nor/</loc>
     <lastmod>2022-10-06T20:18:47+08:00</lastmod>
   </url><url>
     <loc>https://psuvtk.github.io/posts/1.-opengrok/</loc>
     <lastmod>2022-09-12T13:56:47+08:00</lastmod>
-  </url><url>
-    <loc>https://psuvtk.github.io/posts/5.-linux_coredump%E7%9A%84%E7%94%9F%E6%88%90%E5%8F%8A%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F/</loc>
-    <lastmod>2022-08-14T22:25:47+08:00</lastmod>
-  </url><url>
-    <loc>https://psuvtk.github.io/posts/6.-mtd/</loc>
-    <lastmod>2022-08-14T22:25:47+08:00</lastmod>
   </url><url>
     <loc>https://psuvtk.github.io/posts/3.-coder_tools/</loc>
     <lastmod>2022-07-18T23:38:47+08:00</lastmod>
@@ -30,8 +27,6 @@
     <lastmod>2022-04-05T19:28:46+08:00</lastmod>
   </url><url>
     <loc>https://psuvtk.github.io/categories/</loc>
-  </url><url>
-    <loc>https://psuvtk.github.io/posts/8.-qemu/</loc>
   </url><url>
     <loc>https://psuvtk.github.io/tags/</loc>
   </url>
