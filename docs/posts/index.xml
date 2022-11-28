@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 浅尝辄止</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 19 Oct 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lua</title>
+      <link>https://psuvtk.github.io/posts/12.-lua/</link>
+      <pubDate>Sun, 20 Nov 2022 20:18:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/12.-lua/</guid>
+      <description>Lua 缩写 luaX == Lua lex LuaZ == LuaS ==</description>
+    </item>
+    
     <item>
       <title>I2C总线</title>
       <link>https://psuvtk.github.io/posts/11.-i2c%E6%80%BB%E7%BA%BF/</link>
@@ -58,7 +67,7 @@ sudo apt remove docker docker-engine docker.io containerd runc curl -fsSL https:
     </item>
     
     <item>
-      <title>实用工具</title>
+      <title>习惯迁移</title>
       <link>https://psuvtk.github.io/posts/3.-coder_tools/</link>
       <pubDate>Mon, 18 Jul 2022 23:38:47 +0800</pubDate>
       
@@ -71,6 +80,24 @@ opengrok :: 代码浏览器,用于阅读源码
 BandZip :: 压缩
 Beyond Compare :: 比较工具
 cloc :: 统计代码行数</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://psuvtk.github.io/posts/13.-libco%E5%AE%9A%E6%97%B6%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/13.-libco%E5%AE%9A%E6%97%B6%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://psuvtk.github.io/posts/14.-go%E8%AF%AD%E8%A8%80gmp%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/14.-go%E8%AF%AD%E8%A8%80gmp%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
     </item>
     
   </channel>

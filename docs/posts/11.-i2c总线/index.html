@@ -75,6 +75,12 @@
         
         
         <li>
+          <a class="icon" href="https://psuvtk.github.io/posts/12.-lua/">
+            <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
+          </a>
+        </li>
+        
+        <li>
           <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
             <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
           </a>
@@ -170,6 +176,11 @@
     <li><a href="#i2c-slave">I2C Slave</a>
       <ul>
         <li><a href="#ti-参考代码">TI 参考代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#linux-i2c-驱动">Linux I2C 驱动</a>
+      <ul>
+        <li><a href="#gpio-模拟">GPIO 模拟</a></li>
       </ul>
     </li>
     <li><a href="#学习文档">学习文档</a></li>
@@ -1154,7 +1165,11 @@ I2CReadTransactionCleanUp:
 	}
 }
 
-</code></pre></div><h2 id="学习文档">学习文档</h2>
+</code></pre></div><h2 id="linux-i2c-驱动">Linux I2C 驱动</h2>
+<h3 id="gpio-模拟">GPIO 模拟</h3>
+<p>算法: linux-6.1-rc2\drivers\i2c\algos\i2c-algo-bit.c
+总线: linux-6.1-rc2\drivers\i2c\busses\i2c-gpio.c</p>
+<h2 id="学习文档">学习文档</h2>
 <ol>
 <li>UM10204(I2C-bus specification and user manual) Texas Instruments</li>
 <li>SPRABJ6(Software Implementation of PMBus Over I2C for TMS320F2803x)</li>
@@ -1209,6 +1224,11 @@ I2CReadTransactionCleanUp:
     <li><a href="#i2c-slave">I2C Slave</a>
       <ul>
         <li><a href="#ti-参考代码">TI 参考代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#linux-i2c-驱动">Linux I2C 驱动</a>
+      <ul>
+        <li><a href="#gpio-模拟">GPIO 模拟</a></li>
       </ul>
     </li>
     <li><a href="#学习文档">学习文档</a></li>

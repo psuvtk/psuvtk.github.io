@@ -6,7 +6,16 @@
     <description>Recent content on 浅尝辄止</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 19 Oct 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lua</title>
+      <link>https://psuvtk.github.io/posts/12.-lua/</link>
+      <pubDate>Sun, 20 Nov 2022 20:18:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/12.-lua/</guid>
+      <description>Lua 缩写 luaX == Lua lex LuaZ == LuaS ==</description>
+    </item>
+    
     <item>
       <title>I2C总线</title>
       <link>https://psuvtk.github.io/posts/11.-i2c%E6%80%BB%E7%BA%BF/</link>
@@ -58,7 +67,7 @@ sudo apt remove docker docker-engine docker.io containerd runc curl -fsSL https:
     </item>
     
     <item>
-      <title>实用工具</title>
+      <title>习惯迁移</title>
       <link>https://psuvtk.github.io/posts/3.-coder_tools/</link>
       <pubDate>Mon, 18 Jul 2022 23:38:47 +0800</pubDate>
       
@@ -79,13 +88,41 @@ cloc :: 统计代码行数</description>
       <pubDate>Tue, 05 Apr 2022 19:28:46 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/about/</guid>
-      <description>年龄 27 (1995~)
+      <description>年龄 26 (1995~)
 教育背景 2014.9 ~ 2018.7 本科 哈尔滨工业大学(威海) 电子信息工程
 2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 电子与通信工程
 工作履历 底层软件工程师、系统工程师(SE) @ 华为技术有限公司
-工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言; 熟练使用C++11, 了解C++14\17\20; 熟练使用Python语言; 熟练使用Shell编程;
-2022 年第3季度目标  网络子系统 网卡驱动 spi-nor 驱动、MTD子系统、jffs2文件系统  嵌入式技能  内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI 熟悉GIC 熟悉Linux Kernel, 阅读xx模块源码 熟悉Qemu, 能够基于Qemu完成单板外设仿真; CoreDump分析、熟悉问题定位与分析能力 （Not Yet）熟悉安全启动、了解TF-A、optee实现；  精通MCU开发, 基于Cortex-M4, Cortex-M23系列单片机内核 熟悉I2C总线
- 熟悉 SPI-NOR/MTD 子系统 熟悉内核编译、裁剪 熟悉  通用软件技能 ELF文件格式、</description>
+工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言;
+熟练使用C++11, 了解C++14\17\20;
+熟练使用Python语言;
+熟练使用Shell编程;
+熟练使用Lua、Rust、Go语言;
+MCU开发经验   基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发;
+  基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;
+  应用软件开发经验 维护、开发射频单元维测子系统、日志子系统、异常监控子系统等上层软件特性;
+熟悉内核驱动开发, 维护、开发ethernet(MAC)、espi\localbus\uart\I2C\SPI等用户态、内核态驱动;
+嵌入式技能   内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI
+  熟悉GIC
+  熟悉Linux Kernel, 阅读xx模块源码
+  熟悉Qemu, 能够基于Qemu完成单板外设仿真;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://psuvtk.github.io/posts/13.-libco%E5%AE%9A%E6%97%B6%E5%99%A8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/13.-libco%E5%AE%9A%E6%97%B6%E5%99%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://psuvtk.github.io/posts/14.-go%E8%AF%AD%E8%A8%80gmp%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/14.-go%E8%AF%AD%E8%A8%80gmp%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
     </item>
     
   </channel>
