@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>浅尝辄止</title>
+    <title>Early is on time</title>
     <link>https://psuvtk.github.io/</link>
-    <description>Recent content on 浅尝辄止</description>
+    <description>Recent content on Early is on time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Nov 2022 20:18:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Dec 2022 23:51:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TF-M</title>
+      <link>https://psuvtk.github.io/posts/17.-tf-m/</link>
+      <pubDate>Fri, 09 Dec 2022 23:51:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/17.-tf-m/</guid>
+      <description>ARM 官方文档: https://tf-m-user-guide.trustedfirmware.org/introduction/readme.html
+Armv8-M and Armv8.1-M architectures. cortex-m23 cortex-m33 cortex-m55 cortex-m85 或者其他物理核隔离的系统, 比如Cypress PSoC® 64 Secure Microcontrollers;
+PSA Certified guidelines SPE &amp;lt;&amp;ndash;&amp;gt; NSPE
+mcuboot https://docs.mcuboot.com/design.html 阅读TF-M的官方文档是发现BL2使用是mcuboot这个项目。 mcuboot被设计为一个函数库，官方文档给出的其中一个原因是函数库可以进行单元测试，但是完整的应用不能够(A library can be unit tested, but an application can’t.)。因此，mcuboot并不包含实际跳转到APP执行的代码。</description>
+    </item>
+    
+    <item>
+      <title>理解LINUX系统调用</title>
+      <link>https://psuvtk.github.io/posts/16.-linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</link>
+      <pubDate>Sat, 03 Dec 2022 01:01:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/16.-linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/</guid>
+      <description>上下文 内核在执行系统调用的时候处于进程上下文
+ 可以睡眠 可以被抢占 &amp;mdash;&amp;gt; 需要保证系统是可以重入的  用户态抢占 从中断返回用户空间时 从系统调用返回用户空间时
+内核态抢占 时机: 未持有锁</description>
+    </item>
+    
+    <item>
+      <title>Lua</title>
+      <link>https://psuvtk.github.io/posts/15.-%E5%86%85%E6%A0%B8%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</link>
+      <pubDate>Tue, 29 Nov 2022 01:01:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/15.-%E5%86%85%E6%A0%B8%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</guid>
+      <description>与中断例程之间的同步：禁止中断
+UP 不需要同步 SMP 才需要
+内核锁 用户态锁 参考  kernel_locking  </description>
+    </item>
+    
     <item>
       <title>Lua</title>
       <link>https://psuvtk.github.io/posts/12.-lua/</link>
@@ -95,7 +129,7 @@ cloc :: 统计代码行数</description>
 工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言;
 熟练使用C++11, 了解C++14\17\20;
 熟练使用Python语言;
-熟练使用Shell编程;
+熟练使用Shell脚本编程;
 熟练使用Lua、Rust、Go语言;
 MCU开发经验   基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发;
   基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;

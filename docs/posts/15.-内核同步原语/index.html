@@ -3,36 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title> 习惯迁移 | Early is on time</title>
+  <title> Lua | Early is on time</title>
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
-  <meta property="og:title" content="习惯迁移" />
-<meta property="og:description" content="VSCode :: 编辑器即IDE
-Tabby :: 终端工具
-MobaXTerm :: 远程工具
-oh-my-zsh ::
-opengrok :: 代码浏览器,用于阅读源码
-BandZip :: 压缩
-Beyond Compare :: 比较工具
-cloc :: 统计代码行数" />
+  <meta property="og:title" content="Lua" />
+<meta property="og:description" content="与中断例程之间的同步：禁止中断
+UP 不需要同步 SMP 才需要
+内核锁 用户态锁 参考  kernel_locking  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://psuvtk.github.io/posts/3.-coder_tools/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-07-18T23:38:47&#43;08:00" />
-<meta property="article:modified_time" content="2022-07-18T23:38:47&#43;08:00" />
+<meta property="og:url" content="https://psuvtk.github.io/posts/15.-%E5%86%85%E6%A0%B8%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-29T01:01:47&#43;08:00" />
+<meta property="article:modified_time" content="2022-11-29T01:01:47&#43;08:00" />
 
 
   <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="习惯迁移"/>
-<meta name="twitter:description" content="VSCode :: 编辑器即IDE
-Tabby :: 终端工具
-MobaXTerm :: 远程工具
-oh-my-zsh ::
-opengrok :: 代码浏览器,用于阅读源码
-BandZip :: 压缩
-Beyond Compare :: 比较工具
-cloc :: 统计代码行数"/>
+<meta name="twitter:title" content="Lua"/>
+<meta name="twitter:description" content="与中断例程之间的同步：禁止中断
+UP 不需要同步 SMP 才需要
+内核锁 用户态锁 参考  kernel_locking  "/>
 
   
   
@@ -80,14 +70,14 @@ cloc :: 统计代码行数"/>
       <ul>
         
         <li>
-          <a class="icon" href=" https://psuvtk.github.io/about/">
+          <a class="icon" href=" https://psuvtk.github.io/posts/12.-lua/">
             <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
           </a>
         </li>
         
         
         <li>
-          <a class="icon" href="https://psuvtk.github.io/posts/1.-opengrok/">
+          <a class="icon" href="https://psuvtk.github.io/posts/16.-linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/">
             <i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i>
           </a>
         </li>
@@ -118,47 +108,47 @@ cloc :: 统计代码行数"/>
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f">
       <i class="fab fa-facebook " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&text=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&text=Lua">
       <i class="fab fa-twitter " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&title=Lua">
       <i class="fab fa-linkedin " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&is_video=false&description=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&is_video=false&description=Lua">
       <i class="fab fa-pinterest " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="mailto:?subject=Lua&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f">
       <i class="fas fa-envelope " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&title=Lua">
       <i class="fab fa-get-pocket " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&title=Lua">
       <i class="fab fa-reddit " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&name=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb&description=VSCode%20%3a%3a%20%e7%bc%96%e8%be%91%e5%99%a8%e5%8d%b3IDE%0aTabby%20%3a%3a%20%e7%bb%88%e7%ab%af%e5%b7%a5%e5%85%b7%0aMobaXTerm%20%3a%3a%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e5%85%b7%0aoh-my-zsh%20%3a%3a%0aopengrok%20%3a%3a%20%e4%bb%a3%e7%a0%81%e6%b5%8f%e8%a7%88%e5%99%a8%2c%e7%94%a8%e4%ba%8e%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81%0aBandZip%20%3a%3a%20%e5%8e%8b%e7%bc%a9%0aBeyond%20Compare%20%3a%3a%20%e6%af%94%e8%be%83%e5%b7%a5%e5%85%b7%0acloc%20%3a%3a%20%e7%bb%9f%e8%ae%a1%e4%bb%a3%e7%a0%81%e8%a1%8c%e6%95%b0">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&name=Lua&description=%e4%b8%8e%e4%b8%ad%e6%96%ad%e4%be%8b%e7%a8%8b%e4%b9%8b%e9%97%b4%e7%9a%84%e5%90%8c%e6%ad%a5%ef%bc%9a%e7%a6%81%e6%ad%a2%e4%b8%ad%e6%96%ad%0aUP%20%e4%b8%8d%e9%9c%80%e8%a6%81%e5%90%8c%e6%ad%a5%20SMP%20%e6%89%8d%e9%9c%80%e8%a6%81%0a%e5%86%85%e6%a0%b8%e9%94%81%20%e7%94%a8%e6%88%b7%e6%80%81%e9%94%81%20%e5%8f%82%e8%80%83%20%20kernel_locking%20%20">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&t=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&t=Lua">
       <i class="fab fa-hacker-news " aria-hidden="true"></i>
     </a>
   </li>
@@ -166,7 +156,13 @@ cloc :: 统计代码行数"/>
 
     </div>
     <div id="toc">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#内核锁">内核锁</a></li>
+    <li><a href="#用户态锁">用户态锁</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
     </div>
   </span>
 </div>
@@ -175,13 +171,13 @@ cloc :: 统计代码行数"/>
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
-        习惯迁移
+        Lua
       </h1>
       <div class="meta">
         
         <div class="postdate">
           
-          <time datetime="2022-07-18 23:38:47 &#43;0800 CST" itemprop="datePublished">2022-07-18</time>
+          <time datetime="2022-11-29 01:01:47 &#43;0800 CST" itemprop="datePublished">2022-11-29</time>
           
         </div>
         
@@ -193,14 +189,15 @@ cloc :: 统计代码行数"/>
 
   
     <div class="content" itemprop="articleBody">
-      <p>VSCode  :: 编辑器即IDE</p>
-<p>Tabby :: 终端工具</p>
-<p>MobaXTerm :: 远程工具</p>
-<p>oh-my-zsh ::</p>
-<p>opengrok :: 代码浏览器,用于阅读源码</p>
-<p>BandZip :: 压缩</p>
-<p>Beyond Compare :: 比较工具</p>
-<p>cloc :: 统计代码行数</p>
+      <p>与中断例程之间的同步：禁止中断</p>
+<p>UP 不需要同步
+SMP 才需要</p>
+<h2 id="内核锁">内核锁</h2>
+<h2 id="用户态锁">用户态锁</h2>
+<h2 id="参考">参考</h2>
+<ol>
+<li><a href="http://retis.sssup.it/luca/KernelProgramming/Slides/kernel_locking.pdf">kernel_locking</a></li>
+</ol>
 
     </div>
   </article>
@@ -228,7 +225,13 @@ cloc :: 统计代码行数"/>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <nav id="TableOfContents"></nav>
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#内核锁">内核锁</a></li>
+    <li><a href="#用户态锁">用户态锁</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -240,47 +243,47 @@ cloc :: 统计代码行数"/>
   
   
   <li>
-    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f">
       <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&text=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&text=Lua">
       <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&title=Lua">
       <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&is_video=false&description=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&is_video=false&description=Lua">
       <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="mailto:?subject=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f">
+    <a class="icon" href="mailto:?subject=Lua&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f">
       <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&title=Lua">
       <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&title=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&title=Lua">
       <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&name=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb&description=VSCode%20%3a%3a%20%e7%bc%96%e8%be%91%e5%99%a8%e5%8d%b3IDE%0aTabby%20%3a%3a%20%e7%bb%88%e7%ab%af%e5%b7%a5%e5%85%b7%0aMobaXTerm%20%3a%3a%20%e8%bf%9c%e7%a8%8b%e5%b7%a5%e5%85%b7%0aoh-my-zsh%20%3a%3a%0aopengrok%20%3a%3a%20%e4%bb%a3%e7%a0%81%e6%b5%8f%e8%a7%88%e5%99%a8%2c%e7%94%a8%e4%ba%8e%e9%98%85%e8%af%bb%e6%ba%90%e7%a0%81%0aBandZip%20%3a%3a%20%e5%8e%8b%e7%bc%a9%0aBeyond%20Compare%20%3a%3a%20%e6%af%94%e8%be%83%e5%b7%a5%e5%85%b7%0acloc%20%3a%3a%20%e7%bb%9f%e8%ae%a1%e4%bb%a3%e7%a0%81%e8%a1%8c%e6%95%b0">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&name=Lua&description=%e4%b8%8e%e4%b8%ad%e6%96%ad%e4%be%8b%e7%a8%8b%e4%b9%8b%e9%97%b4%e7%9a%84%e5%90%8c%e6%ad%a5%ef%bc%9a%e7%a6%81%e6%ad%a2%e4%b8%ad%e6%96%ad%0aUP%20%e4%b8%8d%e9%9c%80%e8%a6%81%e5%90%8c%e6%ad%a5%20SMP%20%e6%89%8d%e9%9c%80%e8%a6%81%0a%e5%86%85%e6%a0%b8%e9%94%81%20%e7%94%a8%e6%88%b7%e6%80%81%e9%94%81%20%e5%8f%82%e8%80%83%20%20kernel_locking%20%20">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>
   <li>
-    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f3.-coder_tools%2f&t=%e4%b9%a0%e6%83%af%e8%bf%81%e7%a7%bb">
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f15.-%25E5%2586%2585%25E6%25A0%25B8%25E5%2590%258C%25E6%25AD%25A5%25E5%258E%259F%25E8%25AF%25AD%2f&t=Lua">
       <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
     </a>
   </li>

@@ -38,7 +38,7 @@ draft: false
 
 熟练使用Python语言;
 
-熟练使用Shell编程;
+熟练使用Shell脚本编程;
 
 熟练使用Lua、Rust、Go语言;
 
@@ -71,7 +71,7 @@ draft: false
 3. 熟悉根文件系统制作
 
 ## 通用软件技能
-ELF文件格式、
+ELF文件格式
 
 
 ##  技能提升
@@ -86,7 +86,7 @@ ELF文件格式、
 1. 网络子系统 网卡驱动
 2. spi-nor 驱动、MTD子系统、jffs2文件系统
 
-
+熟练掌握 C++/Python等语言
 
 
 
