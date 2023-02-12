@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Early is on time</title>
+    <title>Posts on Early is on timeASD</title>
     <link>https://psuvtk.github.io/posts/</link>
-    <description>Recent content in Posts on Early is on time</description>
+    <description>Recent content in Posts on Early is on timeASD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Dec 2022 23:51:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 23:36:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MCU开发踩坑</title>
+      <link>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</link>
+      <pubDate>Thu, 09 Feb 2023 23:36:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</guid>
+      <description>串口输出乱码 时钟配置不正确</description>
+    </item>
+    
+    <item>
+      <title>RTOS与LINUX差异</title>
+      <link>https://psuvtk.github.io/posts/18.-rtos%E4%B8%8Elinux/</link>
+      <pubDate>Sun, 05 Feb 2023 23:46:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/18.-rtos%E4%B8%8Elinux/</guid>
+      <description>占用资源少
+实时性方面？
+实时性的定义 在有限截止时间内任务得到调度</description>
+    </item>
+    
     <item>
       <title>TF-M</title>
       <link>https://psuvtk.github.io/posts/17.-tf-m/</link>
@@ -31,7 +51,7 @@ mcuboot https://docs.mcuboot.com/design.html 阅读TF-M的官方文档是发现B
     </item>
     
     <item>
-      <title>Lua</title>
+      <title>同步原语</title>
       <link>https://psuvtk.github.io/posts/15.-%E5%86%85%E6%A0%B8%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</link>
       <pubDate>Tue, 29 Nov 2022 01:01:47 +0800</pubDate>
       

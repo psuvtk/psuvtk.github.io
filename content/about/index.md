@@ -6,7 +6,7 @@ draft: false
 
 ## 年龄
 
-26 (1995~)
+27 (1995~)
 
 
 ## 教育背景
@@ -42,7 +42,7 @@ draft: false
 
 熟练使用Lua、Rust、Go语言;
 
-
+## 项目经历
 ## MCU开发经验
 
 1. 基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发;
@@ -50,13 +50,13 @@ draft: false
 2. 基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;
 
 
-## 应用软件开发经验
+## Linux 应用开发
 
 维护、开发射频单元维测子系统、日志子系统、异常监控子系统等上层软件特性;
 
 熟悉内核驱动开发, 维护、开发ethernet(MAC)、espi\localbus\uart\I2C\SPI等用户态、内核态驱动;
 
-
+熟悉TUN\TAP网络虚拟化
 
 ## 嵌入式技能
 1. 内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI 
@@ -86,15 +86,8 @@ ELF文件格式
 1. 网络子系统 网卡驱动
 2. spi-nor 驱动、MTD子系统、jffs2文件系统
 
-熟练掌握 C++/Python等语言
-
-
-
-增强计划
-1. buildroot
-2. edk2
-3. yocto
-
+ 
+熟悉使用busybox、Yocto等构建嵌入式系统;
 
 
 

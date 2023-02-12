@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Early is on time</title>
+    <title>Early is on timeASD</title>
     <link>https://psuvtk.github.io/</link>
-    <description>Recent content on Early is on time</description>
+    <description>Recent content on Early is on timeASD</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 09 Dec 2022 23:51:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Feb 2023 23:36:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MCU开发踩坑</title>
+      <link>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</link>
+      <pubDate>Thu, 09 Feb 2023 23:36:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</guid>
+      <description>串口输出乱码 时钟配置不正确</description>
+    </item>
+    
+    <item>
+      <title>RTOS与LINUX差异</title>
+      <link>https://psuvtk.github.io/posts/18.-rtos%E4%B8%8Elinux/</link>
+      <pubDate>Sun, 05 Feb 2023 23:46:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/18.-rtos%E4%B8%8Elinux/</guid>
+      <description>占用资源少
+实时性方面？
+实时性的定义 在有限截止时间内任务得到调度</description>
+    </item>
+    
     <item>
       <title>TF-M</title>
       <link>https://psuvtk.github.io/posts/17.-tf-m/</link>
@@ -17,6 +37,15 @@
 Armv8-M and Armv8.1-M architectures. cortex-m23 cortex-m33 cortex-m55 cortex-m85 或者其他物理核隔离的系统, 比如Cypress PSoC® 64 Secure Microcontrollers;
 PSA Certified guidelines SPE &amp;lt;&amp;ndash;&amp;gt; NSPE
 mcuboot https://docs.mcuboot.com/design.html 阅读TF-M的官方文档是发现BL2使用是mcuboot这个项目。 mcuboot被设计为一个函数库，官方文档给出的其中一个原因是函数库可以进行单元测试，但是完整的应用不能够(A library can be unit tested, but an application can’t.)。因此，mcuboot并不包含实际跳转到APP执行的代码。</description>
+    </item>
+    
+    <item>
+      <title>啤酒, 干杯!</title>
+      <link>https://psuvtk.github.io/life/51.-%E5%95%A4%E9%85%92/</link>
+      <pubDate>Fri, 09 Dec 2022 23:51:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/life/51.-%E5%95%A4%E9%85%92/</guid>
+      <description>哪里买 品牌 价格 酒精度 麦芽度 评价     盒马 盒马 德式小麦白 精酿原浆 15.9元 / 1000ml 4.5%vol 12.1P 浑浊, 好喝   盒马 盒马 黄油风味皮尔森啤酒 19.9元 / 650ml 2.5%vol 8P 好喝   随便 青岛白啤 元 / ml 4.1%vol 11P 好喝   盒马 盒马精酿原浆 桂圆红枣小麦啤酒(冬限定) 18.9元 / 460ml 2.8%vol 12P 酸, 口感忘了   盒马 乌苏 赤焱 4.5元 / 500ml 5.8%vol 13.5P 凑合, 口感一般   盒马 燕京U8 4.</description>
     </item>
     
     <item>
@@ -31,7 +60,7 @@ mcuboot https://docs.mcuboot.com/design.html 阅读TF-M的官方文档是发现B
     </item>
     
     <item>
-      <title>Lua</title>
+      <title>同步原语</title>
       <link>https://psuvtk.github.io/posts/15.-%E5%86%85%E6%A0%B8%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/</link>
       <pubDate>Tue, 29 Nov 2022 01:01:47 +0800</pubDate>
       
@@ -74,6 +103,15 @@ I2C 同步通信协议
 SCL SDA
 典型速率: 100Kbps, 400Kbpx, 3.4Mbps
 UART 异步通信协议 慢 115200</description>
+    </item>
+    
+    <item>
+      <title>小吊梨汤</title>
+      <link>https://psuvtk.github.io/life/50.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/</link>
+      <pubDate>Wed, 12 Oct 2022 20:18:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/life/50.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/</guid>
+      <description>原料  秋梨 银耳 百合 橘皮 葛根 话梅 枸杞 黄冰糖  </description>
     </item>
     
     <item>
@@ -122,7 +160,7 @@ cloc :: 统计代码行数</description>
       <pubDate>Tue, 05 Apr 2022 19:28:46 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/about/</guid>
-      <description>年龄 26 (1995~)
+      <description>年龄 27 (1995~)
 教育背景 2014.9 ~ 2018.7 本科 哈尔滨工业大学(威海) 电子信息工程
 2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 电子与通信工程
 工作履历 底层软件工程师、系统工程师(SE) @ 华为技术有限公司
@@ -131,14 +169,14 @@ cloc :: 统计代码行数</description>
 熟练使用Python语言;
 熟练使用Shell脚本编程;
 熟练使用Lua、Rust、Go语言;
-MCU开发经验   基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发;
+项目经历 MCU开发经验   基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发;
   基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;
-  应用软件开发经验 维护、开发射频单元维测子系统、日志子系统、异常监控子系统等上层软件特性;
+  Linux 应用开发 维护、开发射频单元维测子系统、日志子系统、异常监控子系统等上层软件特性;
 熟悉内核驱动开发, 维护、开发ethernet(MAC)、espi\localbus\uart\I2C\SPI等用户态、内核态驱动;
+熟悉TUN\TAP网络虚拟化
 嵌入式技能   内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI
   熟悉GIC
-  熟悉Linux Kernel, 阅读xx模块源码
-  熟悉Qemu, 能够基于Qemu完成单板外设仿真;</description>
+  熟悉Linux Kernel, 阅读xx模块源码</description>
     </item>
     
     <item>
