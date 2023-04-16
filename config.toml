@@ -1,7 +1,7 @@
 baseurl  = "https://psuvtk.github.io/"
 languageCode = "zh-cn"
 
-title = "Early is on timeASD"
+title = "Early is on Time"
 
 theme = "cactus"
 
@@ -23,6 +23,10 @@ name = "Life"
 url = "/life"
 weight = 2
 
+[[menu.main]]
+name = "Algo"
+url = "/algo"
+weight = 2
 
 [[menu.main]]
 name = "About Me"

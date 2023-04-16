@@ -1,12 +1,44 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Early is on timeASD</title>
+    <title>Posts on Early is on Time</title>
     <link>https://psuvtk.github.io/posts/</link>
-    <description>Recent content in Posts on Early is on timeASD</description>
+    <description>Recent content in Posts on Early is on Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Feb 2023 23:36:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Apr 2023 00:02:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux调度</title>
+      <link>https://psuvtk.github.io/posts/23.-linux_%E8%B0%83%E5%BA%A6/</link>
+      <pubDate>Tue, 11 Apr 2023 00:02:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/23.-linux_%E8%B0%83%E5%BA%A6/</guid>
+      <description>stop_task.c	117 DEFINE_SCHED_CLASS(stop) idle.c	498 DEFINE_SCHED_CLASS(idle) deadline.c	2696 DEFINE_SCHED_CLASS(dl) rt.c	2680 DEFINE_SCHED_CLASS(rt) fair.c	12355 DEFINE_SCHED_CLASS(fair) 调度器会放到单独的段里面
+#define DEFINE_SCHED_CLASS(name) \ const struct sched_class name##_sched_class \ __aligned(__alignof__(struct sched_class)) \ __section(&amp;#34;__&amp;#34; #name &amp;#34;_sched_class&amp;#34;) </description>
+    </item>
+    
+    <item>
+      <title>consle/tty/ptmx/pts</title>
+      <link>https://psuvtk.github.io/posts/22.-console/</link>
+      <pubDate>Sun, 26 Feb 2023 20:48:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/22.-console/</guid>
+      <description>console :=
+termial :=
+tty
+ptmx、pts</description>
+    </item>
+    
+    <item>
+      <title>内核编译</title>
+      <link>https://psuvtk.github.io/posts/21.-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Sun, 26 Feb 2023 20:48:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/21.-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/</guid>
+      <description> 下载Ubuntu镜像 安装Virtual Box 下载内核源码, linux-source 这个包可能和当前的内核版本不匹配？, 所以使用linux-source-5.xx.x包  sudo apt-get install linux-headers-$(uname -r) sudo apt-get install linux-source-5.xx.x cd /usr/src/linux-source-5.19.0 sudo tar jxf /usr/src/linux-source-5.19.0.tar.bz2 依赖安装 sudo apt install build-essential libncurses5-dev libssl-dev flex bison 编译内核 #清除之前编译环境 make mrproper # 编译 sudo make defconfig sudo make -j4  安装基本软件
+sudo apt install zsh git curl vim</description>
+    </item>
+    
     <item>
       <title>MCU开发踩坑</title>
       <link>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</link>
@@ -14,6 +46,16 @@
       
       <guid>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</guid>
       <description>串口输出乱码 时钟配置不正确</description>
+    </item>
+    
+    <item>
+      <title>锁</title>
+      <link>https://psuvtk.github.io/posts/20.-locking/</link>
+      <pubDate>Thu, 09 Feb 2023 23:36:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/20.-locking/</guid>
+      <description>如何死锁?  ABBA 同线程多次调用不可重入锁  可重入与不可重入 用户态与内核态 库函数与锁 死锁 形成死锁的必要条件  互斥条件 不可剥夺条件 请求与保持条件 循环等待条件  如何避免死锁 破坏上述的必要条件
+ 互斥条件 :: 无法破坏, 锁的目的就是互斥 不可剥夺条件 :: 无法获取锁时, 直接失败或者等待超时 请求与保持条件 :: 在加锁前，增加资源池判断资源是否已经在池内 循环等待条件 :: 保证加锁的顺序  参考  深入理解高并发原理  </description>
     </item>
     
     <item>

@@ -1,12 +1,107 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Early is on timeASD</title>
+    <title>Early is on Time</title>
     <link>https://psuvtk.github.io/</link>
-    <description>Recent content on Early is on timeASD</description>
+    <description>Recent content on Early is on Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 09 Feb 2023 23:36:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Apr 2023 00:03:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>堆</title>
+      <link>https://psuvtk.github.io/algo/%E5%A0%86/</link>
+      <pubDate>Sun, 16 Apr 2023 00:03:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E5%A0%86/</guid>
+      <description>操作  插入1个数 求集合中的最小值 删除最小值 删除任意值(STL 无法直接实现) 修改任意值(STL 无法直接实现)  存储方式 数组存储, 下标从1开始;
+父节点为 x 则，左儿子为 2x, 右儿子为 2x+1：
+接口 up : 节点上移动
+down : 节点下移
+插入 插入值 := 末尾位置插入 , size++, 然后 up
+删除 最小值(小根堆) := 删除末位置，size-1, 然后从根down
+删除k 位置值 := heap[k] = heap[size]; size&amp;ndash;; down(); up() &amp;ndash;&amp;gt; down\up 只会执行一次
+修改k 位置值 := heap[k] = x; down(); up() &amp;ndash;&amp;gt; down\up 只会执行一次
+特征 堆是完全二叉树(除最后一层其他层满，最后一层从左往右排列)
+建立堆 正常方式 逐个插入建堆, 时间复杂度O(n*log n)
+快速方式 读入 从 n/2 -&amp;gt; 1 处 开始执行down操作, 时间复杂度 O(n) 证明: 递推</description>
+    </item>
+    
+    <item>
+      <title>Trie</title>
+      <link>https://psuvtk.github.io/algo/trie/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/trie/</guid>
+      <description>字典树？
+acwing 算法基础课
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;stdio.h&amp;gt;using namespace std; const int N = 100010; // 子节点编号(索引) int son[N][26]; int cnt[N]; // 当前使用节点的索引 // 索引为0的点既是根节点 也是空节点 int idx; int insert(const char* s) { int p = 0; for (int i = 0; s[i]; i++) { int u = s[i] - &amp;#39;a&amp;#39;; if (!son[p][u]) son[p][u] = ++idx; p = son[p][u]; } cnt[p] ++; } int query(const char *s) { int p = 0; for (int i = 0; s[i]; i++) { int u = s[i] - &amp;#39;a&amp;#39;; if (!</description>
+    </item>
+    
+    <item>
+      <title>并查集</title>
+      <link>https://psuvtk.github.io/algo/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
+      <description>主要操作  合并两个集合 查询 两个元素是否在同一个集合  并查集优化(路径压缩) WHY: 防止查询父节点时间过长
+HOW: 让路径的店直接指向根节点
+代码实现:
+# tips: find的同时实现路径压缩  int find(int x) { // 压缩路径  if (p[x] != x) p[x] = find(p[x]); // 此时父节点就是新的父节点  return p[x]; } 按秩优化(无用) 让矮的树接到高的树
+基本模板题 合并集合 连通块中点的数量  练习题 食物链
+WHY: 为什么 find的时候 需要 d[x] = d[p[x]] ANS: 因为dx 是与父节点之间的距离，合并两棵树时，dx 并一定为 1, 因此后续压缩路径的时候dx并不一定为1</description>
+    </item>
+    
+    <item>
+      <title>并查集</title>
+      <link>https://psuvtk.github.io/algo/%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E6%8E%92%E5%BA%8F/</guid>
+      <description>acwing 基础课 第一章 基础算法(一) </description>
+    </item>
+    
+    <item>
+      <title>算法STL</title>
+      <link>https://psuvtk.github.io/algo/stl/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/stl/</guid>
+      <description>不管读字符还是读字符串都用%s来读取
+// 读取 I abc char op[2]; scanf(&amp;#34;%s%s&amp;#34;, op, str); vector 支持[] size() empty() clear() 清空 front()/back() 数组头尾元素 push_back()/pop_back begin()/end() 首尾元素 支持字典序比较 pair first 第一个元素 second 第二个元素 string size()/length 返回长度 empty() clear() substr(a,b) 得到一个下标位a长度位b的子字符串 substr(a) 得到一个下表为a长度取最长的子字符串 c_str() 取string定义数组的首地址 queue size() empty() push() 在队尾插入一个元素 front()/back() 返回队头/队尾元素 pop() 弹出队头元素 priority_queue 优先队列(堆) 默认大根堆 size() empty() push() top() pop() 定义小根堆: priority_queue&amp;lt;int , vector&amp;lt;int&amp;gt; , greater&amp;lt;int&amp;gt;&amp;gt; stack size() empty() push() pop() top() deque 支持[] size() empty() clear() front()/back() 头尾元素 push_back()/push_front() 在头尾插入 begin()/end() set , map , multimap , multiset , 基于平衡二叉树 (红黑树) 维护一个有序数列 大部分函数时间复杂度都是logn (因为是树) size() empty() clear() begin()/end() 支持++ -- 时间复杂度 O(logn) lower_bound()/upper_bound() lower_bound(x) 返回一个大于等于x的最小值 upper_bound(x) 返回一个大于x的最小值 set / multiset set不支持重复数插入 插入重复数直接跳过 insert() 插入一个数 find() 查找一个数 count() 返回一个数存入的个数 erase() (1) 输入是一个x , 删除全部x , 时间复杂度 O(k + logn) (2) 输入是一个迭代器 , 删除这个迭代器 map / multimap insert() 插入的是一个pair erase() 输入的参数是pair 或者 迭代器 find() 支持[] unordered_set , unordered_map , unordered_multiset , unordered_multimap 基本跟上面一个一样 查找删改时间复杂度是 O(1) 不支持lower_bound()/upper_bound() 迭代器的++ -- bitset 压位 bitset&amp;lt;放大小&amp;gt; s; 初始化时候全为0 —— false; ~取反 &amp;amp;且 |或 ^异或 == , !</description>
+    </item>
+    
+    <item>
+      <title>Linux调度</title>
+      <link>https://psuvtk.github.io/posts/23.-linux_%E8%B0%83%E5%BA%A6/</link>
+      <pubDate>Tue, 11 Apr 2023 00:02:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/23.-linux_%E8%B0%83%E5%BA%A6/</guid>
+      <description>stop_task.c	117 DEFINE_SCHED_CLASS(stop) idle.c	498 DEFINE_SCHED_CLASS(idle) deadline.c	2696 DEFINE_SCHED_CLASS(dl) rt.c	2680 DEFINE_SCHED_CLASS(rt) fair.c	12355 DEFINE_SCHED_CLASS(fair) 调度器会放到单独的段里面
+#define DEFINE_SCHED_CLASS(name) \ const struct sched_class name##_sched_class \ __aligned(__alignof__(struct sched_class)) \ __section(&amp;#34;__&amp;#34; #name &amp;#34;_sched_class&amp;#34;) </description>
+    </item>
+    
+    <item>
+      <title>consle/tty/ptmx/pts</title>
+      <link>https://psuvtk.github.io/posts/22.-console/</link>
+      <pubDate>Sun, 26 Feb 2023 20:48:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/22.-console/</guid>
+      <description>console :=
+termial :=
+tty
+ptmx、pts</description>
+    </item>
+    
+    <item>
+      <title>内核编译</title>
+      <link>https://psuvtk.github.io/posts/21.-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Sun, 26 Feb 2023 20:48:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/21.-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/</guid>
+      <description> 下载Ubuntu镜像 安装Virtual Box 下载内核源码, linux-source 这个包可能和当前的内核版本不匹配？, 所以使用linux-source-5.xx.x包  sudo apt-get install linux-headers-$(uname -r) sudo apt-get install linux-source-5.xx.x cd /usr/src/linux-source-5.19.0 sudo tar jxf /usr/src/linux-source-5.19.0.tar.bz2 依赖安装 sudo apt install build-essential libncurses5-dev libssl-dev flex bison 编译内核 #清除之前编译环境 make mrproper # 编译 sudo make defconfig sudo make -j4  安装基本软件
+sudo apt install zsh git curl vim</description>
+    </item>
+    
     <item>
       <title>MCU开发踩坑</title>
       <link>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</link>
@@ -14,6 +109,16 @@
       
       <guid>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</guid>
       <description>串口输出乱码 时钟配置不正确</description>
+    </item>
+    
+    <item>
+      <title>锁</title>
+      <link>https://psuvtk.github.io/posts/20.-locking/</link>
+      <pubDate>Thu, 09 Feb 2023 23:36:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/20.-locking/</guid>
+      <description>如何死锁?  ABBA 同线程多次调用不可重入锁  可重入与不可重入 用户态与内核态 库函数与锁 死锁 形成死锁的必要条件  互斥条件 不可剥夺条件 请求与保持条件 循环等待条件  如何避免死锁 破坏上述的必要条件
+ 互斥条件 :: 无法破坏, 锁的目的就是互斥 不可剥夺条件 :: 无法获取锁时, 直接失败或者等待超时 请求与保持条件 :: 在加锁前，增加资源池判断资源是否已经在池内 循环等待条件 :: 保证加锁的顺序  参考  深入理解高并发原理  </description>
     </item>
     
     <item>
@@ -40,12 +145,12 @@ mcuboot https://docs.mcuboot.com/design.html 阅读TF-M的官方文档是发现B
     </item>
     
     <item>
-      <title>啤酒, 干杯!</title>
+      <title>啤酒!</title>
       <link>https://psuvtk.github.io/life/51.-%E5%95%A4%E9%85%92/</link>
       <pubDate>Fri, 09 Dec 2022 23:51:47 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/life/51.-%E5%95%A4%E9%85%92/</guid>
-      <description>哪里买 品牌 价格 酒精度 麦芽度 评价     盒马 盒马 德式小麦白 精酿原浆 15.9元 / 1000ml 4.5%vol 12.1P 浑浊, 好喝   盒马 盒马 黄油风味皮尔森啤酒 19.9元 / 650ml 2.5%vol 8P 好喝   随便 青岛白啤 元 / ml 4.1%vol 11P 好喝   盒马 盒马精酿原浆 桂圆红枣小麦啤酒(冬限定) 18.9元 / 460ml 2.8%vol 12P 酸, 口感忘了   盒马 乌苏 赤焱 4.5元 / 500ml 5.8%vol 13.5P 凑合, 口感一般   盒马 燕京U8 4.</description>
+      <description>哪里买 品牌 价格 酒精度 麦芽度 评价     盒马 盒马 德式小麦白 精酿原浆 15.9元 / 1000ml 4.5%vol 12.1P 泡沫绵密消散慢浑浊好喝   盒马 盒马 黄油风味皮尔森啤酒 19.9元 / 650ml 2.5%vol 8P 好喝   随便 青岛白啤 元 / ml 4.1%vol 11P 好喝   随便 雪花 醇香啤酒(易拉罐) 4.88元 / 500ml 4.7%vol 12P 泡沫丰富消散适中, 酒体澄澈, 不错   盒马 盒马 印度淡色艾尔 精酿原浆 23.9元 / 1000ml 6.1%vol 14.2P 泡沫绵密消散慢, 略苦, 劲蛮大   盒马 盒马精酿原浆 桂圆红枣小麦啤酒(冬限定) 18.</description>
     </item>
     
     <item>
@@ -163,7 +268,7 @@ cloc :: 统计代码行数</description>
       <description>年龄 27 (1995~)
 教育背景 2014.9 ~ 2018.7 本科 哈尔滨工业大学(威海) 电子信息工程
 2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 电子与通信工程
-工作履历 底层软件工程师、系统工程师(SE) @ 华为技术有限公司
+工作履历 底层软件工程师(SDE)、系统工程师(SE)、资源组PL @ 华为技术有限公司
 工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言;
 熟练使用C++11, 了解C++14\17\20;
 熟练使用Python语言;
@@ -177,6 +282,15 @@ cloc :: 统计代码行数</description>
 嵌入式技能   内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI
   熟悉GIC
   熟悉Linux Kernel, 阅读xx模块源码</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://psuvtk.github.io/algo/%E6%95%B4%E6%95%B0_%E6%B5%AE%E7%82%B9%E6%95%B0_%E4%BA%8C%E5%88%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E6%95%B4%E6%95%B0_%E6%B5%AE%E7%82%B9%E6%95%B0_%E4%BA%8C%E5%88%86/</guid>
+      <description></description>
     </item>
     
     <item>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algoes on Early is on Time</title>
+    <link>https://psuvtk.github.io/algo/</link>
+    <description>Recent content in Algoes on Early is on Time</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 16 Apr 2023 00:03:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/algo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>堆</title>
+      <link>https://psuvtk.github.io/algo/%E5%A0%86/</link>
+      <pubDate>Sun, 16 Apr 2023 00:03:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E5%A0%86/</guid>
+      <description>操作  插入1个数 求集合中的最小值 删除最小值 删除任意值(STL 无法直接实现) 修改任意值(STL 无法直接实现)  存储方式 数组存储, 下标从1开始;
+父节点为 x 则，左儿子为 2x, 右儿子为 2x+1：
+接口 up : 节点上移动
+down : 节点下移
+插入 插入值 := 末尾位置插入 , size++, 然后 up
+删除 最小值(小根堆) := 删除末位置，size-1, 然后从根down
+删除k 位置值 := heap[k] = heap[size]; size&amp;ndash;; down(); up() &amp;ndash;&amp;gt; down\up 只会执行一次
+修改k 位置值 := heap[k] = x; down(); up() &amp;ndash;&amp;gt; down\up 只会执行一次
+特征 堆是完全二叉树(除最后一层其他层满，最后一层从左往右排列)
+建立堆 正常方式 逐个插入建堆, 时间复杂度O(n*log n)
+快速方式 读入 从 n/2 -&amp;gt; 1 处 开始执行down操作, 时间复杂度 O(n) 证明: 递推</description>
+    </item>
+    
+    <item>
+      <title>Trie</title>
+      <link>https://psuvtk.github.io/algo/trie/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/trie/</guid>
+      <description>字典树？
+acwing 算法基础课
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;stdio.h&amp;gt;using namespace std; const int N = 100010; // 子节点编号(索引) int son[N][26]; int cnt[N]; // 当前使用节点的索引 // 索引为0的点既是根节点 也是空节点 int idx; int insert(const char* s) { int p = 0; for (int i = 0; s[i]; i++) { int u = s[i] - &amp;#39;a&amp;#39;; if (!son[p][u]) son[p][u] = ++idx; p = son[p][u]; } cnt[p] ++; } int query(const char *s) { int p = 0; for (int i = 0; s[i]; i++) { int u = s[i] - &amp;#39;a&amp;#39;; if (!</description>
+    </item>
+    
+    <item>
+      <title>并查集</title>
+      <link>https://psuvtk.github.io/algo/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E5%B9%B6%E6%9F%A5%E9%9B%86/</guid>
+      <description>主要操作  合并两个集合 查询 两个元素是否在同一个集合  并查集优化(路径压缩) WHY: 防止查询父节点时间过长
+HOW: 让路径的店直接指向根节点
+代码实现:
+# tips: find的同时实现路径压缩  int find(int x) { // 压缩路径  if (p[x] != x) p[x] = find(p[x]); // 此时父节点就是新的父节点  return p[x]; } 按秩优化(无用) 让矮的树接到高的树
+基本模板题 合并集合 连通块中点的数量  练习题 食物链
+WHY: 为什么 find的时候 需要 d[x] = d[p[x]] ANS: 因为dx 是与父节点之间的距离，合并两棵树时，dx 并一定为 1, 因此后续压缩路径的时候dx并不一定为1</description>
+    </item>
+    
+    <item>
+      <title>并查集</title>
+      <link>https://psuvtk.github.io/algo/%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E6%8E%92%E5%BA%8F/</guid>
+      <description>acwing 基础课 第一章 基础算法(一) </description>
+    </item>
+    
+    <item>
+      <title>算法STL</title>
+      <link>https://psuvtk.github.io/algo/stl/</link>
+      <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/stl/</guid>
+      <description>不管读字符还是读字符串都用%s来读取
+// 读取 I abc char op[2]; scanf(&amp;#34;%s%s&amp;#34;, op, str); vector 支持[] size() empty() clear() 清空 front()/back() 数组头尾元素 push_back()/pop_back begin()/end() 首尾元素 支持字典序比较 pair first 第一个元素 second 第二个元素 string size()/length 返回长度 empty() clear() substr(a,b) 得到一个下标位a长度位b的子字符串 substr(a) 得到一个下表为a长度取最长的子字符串 c_str() 取string定义数组的首地址 queue size() empty() push() 在队尾插入一个元素 front()/back() 返回队头/队尾元素 pop() 弹出队头元素 priority_queue 优先队列(堆) 默认大根堆 size() empty() push() top() pop() 定义小根堆: priority_queue&amp;lt;int , vector&amp;lt;int&amp;gt; , greater&amp;lt;int&amp;gt;&amp;gt; stack size() empty() push() pop() top() deque 支持[] size() empty() clear() front()/back() 头尾元素 push_back()/push_front() 在头尾插入 begin()/end() set , map , multimap , multiset , 基于平衡二叉树 (红黑树) 维护一个有序数列 大部分函数时间复杂度都是logn (因为是树) size() empty() clear() begin()/end() 支持++ -- 时间复杂度 O(logn) lower_bound()/upper_bound() lower_bound(x) 返回一个大于等于x的最小值 upper_bound(x) 返回一个大于x的最小值 set / multiset set不支持重复数插入 插入重复数直接跳过 insert() 插入一个数 find() 查找一个数 count() 返回一个数存入的个数 erase() (1) 输入是一个x , 删除全部x , 时间复杂度 O(k + logn) (2) 输入是一个迭代器 , 删除这个迭代器 map / multimap insert() 插入的是一个pair erase() 输入的参数是pair 或者 迭代器 find() 支持[] unordered_set , unordered_map , unordered_multiset , unordered_multimap 基本跟上面一个一样 查找删改时间复杂度是 O(1) 不支持lower_bound()/upper_bound() 迭代器的++ -- bitset 压位 bitset&amp;lt;放大小&amp;gt; s; 初始化时候全为0 —— false; ~取反 &amp;amp;且 |或 ^异或 == , !</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://psuvtk.github.io/algo/%E6%95%B4%E6%95%B0_%E6%B5%AE%E7%82%B9%E6%95%B0_%E4%BA%8C%E5%88%86/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://psuvtk.github.io/algo/%E6%95%B4%E6%95%B0_%E6%B5%AE%E7%82%B9%E6%95%B0_%E4%BA%8C%E5%88%86/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
