@@ -57,7 +57,7 @@ WHY: 为什么 find的时候 需要 d[x] = d[p[x]] ANS: 因为dx 是与父节点
       <pubDate>Sat, 15 Apr 2023 22:15:47 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/algo/%E6%8E%92%E5%BA%8F/</guid>
-      <description>acwing 基础课 第一章 基础算法(一) </description>
+      <description>acwing 基础课 第一章 基础算法(一) 快排 void quick_sort(int *q, int l, int r) { // 边界处理, 记住其中一种即可  // 取端点可能会退化为O(n)  // 左端点要用 (l,j), (j+1,r)  // int x = q[l];  // 右端点要用 (l,i-1), (i,r)  // int x = q[r];  // int x = q[(l+r+1) &amp;gt;&amp;gt; 1];  int x = q[rand() % (r - l + 1) + l]; // off-the-end, 后面直接先增加  int i = l - 1; int j = r + 1; if (l &amp;gt;= r) return; while (i &amp;lt; j) { do i++; while (q[i] &amp;lt; x); do j--; while (q[j] &amp;gt; x); if (i &amp;lt; j) swap(q[i], q[j]); } quick_sort(q, l, j); quick_sort(q, j+1, r); } </description>
     </item>
     
     <item>
