@@ -8,28 +8,28 @@ theme = "cactus"
 publishDir = "./docs"
 
 [[menu.main]]
-name = "Home"
+name = "首页"
 url = "/"
 weight = 1
 
 [[menu.main]]
-name = "Writings"
+name = "文章"
 url = "/posts"
 weight = 2
 
 
 [[menu.main]]
-name = "Life"
+name = "生活"
 url = "/life"
 weight = 2
 
 [[menu.main]]
-name = "Algo"
+name = "面经"
 url = "/algo"
-weight = 2
+weight = 3
 
 [[menu.main]]
-name = "About Me"
+name = "本人"
 url = "/about"
 weight = 4
 
