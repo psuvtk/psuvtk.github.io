@@ -6,7 +6,40 @@
     <description>Recent content in Posts on Early is on Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 11 Apr 2023 00:02:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 Jul 2023 00:02:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CMAKE</title>
+      <link>https://psuvtk.github.io/posts/cmake/</link>
+      <pubDate>Fri, 14 Jul 2023 00:02:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/cmake/</guid>
+      <description>模板 cmake_minimum_required(VERSION 3.11)project(ProjectName)target_link_libraries(ProjectName libarchive)target_include_directories(ProjectName ${CMAKE_SOURCE_DIR}/include)链接静态库 target_link_libraries(csgo ${CMAKE_SOURCE_DIR}/libarchive_static.a )</description>
+    </item>
+    
+    <item>
+      <title>使用libarchive</title>
+      <link>https://psuvtk.github.io/posts/libarchive/</link>
+      <pubDate>Fri, 14 Jul 2023 00:02:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/libarchive/</guid>
+      <description>安装 msys2 (WIN + MinGW) pacman -S libarchive源码编译 TODO</description>
+    </item>
+    
+    <item>
+      <title>MCU裸机编程的代码架构</title>
+      <link>https://psuvtk.github.io/posts/25.-mcu%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sun, 11 Jun 2023 00:02:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/25.-mcu%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/</guid>
+      <description>MCU裸机开发常用的系统架构:
+1、轮训模式 对外部事件进行轮训
+2、前后台模式 中断处理外部时间，后台循环处理其他事务
+3、定时器模式 采用定时器来管理
+时间基准：
+ 框架调用用户注册的回调获取 TICK 用户(中断)周期性回调框架接口增加TICK计数  MultiTimer https://github.com/0x1abin/MultiTimer
+4、分级状态机、状态机 顶层状态机判断系统忙闲状态 做节能处理；</description>
+    </item>
+    
     <item>
       <title>Linux调度</title>
       <link>https://psuvtk.github.io/posts/23.-linux_%E8%B0%83%E5%BA%A6/</link>
