@@ -41,6 +41,15 @@
     </item>
     
     <item>
+      <title>UIO 用户态驱动</title>
+      <link>https://psuvtk.github.io/posts/26.-uio_map/</link>
+      <pubDate>Sun, 11 Jun 2023 00:02:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/26.-uio_map/</guid>
+      <description>__uio_register_device</description>
+    </item>
+    
+    <item>
       <title>Linux调度</title>
       <link>https://psuvtk.github.io/posts/23.-linux_%E8%B0%83%E5%BA%A6/</link>
       <pubDate>Tue, 11 Apr 2023 00:02:47 +0800</pubDate>

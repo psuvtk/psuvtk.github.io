@@ -8,6 +8,25 @@
     <language>zh-cn</language>
     <lastBuildDate>Fri, 14 Jul 2023 00:02:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>WHO AM I</title>
+      <link>https://psuvtk.github.io/about/</link>
+      <pubDate>Sat, 29 Jul 2023 19:28:46 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/about/</guid>
+      <description>年龄 27 (1995~)
+教育背景 2014.9 ~ 2018.7 本科 哈尔滨工业大学(威海) 电子信息工程
+2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 电子与通信工程
+工作履历 底层软件工程师(SDE)、系统工程师(SE)、资源组PL @ 华为技术有限公司
+工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言;
+熟练使用C++11, 了解C++14\17\20;
+熟练使用Python语言;
+熟练使用Shell脚本编程;
+熟练使用Lua、Rust、Go语言;
+项目经历 Linux开发  熟悉Ethernet(MAC)\ESPI\Localbus\UART\I2C\SPI\WDT\FLASH\中断等用户态、内核态驱动开发及调试; 熟悉GIC驱动; 熟悉 SPI-NOR/MTD 子系统; 熟悉使用UIO MAP实现用户态驱动; 熟悉TUN\TAP网络虚拟化; 熟悉Qemu, 能够基于Qemu完成单板外设仿真; 熟悉GDB、JTAG等工具的使用，具备良好的问题定位及解决能力； 熟悉内核编译、裁剪, 熟悉根文件系统制作; 熟悉安全启动的整体解决方案，  MCU开发经验  基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发; 基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;  应用层开发 1、负责基于DOPRA中间件的应用层软件开发，熟悉多线程编程; 2、维护、开发射频单元维测子系统、日志子系统、异常监控子系统等应用层软件特性;
+通用软件技能 ELF文件格式</description>
+    </item>
+    
+    <item>
       <title>CMAKE</title>
       <link>https://psuvtk.github.io/posts/cmake/</link>
       <pubDate>Fri, 14 Jul 2023 00:02:47 +0800</pubDate>
@@ -38,6 +57,15 @@
 时间基准：
  框架调用用户注册的回调获取 TICK 用户(中断)周期性回调框架接口增加TICK计数  MultiTimer https://github.com/0x1abin/MultiTimer
 4、分级状态机、状态机 顶层状态机判断系统忙闲状态 做节能处理；</description>
+    </item>
+    
+    <item>
+      <title>UIO 用户态驱动</title>
+      <link>https://psuvtk.github.io/posts/26.-uio_map/</link>
+      <pubDate>Sun, 11 Jun 2023 00:02:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/26.-uio_map/</guid>
+      <description>__uio_register_device</description>
     </item>
     
     <item>
@@ -300,31 +328,6 @@ opengrok :: 代码浏览器,用于阅读源码
 BandZip :: 压缩
 Beyond Compare :: 比较工具
 cloc :: 统计代码行数</description>
-    </item>
-    
-    <item>
-      <title>WHO AM I</title>
-      <link>https://psuvtk.github.io/about/</link>
-      <pubDate>Tue, 05 Apr 2022 19:28:46 +0800</pubDate>
-      
-      <guid>https://psuvtk.github.io/about/</guid>
-      <description>年龄 27 (1995~)
-教育背景 2014.9 ~ 2018.7 本科 哈尔滨工业大学(威海) 电子信息工程
-2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 电子与通信工程
-工作履历 底层软件工程师(SDE)、系统工程师(SE)、资源组PL @ 华为技术有限公司
-工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言;
-熟练使用C++11, 了解C++14\17\20;
-熟练使用Python语言;
-熟练使用Shell脚本编程;
-熟练使用Lua、Rust、Go语言;
-项目经历 MCU开发经验   基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发;
-  基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;
-  Linux 应用开发 维护、开发射频单元维测子系统、日志子系统、异常监控子系统等上层软件特性;
-熟悉内核驱动开发, 维护、开发ethernet(MAC)、espi\localbus\uart\I2C\SPI等用户态、内核态驱动;
-熟悉TUN\TAP网络虚拟化
-嵌入式技能   内核驱动开发，ethernet(MAC)、espi\localbus\uart\I2C\SPI
-  熟悉GIC
-  熟悉Linux Kernel, 阅读xx模块源码</description>
     </item>
     
     <item>
