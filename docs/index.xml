@@ -22,7 +22,7 @@
 熟练使用Python语言;
 熟练使用Shell脚本编程;
 熟练使用Lua、Rust、Go语言;
-项目经历 Linux开发  熟悉Ethernet(MAC)\ESPI\Localbus\UART\I2C\SPI\WDT\FLASH\中断等用户态、内核态驱动开发及调试; 熟悉GIC驱动; 熟悉 SPI-NOR/MTD 子系统; 熟悉使用UIO MAP实现用户态驱动; 熟悉TUN\TAP网络虚拟化; 熟悉Qemu, 能够基于Qemu完成单板外设仿真; 熟悉GDB、JTAG等工具的使用，具备良好的问题定位及解决能力； 熟悉内核编译、裁剪, 熟悉根文件系统制作; 熟悉安全启动的整体解决方案，  MCU开发经验  基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发; 基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;  应用层开发 1、负责基于DOPRA中间件的应用层软件开发，熟悉多线程编程; 2、维护、开发射频单元维测子系统、日志子系统、异常监控子系统等应用层软件特性;
+项目经历 Linux开发  熟悉Ethernet(MAC)\ESPI\Localbus\UART\I2C\SPI\WDT\FLASH\中断等用户态、内核态驱动开发及调试; 熟悉GIC驱动; 熟悉 SPI-NOR/MTD 子系统; 熟悉使用UIO MAP实现用户态驱动; 熟悉TUN\TAP网络虚拟化; 熟悉Qemu, 能够基于Qemu完成单板外设仿真; 熟悉GDB、JTAG等工具的使用，具备良好的问题定位及解决能力； 熟悉内核编译、裁剪, 熟悉根文件系统制作; 熟悉安全启动的整体解决方案，  MCU开发经验  熟悉Cortex-M3\M4芯片架构，基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计与开发; 熟悉Cortex-M23\M33芯片架构，基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;  应用层开发 1、负责基于DOPRA中间件的应用层软件开发，熟悉多线程编程; 2、维护、开发射频单元维测子系统、日志子系统、异常监控子系统等应用层软件特性;
 通用软件技能 ELF文件格式</description>
     </item>
     
@@ -179,7 +179,8 @@ sudo apt install zsh git curl vim</description>
       <pubDate>Thu, 09 Feb 2023 23:36:47 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</guid>
-      <description>串口输出乱码 时钟配置不正确</description>
+      <description>串口输出乱码 时钟配置不正确
+Cortex-M0 与 Cortex-M23 Cortex-M3 与 Cortex-M33 </description>
     </item>
     
     <item>

@@ -54,8 +54,8 @@ draft: false
 7. 熟悉安全启动的整体解决方案，
 
 ## MCU开发经验
-1. 基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计开发;
-2. 基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;
+1. 熟悉Cortex-M3\M4芯片架构，基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计与开发;
+2. 熟悉Cortex-M23\M33芯片架构，基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;
 
 ## 应用层开发
 1、负责基于DOPRA中间件的应用层软件开发，熟悉多线程编程;

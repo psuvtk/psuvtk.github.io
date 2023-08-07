@@ -97,7 +97,8 @@ sudo apt install zsh git curl vim</description>
       <pubDate>Thu, 09 Feb 2023 23:36:47 +0800</pubDate>
       
       <guid>https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/</guid>
-      <description>串口输出乱码 时钟配置不正确</description>
+      <description>串口输出乱码 时钟配置不正确
+Cortex-M0 与 Cortex-M23 Cortex-M3 与 Cortex-M33 </description>
     </item>
     
     <item>
