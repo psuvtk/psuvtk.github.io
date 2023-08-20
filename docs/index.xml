@@ -6,7 +6,19 @@
     <description>Recent content on Early is on Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 14 Jul 2023 00:02:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Aug 2023 00:13:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux 中断子系统</title>
+      <link>https://psuvtk.github.io/posts/%E4%B8%AD%E6%96%AD%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 15 Aug 2023 00:13:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/%E4%B8%AD%E6%96%AD%E5%AD%90%E7%B3%BB%E7%BB%9F/</guid>
+      <description>IRQ Domain 关于IRQ Domain的介绍: linux-6.1.23\Documentation\core-api\irq\irq-domain.rst
+IRQ 关联一个irq Domain,
+IRQ Chip 代码走读 GIC 初始化
+static int gic_init_bases(struct gic_chip_data *gic, struct fwnode_handle *handle) { int gic_irqs, ret; // 针对不支持BANKED寄存器的特殊处理 	if (IS_ENABLED(CONFIG_GIC_NON_BANKED) &amp;amp;&amp;amp; gic-&amp;gt;percpu_offset) { /* Frankein-GIC without banked registers... */ unsigned int cpu; gic-&amp;gt;dist_base.percpu_base = alloc_percpu(void __iomem *); gic-&amp;gt;cpu_base.percpu_base = alloc_percpu(void __iomem *); if (WARN_ON(!gic-&amp;gt;dist_base.percpu_base || !gic-&amp;gt;cpu_base.percpu_base)) { ret = -ENOMEM; goto error; } for_each_possible_cpu(cpu) { u32 mpidr = cpu_logical_map(cpu); u32 core_id = MPIDR_AFFINITY_LEVEL(mpidr, 0); unsigned long offset = gic-&amp;gt;percpu_offset * core_id; *per_cpu_ptr(gic-&amp;gt;dist_base.</description>
+    </item>
+    
     <item>
       <title>WHO AM I</title>
       <link>https://psuvtk.github.io/about/</link>

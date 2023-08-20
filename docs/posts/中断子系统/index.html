@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title> Linux 中断子系统 | Early is on Time</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <meta name="googlebot" content="index,follow,snippet,archive">
+  <meta property="og:title" content="Linux 中断子系统" />
+<meta property="og:description" content="IRQ Domain 关于IRQ Domain的介绍: linux-6.1.23\Documentation\core-api\irq\irq-domain.rst
+IRQ 关联一个irq Domain,
+IRQ Chip 代码走读 GIC 初始化
+static int gic_init_bases(struct gic_chip_data *gic, struct fwnode_handle *handle) { int gic_irqs, ret; // 针对不支持BANKED寄存器的特殊处理 	if (IS_ENABLED(CONFIG_GIC_NON_BANKED) &amp;&amp; gic-&gt;percpu_offset) { /* Frankein-GIC without banked registers... */ unsigned int cpu; gic-&gt;dist_base.percpu_base = alloc_percpu(void __iomem *); gic-&gt;cpu_base.percpu_base = alloc_percpu(void __iomem *); if (WARN_ON(!gic-&gt;dist_base.percpu_base || !gic-&gt;cpu_base.percpu_base)) { ret = -ENOMEM; goto error; } for_each_possible_cpu(cpu) { u32 mpidr = cpu_logical_map(cpu); u32 core_id = MPIDR_AFFINITY_LEVEL(mpidr, 0); unsigned long offset = gic-&gt;percpu_offset * core_id; *per_cpu_ptr(gic-&gt;dist_base." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://psuvtk.github.io/posts/%E4%B8%AD%E6%96%AD%E5%AD%90%E7%B3%BB%E7%BB%9F/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-15T00:13:47&#43;08:00" />
+<meta property="article:modified_time" content="2023-08-15T00:13:47&#43;08:00" />
+
+
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux 中断子系统"/>
+<meta name="twitter:description" content="IRQ Domain 关于IRQ Domain的介绍: linux-6.1.23\Documentation\core-api\irq\irq-domain.rst
+IRQ 关联一个irq Domain,
+IRQ Chip 代码走读 GIC 初始化
+static int gic_init_bases(struct gic_chip_data *gic, struct fwnode_handle *handle) { int gic_irqs, ret; // 针对不支持BANKED寄存器的特殊处理 	if (IS_ENABLED(CONFIG_GIC_NON_BANKED) &amp;&amp; gic-&gt;percpu_offset) { /* Frankein-GIC without banked registers... */ unsigned int cpu; gic-&gt;dist_base.percpu_base = alloc_percpu(void __iomem *); gic-&gt;cpu_base.percpu_base = alloc_percpu(void __iomem *); if (WARN_ON(!gic-&gt;dist_base.percpu_base || !gic-&gt;cpu_base.percpu_base)) { ret = -ENOMEM; goto error; } for_each_possible_cpu(cpu) { u32 mpidr = cpu_logical_map(cpu); u32 core_id = MPIDR_AFFINITY_LEVEL(mpidr, 0); unsigned long offset = gic-&gt;percpu_offset * core_id; *per_cpu_ptr(gic-&gt;dist_base."/>
+
+  
+  
+    
+  
+  
+  <link rel="stylesheet" href="https://psuvtk.github.io/css/style-classic.css">
+  
+  
+  
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  
+
+  
+<link rel="icon" type="image/png" href="https://psuvtk.github.io/images/favicon.ico" />
+
+  
+  
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+  <div class="content index py4">
+
+  <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+        <li><a href="/">首页</a></li>
+         
+        <li><a href="/posts">文章</a></li>
+         
+        <li><a href="/life">生活</a></li>
+         
+        <li><a href="/algo">面经</a></li>
+         
+        <li><a href="/about">本人</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li>
+          <a class="icon" href=" https://psuvtk.github.io/about/">
+            <i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i>
+          </a>
+        </li>
+        
+        
+        <li>
+          <a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i>
+          </a>
+        </li>
+        <li>
+          <a class="icon" href="#">
+            <i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i>
+          </a>
+        </li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f">
+      <i class="fab fa-facebook " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&text=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-twitter " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&title=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-linkedin " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&is_video=false&description=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-pinterest " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f">
+      <i class="fas fa-envelope " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&title=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-get-pocket " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&title=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-reddit " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&name=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f&description=IRQ%20Domain%20%e5%85%b3%e4%ba%8eIRQ%20Domain%e7%9a%84%e4%bb%8b%e7%bb%8d%3a%20linux-6.1.23%5cDocumentation%5ccore-api%5cirq%5cirq-domain.rst%0aIRQ%20%e5%85%b3%e8%81%94%e4%b8%80%e4%b8%aairq%20Domain%2c%0aIRQ%20Chip%20%e4%bb%a3%e7%a0%81%e8%b5%b0%e8%af%bb%20GIC%20%e5%88%9d%e5%a7%8b%e5%8c%96%0astatic%20int%20gic_init_bases%28struct%20gic_chip_data%20%2agic%2c%20struct%20fwnode_handle%20%2ahandle%29%20%7b%20int%20gic_irqs%2c%20ret%3b%20%2f%2f%20%e9%92%88%e5%af%b9%e4%b8%8d%e6%94%af%e6%8c%81BANKED%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e7%89%b9%e6%ae%8a%e5%a4%84%e7%90%86%20%09if%20%28IS_ENABLED%28CONFIG_GIC_NON_BANKED%29%20%26amp%3b%26amp%3b%20gic-%26gt%3bpercpu_offset%29%20%7b%20%2f%2a%20Frankein-GIC%20without%20banked%20registers...%20%2a%2f%20unsigned%20int%20cpu%3b%20gic-%26gt%3bdist_base.percpu_base%20%3d%20alloc_percpu%28void%20__iomem%20%2a%29%3b%20gic-%26gt%3bcpu_base.percpu_base%20%3d%20alloc_percpu%28void%20__iomem%20%2a%29%3b%20if%20%28WARN_ON%28%21gic-%26gt%3bdist_base.percpu_base%20%7c%7c%20%21gic-%26gt%3bcpu_base.percpu_base%29%29%20%7b%20ret%20%3d%20-ENOMEM%3b%20goto%20error%3b%20%7d%20for_each_possible_cpu%28cpu%29%20%7b%20u32%20mpidr%20%3d%20cpu_logical_map%28cpu%29%3b%20u32%20core_id%20%3d%20MPIDR_AFFINITY_LEVEL%28mpidr%2c%200%29%3b%20unsigned%20long%20offset%20%3d%20gic-%26gt%3bpercpu_offset%20%2a%20core_id%3b%20%2aper_cpu_ptr%28gic-%26gt%3bdist_base.">
+      <i class="fab fa-tumblr " aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&t=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-hacker-news " aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#irq-domain">IRQ Domain</a></li>
+    <li><a href="#irq-chip">IRQ Chip</a></li>
+    <li><a href="#代码走读">代码走读</a></li>
+    <li><a href="#中断向量表的安装">中断向量表的安装</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+    </div>
+  </span>
+</div>
+
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      <h1 class="posttitle" itemprop="name headline">
+        Linux 中断子系统
+      </h1>
+      <div class="meta">
+        
+        <div class="postdate">
+          
+          <time datetime="2023-08-15 00:13:47 &#43;0800 CST" itemprop="datePublished">2023-08-15</time>
+          
+        </div>
+        
+        
+        
+        
+      </div>
+    </header>
+
+  
+    <div class="content" itemprop="articleBody">
+      <h2 id="irq-domain">IRQ Domain</h2>
+<p>关于IRQ Domain的介绍: linux-6.1.23\Documentation\core-api\irq\irq-domain.rst</p>
+<p>IRQ 关联一个irq Domain,</p>
+<h2 id="irq-chip">IRQ Chip</h2>
+<h2 id="代码走读">代码走读</h2>
+<p>GIC 初始化</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">gic_init_bases</span>(<span style="color:#66d9ef">struct</span> gic_chip_data <span style="color:#f92672">*</span>gic,
+			  <span style="color:#66d9ef">struct</span> fwnode_handle <span style="color:#f92672">*</span>handle)
+{
+	<span style="color:#66d9ef">int</span> gic_irqs, ret;
+
+    <span style="color:#75715e">// 针对不支持BANKED寄存器的特殊处理
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (IS_ENABLED(CONFIG_GIC_NON_BANKED) <span style="color:#f92672">&amp;&amp;</span> gic<span style="color:#f92672">-&gt;</span>percpu_offset) {
+		<span style="color:#75715e">/* Frankein-GIC without banked registers... */</span>
+		<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">int</span> cpu;
+
+		gic<span style="color:#f92672">-&gt;</span>dist_base.percpu_base <span style="color:#f92672">=</span> alloc_percpu(<span style="color:#66d9ef">void</span> __iomem <span style="color:#f92672">*</span>);
+		gic<span style="color:#f92672">-&gt;</span>cpu_base.percpu_base <span style="color:#f92672">=</span> alloc_percpu(<span style="color:#66d9ef">void</span> __iomem <span style="color:#f92672">*</span>);
+		<span style="color:#66d9ef">if</span> (WARN_ON(<span style="color:#f92672">!</span>gic<span style="color:#f92672">-&gt;</span>dist_base.percpu_base <span style="color:#f92672">||</span>
+			    <span style="color:#f92672">!</span>gic<span style="color:#f92672">-&gt;</span>cpu_base.percpu_base)) {
+			ret <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>ENOMEM;
+			<span style="color:#66d9ef">goto</span> error;
+		}
+
+		for_each_possible_cpu(cpu) {
+			u32 mpidr <span style="color:#f92672">=</span> cpu_logical_map(cpu);
+			u32 core_id <span style="color:#f92672">=</span> MPIDR_AFFINITY_LEVEL(mpidr, <span style="color:#ae81ff">0</span>);
+			<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> offset <span style="color:#f92672">=</span> gic<span style="color:#f92672">-&gt;</span>percpu_offset <span style="color:#f92672">*</span> core_id;
+			<span style="color:#f92672">*</span>per_cpu_ptr(gic<span style="color:#f92672">-&gt;</span>dist_base.percpu_base, cpu) <span style="color:#f92672">=</span>
+				gic<span style="color:#f92672">-&gt;</span>raw_dist_base <span style="color:#f92672">+</span> offset;
+			<span style="color:#f92672">*</span>per_cpu_ptr(gic<span style="color:#f92672">-&gt;</span>cpu_base.percpu_base, cpu) <span style="color:#f92672">=</span>
+				gic<span style="color:#f92672">-&gt;</span>raw_cpu_base <span style="color:#f92672">+</span> offset;
+		}
+
+		enable_frankengic();
+	} <span style="color:#66d9ef">else</span> {
+		<span style="color:#75715e">/* Normal, sane GIC... */</span>
+		WARN(gic<span style="color:#f92672">-&gt;</span>percpu_offset,
+		     <span style="color:#e6db74">&#34;GIC_NON_BANKED not enabled, ignoring %08x offset!&#34;</span>,
+		     gic<span style="color:#f92672">-&gt;</span>percpu_offset);
+		gic<span style="color:#f92672">-&gt;</span>dist_base.common_base <span style="color:#f92672">=</span> gic<span style="color:#f92672">-&gt;</span>raw_dist_base;
+		gic<span style="color:#f92672">-&gt;</span>cpu_base.common_base <span style="color:#f92672">=</span> gic<span style="color:#f92672">-&gt;</span>raw_cpu_base;
+	}
+
+	<span style="color:#75715e">/*
+</span><span style="color:#75715e">	 * Find out how many interrupts are supported.
+</span><span style="color:#75715e">	 * The GIC only supports up to 1020 interrupt sources.
+</span><span style="color:#75715e">	 */</span>
+	gic_irqs <span style="color:#f92672">=</span> readl_relaxed(gic_data_dist_base(gic) <span style="color:#f92672">+</span> GIC_DIST_CTR) <span style="color:#f92672">&amp;</span> <span style="color:#ae81ff">0x1f</span>;
+	gic_irqs <span style="color:#f92672">=</span> (gic_irqs <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> <span style="color:#ae81ff">32</span>;
+	<span style="color:#66d9ef">if</span> (gic_irqs <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1020</span>)
+		gic_irqs <span style="color:#f92672">=</span> <span style="color:#ae81ff">1020</span>;
+	gic<span style="color:#f92672">-&gt;</span>gic_irqs <span style="color:#f92672">=</span> gic_irqs;
+
+	<span style="color:#66d9ef">if</span> (handle) {		<span style="color:#75715e">/* DT/ACPI */</span>
+		gic<span style="color:#f92672">-&gt;</span>domain <span style="color:#f92672">=</span> irq_domain_create_linear(handle, gic_irqs,
+						       <span style="color:#f92672">&amp;</span>gic_irq_domain_hierarchy_ops,
+						       gic);
+	} <span style="color:#66d9ef">else</span> {		<span style="color:#75715e">/* Legacy support */</span>
+
+        <span style="color:#75715e">// 已经删除了对第二级GIC的支持(仅限传统板级方式)
+</span><span style="color:#75715e"></span>		<span style="color:#75715e">/*
+</span><span style="color:#75715e">		 * For primary GICs, skip over SGIs.
+</span><span style="color:#75715e">		 * No secondary GIC support whatsoever.
+</span><span style="color:#75715e">		 */</span>
+		<span style="color:#66d9ef">int</span> irq_base;
+
+		gic_irqs <span style="color:#f92672">-=</span> <span style="color:#ae81ff">16</span>; <span style="color:#75715e">/* calculate # of irqs to allocate */</span>
+
+		irq_base <span style="color:#f92672">=</span> irq_alloc_descs(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">16</span>, gic_irqs,
+					   numa_node_id());
+		<span style="color:#66d9ef">if</span> (irq_base <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span>) {
+			WARN(<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;Cannot allocate irq_descs @ IRQ16, assuming pre-allocated</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+			irq_base <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
+		}
+
+		gic<span style="color:#f92672">-&gt;</span>domain <span style="color:#f92672">=</span> irq_domain_add_legacy(NULL, gic_irqs, irq_base,
+						    <span style="color:#ae81ff">16</span>, <span style="color:#f92672">&amp;</span>gic_irq_domain_ops, gic);
+	}
+
+	<span style="color:#66d9ef">if</span> (WARN_ON(<span style="color:#f92672">!</span>gic<span style="color:#f92672">-&gt;</span>domain)) {
+		ret <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>ENODEV;
+		<span style="color:#66d9ef">goto</span> error;
+	}
+
+	gic_dist_init(gic);
+	ret <span style="color:#f92672">=</span> gic_cpu_init(gic);
+	<span style="color:#66d9ef">if</span> (ret)
+		<span style="color:#66d9ef">goto</span> error;
+
+	ret <span style="color:#f92672">=</span> gic_pm_init(gic);
+	<span style="color:#66d9ef">if</span> (ret)
+		<span style="color:#66d9ef">goto</span> error;
+
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+
+error:
+	<span style="color:#66d9ef">if</span> (IS_ENABLED(CONFIG_GIC_NON_BANKED) <span style="color:#f92672">&amp;&amp;</span> gic<span style="color:#f92672">-&gt;</span>percpu_offset) {
+		free_percpu(gic<span style="color:#f92672">-&gt;</span>dist_base.percpu_base);
+		free_percpu(gic<span style="color:#f92672">-&gt;</span>cpu_base.percpu_base);
+	}
+
+	<span style="color:#66d9ef">return</span> ret;
+}
+</code></pre></div><h2 id="中断向量表的安装">中断向量表的安装</h2>
+<pre><code>__primary_swtich 
+</code></pre><h2 id="参考">参考</h2>
+<p>1、<a href="../images/GICv3_v4_overview.pdf">GICv3_v4_overview.pdf</a>
+2、<a href="../images/IHI0069H_gic_architecture_specification.pdf">IHI0069H_gic_architecture_specification.pdf</a></p>
+
+    </div>
+  </article>
+
+  
+  
+
+
+
+
+
+  <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/posts">文章</a></li>
+         
+          <li><a href="/life">生活</a></li>
+         
+          <li><a href="/algo">面经</a></li>
+         
+          <li><a href="/about">本人</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#irq-domain">IRQ Domain</a></li>
+    <li><a href="#irq-chip">IRQ Chip</a></li>
+    <li><a href="#代码走读">代码走读</a></li>
+    <li><a href="#中断向量表的安装">中断向量表的安装</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      
+      <ul>
+  
+  
+    
+  
+  
+  <li>
+    <a class="icon" href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f">
+      <i class="fab fa-facebook fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://twitter.com/share?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&text=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-twitter fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.linkedin.com/shareArticle?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&title=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-linkedin fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&is_video=false&description=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-pinterest fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="mailto:?subject=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f&body=Check out this article: https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f">
+      <i class="fas fa-envelope fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://getpocket.com/save?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&title=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://reddit.com/submit?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&title=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-reddit fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&name=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f&description=IRQ%20Domain%20%e5%85%b3%e4%ba%8eIRQ%20Domain%e7%9a%84%e4%bb%8b%e7%bb%8d%3a%20linux-6.1.23%5cDocumentation%5ccore-api%5cirq%5cirq-domain.rst%0aIRQ%20%e5%85%b3%e8%81%94%e4%b8%80%e4%b8%aairq%20Domain%2c%0aIRQ%20Chip%20%e4%bb%a3%e7%a0%81%e8%b5%b0%e8%af%bb%20GIC%20%e5%88%9d%e5%a7%8b%e5%8c%96%0astatic%20int%20gic_init_bases%28struct%20gic_chip_data%20%2agic%2c%20struct%20fwnode_handle%20%2ahandle%29%20%7b%20int%20gic_irqs%2c%20ret%3b%20%2f%2f%20%e9%92%88%e5%af%b9%e4%b8%8d%e6%94%af%e6%8c%81BANKED%e5%af%84%e5%ad%98%e5%99%a8%e7%9a%84%e7%89%b9%e6%ae%8a%e5%a4%84%e7%90%86%20%09if%20%28IS_ENABLED%28CONFIG_GIC_NON_BANKED%29%20%26amp%3b%26amp%3b%20gic-%26gt%3bpercpu_offset%29%20%7b%20%2f%2a%20Frankein-GIC%20without%20banked%20registers...%20%2a%2f%20unsigned%20int%20cpu%3b%20gic-%26gt%3bdist_base.percpu_base%20%3d%20alloc_percpu%28void%20__iomem%20%2a%29%3b%20gic-%26gt%3bcpu_base.percpu_base%20%3d%20alloc_percpu%28void%20__iomem%20%2a%29%3b%20if%20%28WARN_ON%28%21gic-%26gt%3bdist_base.percpu_base%20%7c%7c%20%21gic-%26gt%3bcpu_base.percpu_base%29%29%20%7b%20ret%20%3d%20-ENOMEM%3b%20goto%20error%3b%20%7d%20for_each_possible_cpu%28cpu%29%20%7b%20u32%20mpidr%20%3d%20cpu_logical_map%28cpu%29%3b%20u32%20core_id%20%3d%20MPIDR_AFFINITY_LEVEL%28mpidr%2c%200%29%3b%20unsigned%20long%20offset%20%3d%20gic-%26gt%3bpercpu_offset%20%2a%20core_id%3b%20%2aper_cpu_ptr%28gic-%26gt%3bdist_base.">
+      <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+  <li>
+    <a class="icon" href="https://news.ycombinator.com/submitlink?u=https%3a%2f%2fpsuvtk.github.io%2fposts%2f%25E4%25B8%25AD%25E6%2596%25AD%25E5%25AD%2590%25E7%25B3%25BB%25E7%25BB%259F%2f&t=Linux%20%e4%b8%ad%e6%96%ad%e5%ad%90%e7%b3%bb%e7%bb%9f">
+      <i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i>
+    </a>
+  </li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+          <i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+          <i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+          <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer id="footer">
+  <div class="footer-left">
+    Copyright  &copy; 2023  Early is on Time 
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+        <li><a href="/">首页</a></li>
+         
+        <li><a href="/posts">文章</a></li>
+         
+        <li><a href="/life">生活</a></li>
+         
+        <li><a href="/algo">面经</a></li>
+         
+        <li><a href="/about">本人</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+
+  </div>
+</body>
+
+<link rel="stylesheet" href=/lib/font-awesome/css/all.min.css>
+<script src=/lib/jquery/jquery.min.js></script>
+<script src=/js/main.js></script>
+
+
+
+</html>
