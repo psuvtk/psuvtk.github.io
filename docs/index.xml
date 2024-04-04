@@ -6,7 +6,16 @@
     <description>Recent content on Early is on Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Aug 2023 00:13:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Aug 2023 00:13:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>内核基础设施之XArray</title>
+      <link>https://psuvtk.github.io/posts/%E5%86%85%E6%A0%B8%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE-xarray/</link>
+      <pubDate>Sun, 20 Aug 2023 00:13:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/%E5%86%85%E6%A0%B8%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE-xarray/</guid>
+      <description>Entry的不同类型 /* * The bottom two bits of the entry determine how the XArray interprets * the contents: * * 00: Pointer entry * 10: Internal entry * x1: Value entry or tagged pointer * * Attempting to store internal entries in the XArray is a bug. * * Most internal entries are pointers to the next node in the tree. * The following internal entries have a special meaning: * * 0-62: Sibling entries * 256: Retry entry * 257: Zero entry * * Errors are also represented as internal entries, but use the negative * space (-4094 to -2).</description>
+    </item>
+    
     <item>
       <title>Linux 中断子系统</title>
       <link>https://psuvtk.github.io/posts/%E4%B8%AD%E6%96%AD%E5%AD%90%E7%B3%BB%E7%BB%9F/</link>
