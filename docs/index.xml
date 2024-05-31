@@ -6,7 +6,16 @@
     <description>Recent content on Early is on Time</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 20 Aug 2023 00:13:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Apr 2024 19:06:47 +0800</lastBuildDate><atom:link href="https://psuvtk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线程池的实现</title>
+      <link>https://psuvtk.github.io/posts/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Sat, 06 Apr 2024 19:06:47 +0800</pubDate>
+      
+      <guid>https://psuvtk.github.io/posts/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>内核基础设施之XArray</title>
       <link>https://psuvtk.github.io/posts/%E5%86%85%E6%A0%B8%E5%9F%BA%E7%A1%80%E8%AE%BE%E7%BD%AE-xarray/</link>
@@ -36,15 +45,14 @@ static int gic_init_bases(struct gic_chip_data *gic, struct fwnode_handle *handl
       <guid>https://psuvtk.github.io/about/</guid>
       <description>年龄 27 (1995~)
 教育背景 2014.9 ~ 2018.7 本科 哈尔滨工业大学(威海) 电子信息工程
-2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 电子与通信工程
-工作履历 底层软件工程师(SDE)、系统工程师(SE)、资源组PL @ 华为技术有限公司
-工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言;
-熟练使用C++11, 了解C++14\17\20;
-熟练使用Python语言;
-熟练使用Shell脚本编程;
-熟练使用Lua、Rust、Go语言;
-项目经历 Linux开发  熟悉Ethernet(MAC)\ESPI\Localbus\UART\I2C\SPI\WDT\FLASH\中断等用户态、内核态驱动开发及调试; 熟悉GIC驱动; 熟悉 SPI-NOR/MTD 子系统; 熟悉使用UIO MAP实现用户态驱动; 熟悉TUN\TAP网络虚拟化; 熟悉Qemu, 能够基于Qemu完成单板外设仿真; 熟悉GDB、JTAG等工具的使用，具备良好的问题定位及解决能力； 熟悉内核编译、裁剪, 熟悉根文件系统制作; 熟悉安全启动的整体解决方案，  MCU开发经验  熟悉Cortex-M3\M4芯片架构，基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)头端BOOTLOADER设计与开发; 熟悉Cortex-M23\M33芯片架构，基于Cortex-M23架构芯片的射频单元休眠监控子系统的设计开发;  应用层开发 1、负责基于DOPRA中间件的应用层软件开发，熟悉多线程编程; 2、维护、开发射频单元维测子系统、日志子系统、异常监控子系统等应用层软件特性;
-通用软件技能 ELF文件格式</description>
+2018.9 ~ 2020.6 硕士 哈尔滨工业大学(威海) 信息与通信工程
+工作履历 2020.7~至今 上海华为技术有限公司 底层软件工程师(SDE)、系统工程师(SE)、资源组Leader(6~8人)、项目经理(软件-上海地域)
+项目经历 工作方向：负责无线基站中射频芯片的SOC部分预研、商用导入及存量维护 熟悉ARMv8体系结构与编程；负责无线中射频芯片SOC部分验证及商用导入，现网存量千万级模块SOC\BSP相关问题接口及维护； 负责Ethernet(MAC)\MDIO\ESPI\LocalBus\UART\I2C\SPI\WDT\FLASH\GIC\UIO等IP模块的KMD\UMD驱动模块开发、调试及存量维护;熟悉GIC驱动; 熟悉 SPI-NOR\MTD 子系统; 熟悉使用UIO MAP实现用户态驱动; 熟悉TUN\TAP网络虚拟化; 熟悉Linux内核编译、裁剪, 熟悉根文件系统制作; 熟悉GDB、JTAG等工具的使用；熟悉ELF格式、具备二进制分析以及良好的异常问题定位及稳定性问题解决能力； 负责基站自研虚拟机(PEK)的适配、验证以及商用导入, 了解虚拟化相关原理； 熟悉QEMU仿真平台，能够基于QEMU平台完成芯片级、板级仿真，加速芯片验证及导入； 熟悉ARM v8异常模型以及TrustZone机制；熟悉基站平台安全启动的端到端解决方案，作为SE负责射频单元单CPU启动相关的方案设计，负责动态度量、同构多CPU形态的安全启动等方案设计；
+工作方向：负责基站射频单元的通用维测子系统开发与维护 负责基于DOPRA中间件的应用层软件开发，熟悉Linux多线程及并发编程; 负责维护、开发、重构射频单元维测、日志、异常监控子系统等应用层软件特性;
+工作方向：负责基站射频单元MCU相关方案设计及软件开发 熟悉Cortex-M3\M4架构， 基于Cortex-M4架构芯片的5G分布式居民区解决方案(DRS：Distributed Residential Solution)拉远端BOOTLOADER固件设计与开发; 熟悉Cortex-M23\M33架构，基于Cortex-M23架构芯片的射频单元休眠监控子系统固件的设计及开发;
+工作方向：负责SD6xxx中频芯片NTN子系统(基于RISC-V架构)的验证 负责基于RISC-V核的NTN子系统固件开发及硅前验证，从0到1搭建编译开发环境，与海思同事交流，熟悉子系统架构、TMR三模冗余RISC-V核以及GIC、I2CC、WDT、UART、TIMER等外设的开发及用例； 负责主机侧实现通过I2C\ESPI通路将固件加载到VGMEM；负责基于NTN子系统与APSYS系统的交互；
+软技能 工作积极主动； 工作负责，踏实细致，较好的团队协作精神和较强的质量责任意识； 具有较好的承压能力，能够承担具有挑战性的任务； 优秀的逻辑思维，快速的学习能力，思路清晰；善于沟通；
+工作内容  202007~202109 RRU业务维测特性Owner, 熟悉维测相关机制实现; 202109~至今 启动与业务初始化SE, 熟悉从上电至业务启动全流程方案; 熟悉安全启动全流程设计; 负责内核驱动编写与维护; 独立完成基于Arm Cortex-M4的BootLoader方案设计及代码实现;  语言 精通C语言;</description>
     </item>
     
     <item>
