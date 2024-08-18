@@ -34,5 +34,5 @@ SDA
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/  
+> URL: https://psuvtk.github.io/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/  
 
