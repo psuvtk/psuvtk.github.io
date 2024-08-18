@@ -26,5 +26,5 @@ https://github.com/0x1abin/MultiTimer
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/25.-mcu%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/  
+> URL: https://psuvtk.github.io/posts/25.-mcu%E8%BD%AF%E4%BB%B6%E7%9A%84%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F/  
 
