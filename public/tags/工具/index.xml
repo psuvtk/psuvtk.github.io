@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>工具 - Tag - </title>
+    <link>http://localhost:1313/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>工具 - Tag | </description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 12 Sep 2022 13:56:47 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E5%B7%A5%E5%85%B7/" rel="self" type="application/rss+xml" /><item>
+  <title>{OpenGrok引擎浏览开源代码</title>
+  <link>http://localhost:1313/posts/1.-opengrok/</link>
+  <pubDate>Mon, 12 Sep 2022 13:56:47 &#43;0800</pubDate>
+  <author>Kristoffer</author>
+  <guid>http://localhost:1313/posts/1.-opengrok/</guid>
+  <description><![CDATA[[TOC] 阅读大型源码项目除传统的Souce Insight、Scitools Understand等付费PC端工具，基于Web的{OpenGrok 和E]]></description>
+</item>
+</channel>
+</rss>

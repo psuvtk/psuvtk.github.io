@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="Kristoffer.Song">
+<meta name="generator" content="Hugo 0.131.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Early is on Time">
+<title>Posts - Early is on Time</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://localhost:1313/">[Early is on Time]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article-list">
+  <h1 class="list-title">Posts</h1>
+  
+    <article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/posts/17.-tf-m/">TF-M</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2022-12-09">December 09, 2022</time></span>
+
+  </div>
+  <section class="summary">
+    ARM 官方文档: https://tf-m-user-guide.trustedfirmware.org/introduction/readme.html
+Armv8-M and Armv8.1-M architectures. cortex-m23 cortex-m33 cortex-m55 cortex-m85 或者其他物理核隔离的系统, 比如Cypress PSoC® 64 Secure Microcontrollers;
+PSA Certified guidelines SPE &lt;&ndash;&gt; NSPE
+mcuboot https://docs.mcuboot.com/design.html 阅读TF-M的官方文档是发现BL2使用是mcuboot这个项目。 mcuboot被设计为一个函数库，官方文档给出的其中一个原因是函数库可以进行单元测试，但是完整的应用不能够(A library can be unit tested, but an application can’t.)。因此，mcuboot并不包含实际跳转到APP执行的代码。 
+  </section>
+</article>
+
+  
+    <article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/posts/16.-linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/">理解LINUX系统调用</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2022-12-03">December 03, 2022</time></span>
+
+  </div>
+  <section class="summary">
+    上下文 内核在执行系统调用的时候处于进程上下文
+可以睡眠 可以被抢占 &mdash;&gt; 需要保证系统是可以重入的 用户态抢占 从中断返回用户空间时 从系统调用返回用户空间时
+内核态抢占 时机: 未持有锁 
+  </section>
+</article>
+
+  
+    <article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/posts/15.-%E5%86%85%E6%A0%B8%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/">同步原语</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2022-11-29">November 29, 2022</time></span>
+
+  </div>
+  <section class="summary">
+    与中断例程之间的同步：禁止中断
+UP 不需要同步 SMP 才需要
+内核锁 用户态锁 参考 kernel_locking  
+  </section>
+</article>
+
+  
+</main>
+
+  <nav class="paginator">
+    
+    <a class="nav-left" href="/posts/page/5/">&lt; Prev</a>
+    
+
+    <span>6 / 8</span>
+
+    
+    <a class="nav-right" href="/posts/page/7/">Next &gt;</a>
+    
+  </nav>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2024 Early is on Time - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+

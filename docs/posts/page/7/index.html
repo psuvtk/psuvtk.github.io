@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="Kristoffer.Song">
+<meta name="generator" content="Hugo 0.131.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" type="text/css">
+<link rel="alternate" href="/index.xml" type="application/rss+xml" title="Early is on Time">
+<title>Posts - Early is on Time</title>
+</head>
+<body>
+
+<header>
+  <div class="container clearfix">
+    <a class="path" href="http://localhost:1313/">[Early is on Time]</a>
+    <span class="caret"># _</span>
+    <div class="right">
+      
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+
+<main role="main" class="article-list">
+  <h1 class="list-title">Posts</h1>
+  
+    <article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/posts/12.-lua/">Lua</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2022-11-20">November 20, 2022</time></span>
+
+  </div>
+  <section class="summary">
+    Lua 缩写 luaX == Lua lex LuaZ == LuaS == 
+  </section>
+</article>
+
+  
+    <article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/posts/11.-i2c%E6%80%BB%E7%BA%BF/">I2C总线</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2022-10-19">October 19, 2022</time></span>
+
+  </div>
+  <section class="summary">
+    时钟延展 总线挂死 I2C子系统 Linux内核实现 TODO
+软件模拟I2C Master(GPIO模拟) 检测总线是否空闲 发送START // 确保总线空闲 // HOW TO us_delay(4); // 额外的 SDA=1;SCL=1; // 是否需要延时？延时多少 // START 符号 SDA=0;SCL=1; // T_hd;sta &gt; 4.0 us us_delay(4); SDA=0;SCL=0; 发送 // T_low &gt; 4.7, T_high &gt; 4.0us SCL = 0; us_delay(5); // 数据 SDA = xx; // T_su;dat &gt; 250ns us_delay(1); // 拉高SCL SCL = 1; // T_high &gt; 4.0us us_delay(4); // 拉低SCL SCL = 0; // T_high &gt; 4.  <a href="/posts/11.-i2c%E6%80%BB%E7%BA%BF/">Read More...</a>
+  </section>
+</article>
+
+  
+    <article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/">SPI总线</a></h2>
+  <div class="meta">
+
+    <span class="key">published on</span>
+    <span class="val"><time itemprop="datePublished" datetime="2022-10-19">October 19, 2022</time></span>
+
+  </div>
+  <section class="summary">
+    SPI 同步通信协议 如何实现一主多从？ 通过多个片选，每个片选对应一个从机
+MOSI MISO
+I2C 同步通信协议
+如何实现一主多从？ 通过使用多个从机地址
+开漏结构 &lt;-&gt; 数据双向传输
+SCL SDA
+典型速率: 100Kbps, 400Kbpx, 3.4Mbps
+UART 异步通信协议 慢 115200 
+  </section>
+</article>
+
+  
+</main>
+
+  <nav class="paginator">
+    
+    <a class="nav-left" href="/posts/page/6/">&lt; Prev</a>
+    
+
+    <span>7 / 8</span>
+
+    
+    <a class="nav-right" href="/posts/page/8/">Next &gt;</a>
+    
+  </nav>
+
+
+</div>
+
+<footer>
+  <div class="container">
+    <span class="copyright">&copy; 2024 Early is on Time - <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
+
