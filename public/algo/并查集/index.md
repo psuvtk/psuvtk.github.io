@@ -42,5 +42,5 @@ ANS: 因为dx 是与父节点之间的距离，合并两棵树时，dx 并一定
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/algo/%E5%B9%B6%E6%9F%A5%E9%9B%86/  
+> URL: http://localhost:1313/algo/%E5%B9%B6%E6%9F%A5%E9%9B%86/  
 

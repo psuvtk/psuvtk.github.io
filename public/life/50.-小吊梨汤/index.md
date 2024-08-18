@@ -16,5 +16,5 @@
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/life/50.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/  
+> URL: http://localhost:1313/life/50.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/  
 

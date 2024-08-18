@@ -47,5 +47,5 @@ const struct sched_class name##_sched_class \
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/28.-rt%E8%B0%83%E5%BA%A6sched_fifo%E4%B8%8Esched_rr/  
+> URL: http://localhost:1313/posts/28.-rt%E8%B0%83%E5%BA%A6sched_fifo%E4%B8%8Esched_rr/  
 

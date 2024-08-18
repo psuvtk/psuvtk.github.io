@@ -207,5 +207,5 @@ f7632745dfe1   opengrok/docker:1.5.12   &#34;/scripts/start.sh&#34;   2 months a
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/1.-opengrok/  
+> URL: http://localhost:1313/posts/1.-opengrok/  
 

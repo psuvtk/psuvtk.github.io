@@ -37,5 +37,5 @@ void quick_sort(int *q, int l, int r)
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/algo/%E6%8E%92%E5%BA%8F/  
+> URL: http://localhost:1313/algo/%E6%8E%92%E5%BA%8F/  
 
