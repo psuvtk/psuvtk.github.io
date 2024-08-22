@@ -1,0 +1,10 @@
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "..\\themes\\FixIt-0.3.9\\assets\\*"
+   ]
+  }
+ }
+}

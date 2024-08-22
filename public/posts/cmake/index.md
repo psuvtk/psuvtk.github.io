@@ -23,5 +23,5 @@ target_link_libraries(csgo
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/cmake/  
+> URL: https://psuvtk.github.io/posts/cmake/  
 
