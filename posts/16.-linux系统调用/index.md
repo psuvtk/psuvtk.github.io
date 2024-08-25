@@ -18,5 +18,5 @@
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/16.-linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/  
+> URL: https://psuvtk.github.io/posts/16.-linux%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8/  
 
