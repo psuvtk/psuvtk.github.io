@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="robots" content="noodp" />
+    <title>MTD子系统与JFFS2文件系统 - </title><meta name="author" content="Kristoffer">
+<meta name="author-link" content="">
+<meta name="description" content="遗留问题: 从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组" /><meta name="keywords" content='linux' />
+  <meta itemprop="name" content="MTD子系统与JFFS2文件系统">
+  <meta itemprop="description" content="遗留问题: 从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组">
+  <meta itemprop="datePublished" content="2022-10-06T20:18:47+08:00">
+  <meta itemprop="dateModified" content="2022-10-23T16:17:42+08:00">
+  <meta itemprop="wordCount" content="371"><meta property="og:url" content="http://localhost:1313/posts/7.spi_nor/">
+  <meta property="og:title" content="MTD子系统与JFFS2文件系统">
+  <meta property="og:description" content="遗留问题: 从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-10-06T20:18:47+08:00">
+    <meta property="article:modified_time" content="2022-10-23T16:17:42+08:00">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MTD子系统与JFFS2文件系统">
+  <meta name="twitter:description" content="遗留问题: 从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组">
+<meta name="application-name" content="FixIt">
+<meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/7.spi_nor/" /><link rel="prev" href="http://localhost:1313/posts/1.-opengrok/" /><link rel="next" href="http://localhost:1313/life/50.-%E5%B0%8F%E5%90%8A%E6%A2%A8%E6%B1%A4/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MTD子系统与JFFS2文件系统",
+    "inLanguage": "en",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/localhost:1313\/posts\/7.spi_nor\/"
+    },"genre": "posts","wordcount":  371 ,
+    "url": "http:\/\/localhost:1313\/posts\/7.spi_nor\/","datePublished": "2022-10-06T20:18:47+08:00","dateModified": "2022-10-23T16:17:42+08:00","publisher": {
+      "@type": "Organization",
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Kristoffer"
+      },"description": ""
+  }
+  </script></head>
+  <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
+  <div class="header-wrapper">
+    <div class="header-title">
+      <a href="/" title=""><span class="header-title-text">Early Is On Time</span></a><span class="header-subtitle"></span></div>
+    <nav>
+      <ul class="menu"><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/archives/"
+                
+                
+              ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/categories/"
+                
+                
+              ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li class="menu-item">
+              <a
+                class="menu-link"
+                href="/tags/"
+                
+                
+              ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item delimiter"></li><li class="menu-item search" id="search-desktop">
+            <input type="text" placeholder="Search titles or contents ..." id="search-input-desktop">
+            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+              <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+            </a>
+            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+              <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+            </a>
+            <span class="search-button search-loading" id="search-loading-desktop">
+              <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+            </span>
+          </li><li class="menu-item theme-switch" title="Switch Theme">
+          <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+        </li></ul>
+    </nav>
+  </div>
+</header><header class="mobile animate__faster" id="header-mobile">
+  <div class="header-container">
+    <div class="header-wrapper">
+      <div class="header-title">
+        <a href="/" title=""><span class="header-title-text">Early Is On Time</span></a><span class="header-subtitle"></span></div>
+      <div class="menu-toggle" id="menu-toggle-mobile">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+    <nav>
+      <ul class="menu" id="menu-mobile"><li class="search-wrapper">
+            <div class="search mobile" id="search-mobile">
+              <input type="text" placeholder="Search titles or contents ..." id="search-input-mobile">
+              <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                <i class="fa-solid fa-search fa-fw" aria-hidden="true"></i>
+              </a>
+              <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                <i class="fa-solid fa-times-circle fa-fw" aria-hidden="true"></i>
+              </a>
+              <span class="search-button search-loading" id="search-loading-mobile">
+                <i class="fa-solid fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+              </span>
+            </div>
+            <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+              Cancel
+            </a>
+          </li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/archives/"
+                  
+                  
+                ><i class="fa-solid fa-archive fa-fw fa-sm" aria-hidden="true"></i> Archives</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/categories/"
+                  
+                  
+                ><i class="fa-solid fa-folder-tree fa-fw fa-sm" aria-hidden="true"></i> Categories</a></li><li
+              class="menu-item"
+            ><a
+                  class="menu-link"
+                  href="/tags/"
+                  
+                  
+                ><i class="fa-solid fa-tags fa-fw fa-sm" aria-hidden="true"></i> Tags</a></li><li class="menu-item menu-system">
+          <span class="menu-system-item theme-switch" title="Switch Theme"><i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i></span></li>
+      </ul>
+    </nav>
+  </div>
+</header><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+  </div>
+  <div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+  </div><main class="container"><aside class="aside-collection animate__animated animate__fadeIn animate__faster" aria-label="Collections"></aside>
+
+  <article class="page single">
+    <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span>MTD子系统与JFFS2文件系统</span>
+      </h1></div><div class="post-meta">
+      <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Kristoffer</span></span></div><div class="post-meta-line"><span title="published on 2022-10-06 20:18:47"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2022-10-06">2022-10-06</time></span>&nbsp;<span title="Updated on 2022-10-23 16:17:42"><i class="fa-regular fa-calendar-check fa-fw me-1" aria-hidden="true"></i><time datetime="2022-10-23">2022-10-23</time></span>&nbsp;<span title="371 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 400 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+    </div><div class="details toc" id="toc-static" data-kept="false">
+        <div class="details-summary toc-title">
+          <span>Contents</span>
+          <span><i class="details-icon fa-solid fa-angle-right" aria-hidden="true"></i></span>
+        </div>
+        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#遗留问题">遗留问题:</a></li>
+  </ul>
+</nav></div>
+      </div><div class="content" id="content"><h2 id="遗留问题" class="heading-element"><span>遗留问题:</span>
+  <a href="#%e9%81%97%e7%95%99%e9%97%ae%e9%a2%98" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>从spi-nor目录的Makefile可以看出目录下文件的关系, 可以看出spi-nor子系统主要由核心、控制器以及FLASH厂商组成；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># SPDX-License-Identifier: GPL-2.0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">spi-nor-objs			:<span class="o">=</span> core.o sfdp.o swp.o otp.o sysfs.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> atmel.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> catalyst.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> eon.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> esmt.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> everspin.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> fujitsu.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> gigadevice.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> intel.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> issi.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> macronix.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> micron-st.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> spansion.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> sst.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> winbond.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> xilinx.o
+</span></span><span class="line"><span class="cl">spi-nor-objs			+<span class="o">=</span> xmc.o
+</span></span><span class="line"><span class="cl">obj-<span class="k">$(</span>CONFIG_MTD_SPI_NOR<span class="k">)</span>	+<span class="o">=</span> spi-nor.o
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">obj-<span class="k">$(</span>CONFIG_MTD_SPI_NOR<span class="k">)</span>	+<span class="o">=</span> controllers/</span></span></code></pre></td></tr></table>
+</div>
+</div><p>&ndash; drivers\mtd\spi-nor\controllers\intel-spi.c
+<a href="https://lwn.net/Articles/692383/"target="_blank" rel="external nofollow noopener noreferrer">https://lwn.net/Articles/692383/</a></p>
+<p>&ndash; drivers\mtd\spi-nor\controllers\hisi-sfc.c
+对应的<code>Hi3519</code>芯片, 该芯片的设备树并没有开源，需要对应的SDK开发包才能看到。</p>
+<p>初始化顺序</p>
+<p>FILE :: <code>include\linux\init.h</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Early initcalls run before initializing SMP.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Only for built-in code, not modules.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define early_initcall(fn)		__define_initcall(fn, early)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * A &#34;pure&#34; initcall has no dependencies on anything else, and purely
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * initializes variables that couldn&#39;t be statically initialized.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> *
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * This only exists for built-in code, not for modules.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Keep main.c:initcall_level_names[] in sync.
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define pure_initcall(fn)		__define_initcall(fn, 0)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define core_initcall(fn)		__define_initcall(fn, 1)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define core_initcall_sync(fn)		__define_initcall(fn, 1s)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define postcore_initcall(fn)		__define_initcall(fn, 2)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define postcore_initcall_sync(fn)	__define_initcall(fn, 2s)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define arch_initcall(fn)		__define_initcall(fn, 3)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define arch_initcall_sync(fn)		__define_initcall(fn, 3s)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define subsys_initcall(fn)		__define_initcall(fn, 4)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define subsys_initcall_sync(fn)	__define_initcall(fn, 4s)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define fs_initcall(fn)			__define_initcall(fn, 5)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define fs_initcall_sync(fn)		__define_initcall(fn, 5s)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define rootfs_initcall(fn)		__define_initcall(fn, rootfs)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define device_initcall(fn)		__define_initcall(fn, 6)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define device_initcall_sync(fn)	__define_initcall(fn, 6s)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define late_initcall(fn)		__define_initcall(fn, 7)
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define late_initcall_sync(fn)		__define_initcall(fn, 7s)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define __initcall(fn) device_initcall(fn)</span></span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+  <div class="post-info">
+    <div class="post-info-line">
+      <div class="post-info-mod">
+        <span title="Updated on 2022-10-23 16:17:42">Updated on 2022-10-23&nbsp;</span>
+      </div><div class="post-info-license">
+            <span><a rel="license external nofollow noopener noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a></span>
+          </div></div><div class="post-info-line">
+        <div class="post-info-md"><span><a href="/posts/7.spi_nor/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
+        <div class="post-info-share">
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/7.spi_nor/" data-title="MTD子系统与JFFS2文件系统"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/7.spi_nor/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/7.spi_nor/" data-title="MTD子系统与JFFS2文件系统"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+  </span>
+        </div>
+      </div></div>
+
+  <div class="post-info-more">
+    <section class="post-tags"></section>
+    <section>
+      <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+    </section>
+  </div>
+
+  <div class="post-nav"><a href="/posts/1.-opengrok/" class="post-nav-item" rel="prev" title="{OpenGrok引擎浏览开源代码"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>{OpenGrok引擎浏览开源代码</a>
+      <a href="/posts/10.-%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE/" class="post-nav-item" rel="next" title="SPI总线">SPI总线<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article>
+
+  <aside class="toc" id="toc-auto" aria-label="Contents"><h2 class="toc-title">Contents&nbsp;<i class="toc-icon fa-solid fa-angle-down fa-fw" aria-hidden="true"></i></h2>
+      <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
+    <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.132.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.9"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
+        </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
+            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+              <a href="/">Kristoffer</a></span></div></div>
+  </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
+        </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
+    <div class="noscript-warning">This website works best with JavaScript enabled.</div>
+  </noscript>
+</div><link rel="preload" href="/lib/katex/katex.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/lib/katex/katex.min.css"></noscript><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/katex/katex.min.js" defer></script><script src="/lib/katex/auto-render.min.js" defer></script><script src="/lib/katex/copy-tex.min.js" defer></script><script src="/lib/katex/mhchem.min.js" defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.9"};</script><script src="/js/theme.min.js" defer></script></body>
+</html>
