@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>可重入 - Tag - </title>
+    <link>https://psuvtk.github.io/tags/%E5%8F%AF%E9%87%8D%E5%85%A5/</link>
+    <description>可重入 - Tag | </description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Aug 2024 22:47:05 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/tags/%E5%8F%AF%E9%87%8D%E5%85%A5/" rel="self" type="application/rss+xml" /><item>
+  <title>可重入性(Reentrancy)与线程安全(Thread-Safety)</title>
+  <link>https://psuvtk.github.io/posts/6a476d5/</link>
+  <pubDate>Sat, 31 Aug 2024 22:47:05 &#43;0800</pubDate>
+  <author>Kristoffer</author>
+  <guid>https://psuvtk.github.io/posts/6a476d5/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

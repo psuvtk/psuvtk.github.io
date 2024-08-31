@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title>Draft - Tag - </title>
+    <link>http://localhost:1313/tags/draft/</link>
+    <description>Draft - Tag | </description>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Aug 2024 22:42:42 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/draft/" rel="self" type="application/rss+xml" /><item>
+  <title>2024 Plan</title>
+  <link>http://localhost:1313/posts/259c8d3/</link>
+  <pubDate>Sat, 31 Aug 2024 22:42:42 &#43;0800</pubDate>
+  <author>Kristoffer</author>
+  <guid>http://localhost:1313/posts/259c8d3/</guid>
+  <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

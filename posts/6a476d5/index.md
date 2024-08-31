@@ -1,7 +1,7 @@
 # 可重入性(Reentrancy)与线程安全(Thread-Safety)
 
 
-
+&lt;!--more--&gt;
 ## 概念
 
 
@@ -36,6 +36,6 @@
 
 ---
 
-> Author: Kristoffer  
-> URL: http://localhost:1313/posts/27.-%E5%8F%AF%E9%87%8D%E5%85%A5%E6%80%A7%E4%B8%8E%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8/  
+> Author:   
+> URL: https://psuvtk.github.io/posts/6a476d5/  
 
