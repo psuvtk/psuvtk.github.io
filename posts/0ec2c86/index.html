@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -12,8 +12,8 @@
   <meta itemprop="description" content="Kristoffer&#39;s Blog">
   <meta itemprop="datePublished" content="2024-08-31T22:54:52+08:00">
   <meta itemprop="dateModified" content="2024-08-31T22:54:52+08:00">
-  <meta itemprop="wordCount" content="572">
-  <meta itemprop="keywords" content="调度,SCHED_FIFO,SCHED_RR,Ftrace"><meta property="og:url" content="http://localhost:1313/posts/0ec2c86/">
+  <meta itemprop="wordCount" content="760">
+  <meta itemprop="keywords" content="调度,SCHED_FIFO,SCHED_RR,Ftrace"><meta property="og:url" content="https://psuvtk.github.io/posts/0ec2c86/">
   <meta property="og:title" content="图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)">
   <meta property="og:description" content="Kristoffer&#39;s Blog">
   <meta property="og:locale" content="en">
@@ -32,7 +32,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/0ec2c86/" /><link rel="prev" href="http://localhost:1313/posts/80ff57e/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://psuvtk.github.io/posts/0ec2c86/" /><link rel="prev" href="https://psuvtk.github.io/posts/80ff57e/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -42,9 +42,9 @@
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http:\/\/localhost:1313\/posts\/0ec2c86\/"
-    },"genre": "posts","keywords": "调度, SCHED_FIFO, SCHED_RR, ftrace","wordcount":  572 ,
-    "url": "http:\/\/localhost:1313\/posts\/0ec2c86\/","datePublished": "2024-08-31T22:54:52+08:00","dateModified": "2024-08-31T22:54:52+08:00","publisher": {
+      "@id": "https:\/\/psuvtk.github.io\/posts\/0ec2c86\/"
+    },"genre": "posts","keywords": "调度, SCHED_FIFO, SCHED_RR, ftrace","wordcount":  760 ,
+    "url": "https:\/\/psuvtk.github.io\/posts\/0ec2c86\/","datePublished": "2024-08-31T22:54:52+08:00","dateModified": "2024-08-31T22:54:52+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -154,7 +154,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Kristoffer</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/linux/" class="post-category" title="Category - Linux"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div><div class="post-meta-line"><span title="published on 2024-08-31 22:54:52"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-31">2024-08-31</time></span>&nbsp;<span title="572 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 600 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
+      Kristoffer</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/linux/" class="post-category" title="Category - Linux"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div><div class="post-meta-line"><span title="published on 2024-08-31 22:54:52"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-31">2024-08-31</time></span>&nbsp;<span title="760 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 800 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>2 minutes</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -163,6 +163,7 @@
         <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#rt调度与完全公平调度">RT调度与完全公平调度</a></li>
+    <li><a href="#sched_fifo-调度">SCHED_FIFO 调度</a></li>
     <li><a href="#调度轨迹抓取及可视化工具">调度轨迹抓取及可视化工具</a>
       <ul>
         <li><a href="#调度轨迹抓取脚本">调度轨迹抓取脚本</a></li>
@@ -175,6 +176,7 @@
         <li><a href="#多核实验">多核实验</a></li>
       </ul>
     </li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h2 id="rt调度与完全公平调度" class="heading-element"><span>RT调度与完全公平调度</span>
@@ -182,6 +184,12 @@
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h2><p>引入多核的话事情会变得复杂起来，先从简单的场景入手</p>
+<h2 id="sched_fifo-调度" class="heading-element"><span>SCHED_FIFO 调度</span>
+  <a href="#sched_fifo-%e8%b0%83%e5%ba%a6" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>那么SCHED_FIFO是否可以一直占用CPU？答案是否定的。
+在单核系统中，如果允许SCHED_FIFO任务一直占用CPU不释放，则普通任务永远得不到调度;</p>
 <h2 id="调度轨迹抓取及可视化工具" class="heading-element"><span>调度轨迹抓取及可视化工具</span>
   <a href="#%e8%b0%83%e5%ba%a6%e8%bd%a8%e8%bf%b9%e6%8a%93%e5%8f%96%e5%8f%8a%e5%8f%af%e8%a7%86%e5%8c%96%e5%b7%a5%e5%85%b7" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -224,11 +232,13 @@
   <a href="#%e5%ae%9e%e9%aa%8c" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
-</h2><h3 id="单核实验" class="heading-element"><span>单核实验</span>
+</h2><p>Tested on <a href="mailto:4Core@Ubuntu-24.04-VirtualBox"target="_blank" rel="external nofollow noopener noreferrer">4Core@Ubuntu-24.04-VirtualBox</a></p>
+<h3 id="单核实验" class="heading-element"><span>单核实验</span>
   <a href="#%e5%8d%95%e6%a0%b8%e5%ae%9e%e9%aa%8c" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>实验: 2个SCHED_RR任务, 均绑定到核3</p>
+<p>实验预期:</p>
 <p><img loading="lazy" src="../../images/Snipaste_2024-08-31_23-54-12.png" alt="../../images/Snipaste_2024-08-31_23-54-12.png" srcset="../../images/Snipaste_2024-08-31_23-54-12.png?size=small, ../../images/Snipaste_2024-08-31_23-54-12.png?size=medium 1.5x, ../../images/Snipaste_2024-08-31_23-54-12.png?size=large 2x" data-title="../../images/Snipaste_2024-08-31_23-54-12.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
 <p>实验: 2个SCHED_FIFO任务, 均绑定到核3</p>
 <p><img loading="lazy" src="../../images/Snipaste_2024-09-01_00-01-02.png" alt="../../images/Snipaste_2024-09-01_00-01-02.png" srcset="../../images/Snipaste_2024-09-01_00-01-02.png?size=small, ../../images/Snipaste_2024-09-01_00-01-02.png?size=medium 1.5x, ../../images/Snipaste_2024-09-01_00-01-02.png?size=large 2x" data-title="../../images/Snipaste_2024-09-01_00-01-02.png" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></p>
@@ -306,6 +316,7 @@
 </span><span class="lnt">67
 </span><span class="lnt">68
 </span><span class="lnt">69
+</span><span class="lnt">70
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define _GNU_SOURCE
@@ -338,9 +349,10 @@
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">sched_param</span> <span class="n">sp</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 </span></span><span class="line"><span class="cl">    <span class="n">sp</span><span class="p">.</span><span class="n">sched_priority</span> <span class="o">=</span> <span class="mi">91</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nf">sched_setscheduler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SCHED_FIFO</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sp</span><span class="p">))</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">//if (sched_setscheduler(0, SCHED_RR, &amp;sp)) {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;thread set sched_fifo failed</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// if (sched_setscheduler(0, SCHED_RR, &amp;sp)) {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nf">sched_setscheduler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SCHED_FIFO</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sp</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;thread set sched_fifo failed</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">set_affinity</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;thread-1 create, tid: %u</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="nf">gettid</span><span class="p">());</span>
@@ -352,8 +364,8 @@
 </span></span><span class="line"><span class="cl"><span class="p">{</span>
 </span></span><span class="line"><span class="cl">    <span class="k">struct</span> <span class="n">sched_param</span> <span class="n">sp</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
 </span></span><span class="line"><span class="cl">    <span class="n">sp</span><span class="p">.</span><span class="n">sched_priority</span> <span class="o">=</span> <span class="mi">91</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// if (sched_setscheduler(0, SCHED_FIFO, &amp;sp)) {
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nf">sched_setscheduler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SCHED_RR</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sp</span><span class="p">))</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// if (sched_setscheduler(0, SCHED_RR, &amp;sp)) {
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="p">(</span><span class="nf">sched_setscheduler</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SCHED_FIFO</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sp</span><span class="p">))</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl">    	<span class="nf">printf</span><span class="p">(</span><span class="s">&#34;thread set sched_fifo failed</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="nf">set_affinity</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
@@ -378,45 +390,26 @@
 </span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span></span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="多核实验" class="heading-element"><span>多核实验</span>
+</div><p>管理员可以限制 SCHED_FIFO 带宽，以防止实时应用程序程序员启动对处理器进行单调执行的实时任务。</p>
+<p>以下是此策略中使用的一些参数：</p>
+<p>/proc/sys/kernel/sched_rt_period_us
+此参数以微秒为单位定义时间，它被视为处理器带宽的 10%。默认值为 1000000 InventoryServices，或 1 秒。
+/proc/sys/kernel/sched_rt_runtime_us
+此参数以微秒为单位定义运行实时线程的时间周期。默认值为 950000 μs，即 0.95 秒。</p>
+<h3 id="多核实验" class="heading-element"><span>多核实验</span>
   <a href="#%e5%a4%9a%e6%a0%b8%e5%ae%9e%e9%aa%8c" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
   </a>
 </h3><p>实验: 2个SCHED_FIFO任务, 均绑定到</p>
-<p>tested on <a href="mailto:4Core@Ubuntu-24.04-VirtualBox"target="_blank" rel="external nofollow noopener noreferrer">4Core@Ubuntu-24.04-VirtualBox</a>
-实验: 3个SCHED_FIFO任务, 分别绑定1~3核</p>
+<p>实验: 3个SCHED_FIFO任务, 分别绑定1~3核</p>
 <p>实验: 2个SCHED_FIFO任务, 均绑定到</p>
-<hr>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">stop_task</span><span class="p">.</span><span class="n">c</span>	<span class="mi">117</span> <span class="nf">DEFINE_SCHED_CLASS</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">idle</span><span class="p">.</span><span class="n">c</span>	<span class="mi">498</span> <span class="nf">DEFINE_SCHED_CLASS</span><span class="p">(</span><span class="n">idle</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">deadline</span><span class="p">.</span><span class="n">c</span>	<span class="mi">2696</span> <span class="nf">DEFINE_SCHED_CLASS</span><span class="p">(</span><span class="n">dl</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">rt</span><span class="p">.</span><span class="n">c</span>	<span class="mi">2680</span> <span class="nf">DEFINE_SCHED_CLASS</span><span class="p">(</span><span class="n">rt</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="n">fair</span><span class="p">.</span><span class="n">c</span>	<span class="mi">12355</span> <span class="nf">DEFINE_SCHED_CLASS</span><span class="p">(</span><span class="n">fair</span><span class="p">)</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>调度器会放到单独的段里面</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#define DEFINE_SCHED_CLASS(name) \
-</span></span></span><span class="line"><span class="cl"><span class="cp">const struct sched_class name##_sched_class \
-</span></span></span><span class="line"><span class="cl"><span class="cp">	__aligned(__alignof__(struct sched_class)) \
-</span></span></span><span class="line"><span class="cl"><span class="cp">	__section(&#34;__&#34; #name &#34;_sched_class&#34;)</span></span></span></code></pre></td></tr></table>
-</div>
-</div></div><div class="post-footer" id="post-footer">
+<h2 id="参考" class="heading-element"><span>参考</span>
+  <a href="#%e5%8f%82%e8%80%83" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><ol>
+<li><img loading="lazy" src="https://www.cnblogs.com/arnoldlu/p/9025981.html" alt="Linux进程管理 (9)实时调度类分析，以及FIFO和RR对比实验" srcset="https://www.cnblogs.com/arnoldlu/p/9025981.html?size=small, https://www.cnblogs.com/arnoldlu/p/9025981.html?size=medium 1.5x, https://www.cnblogs.com/arnoldlu/p/9025981.html?size=large 2x" data-title="Linux进程管理 (9)实时调度类分析，以及FIFO和RR对比实验" class="suffix-invalid suffix-invalid__small suffix-invalid__large" style="background: url(/images/loading.min.svg) no-repeat center;" onload="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}this.dataset.lazyloaded='';" onerror="this.title=this.dataset.title;for(const i of ['style', 'data-title','onerror','onload']){this.removeAttribute(i);}"/></li>
+</ol></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
       <div class="post-info-mod">
@@ -424,9 +417,9 @@
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/0ec2c86/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/0ec2c86/" data-title="图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)" data-hashtags="调度,SCHED_FIFO,SCHED_RR,ftrace"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/0ec2c86/" data-hashtag="调度"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/0ec2c86/" data-title="图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://psuvtk.github.io/posts/0ec2c86/" data-title="图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)" data-hashtags="调度,SCHED_FIFO,SCHED_RR,ftrace"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://psuvtk.github.io/posts/0ec2c86/" data-hashtag="调度"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://psuvtk.github.io/posts/0ec2c86/" data-title="图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -452,5 +445,5 @@
         </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>
     <div class="noscript-warning">This website works best with JavaScript enabled.</div>
   </noscript>
-</div><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.9"};</script><script src="/js/theme.min.js" defer></script></body>
+</div><link rel="stylesheet" href="/lib/lightgallery/css/lightgallery-bundle.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/lib/pace/themes/blue/pace-theme-minimal.css"><script src="/lib/autocomplete/autocomplete.min.js" defer></script><script src="/lib/fuse/fuse.min.js" defer></script><script src="/lib/lightgallery/lightgallery.min.js" defer></script><script src="/lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js" defer></script><script src="/lib/lightgallery/plugins/zoom/lg-zoom.min.js" defer></script><script src="/lib/sharer/sharer.min.js" async defer></script><script src="/lib/cookieconsent/cookieconsent.min.js" defer></script><script src="/lib/pace/pace.min.js" async defer></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","editLockTitle":"Lock editable code block","editUnLockTitle":"Unlock editable code block","editable":true,"maxShownLines":10},"comment":{"enable":false},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightgallery":true,"search":{"distance":100,"findAllMatches":false,"fuseIndexURL":"/index.json","highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"No results found","snippetLength":30,"threshold":0.3,"type":"fuse","useExtendedSearch":false},"version":"v0.3.9"};</script><script src="/js/theme.min.js" defer></script></body>
 </html>

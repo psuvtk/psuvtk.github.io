@@ -8,6 +8,10 @@
 
 引入多核的话事情会变得复杂起来，先从简单的场景入手
 
+## SCHED_FIFO 调度
+
+那么SCHED_FIFO是否可以一直占用CPU？答案是否定的。
+在单核系统中，如果允许SCHED_FIFO任务一直占用CPU不释放，则普通任务永远得不到调度;
 
 
 ## 调度轨迹抓取及可视化工具
@@ -34,8 +38,12 @@ Huawei SmartPerf
 
 ## 实验
 
+Tested on 4Core@Ubuntu-24.04-VirtualBox
+
 ### 单核实验
 实验: 2个SCHED_RR任务, 均绑定到核3
+
+实验预期:
 
 ![](../../images/Snipaste_2024-08-31_23-54-12.png)
 
@@ -84,8 +92,9 @@ void* rt_fifo_entry1(void *data)
 {
     struct sched_param sp = {0};
     sp.sched_priority = 91;
+    // if (sched_setscheduler(0, SCHED_RR, &amp;sp)) {
     if (sched_setscheduler(0, SCHED_FIFO, &amp;sp)) {
-    //if (sched_setscheduler(0, SCHED_RR, &amp;sp)) {
+
     	printf(&#34;thread set sched_fifo failed\n&#34;);
     }
     set_affinity(3);
@@ -98,8 +107,8 @@ void* rt_fifo_entry2(void *data)
 {
     struct sched_param sp = {0};
     sp.sched_priority = 91;
-    // if (sched_setscheduler(0, SCHED_FIFO, &amp;sp)) {
-    if (sched_setscheduler(0, SCHED_RR, &amp;sp)) {
+    // if (sched_setscheduler(0, SCHED_RR, &amp;sp)) {
+    if (sched_setscheduler(0, SCHED_FIFO, &amp;sp)) {
     	printf(&#34;thread set sched_fifo failed\n&#34;);
     }
     set_affinity(3);
@@ -123,15 +132,21 @@ int main()
 	printf(&#34;main thread done, exit\n&#34;);
 	return 0;
 }
-
 ```
 
+管理员可以限制 SCHED_FIFO 带宽，以防止实时应用程序程序员启动对处理器进行单调执行的实时任务。
 
+以下是此策略中使用的一些参数：
+
+/proc/sys/kernel/sched_rt_period_us
+此参数以微秒为单位定义时间，它被视为处理器带宽的 10%。默认值为 1000000 InventoryServices，或 1 秒。
+/proc/sys/kernel/sched_rt_runtime_us
+此参数以微秒为单位定义运行实时线程的时间周期。默认值为 950000 μs，即 0.95 秒。
 
 ### 多核实验
 实验: 2个SCHED_FIFO任务, 均绑定到 
 
-tested on 4Core@Ubuntu-24.04-VirtualBox
+
 实验: 3个SCHED_FIFO任务, 分别绑定1~3核
 
 
@@ -140,29 +155,11 @@ tested on 4Core@Ubuntu-24.04-VirtualBox
 
 
 
-
-
------------------
-
-```c
-stop_task.c	117 DEFINE_SCHED_CLASS(stop)
-idle.c	498 DEFINE_SCHED_CLASS(idle)
-deadline.c	2696 DEFINE_SCHED_CLASS(dl)
-rt.c	2680 DEFINE_SCHED_CLASS(rt)
-fair.c	12355 DEFINE_SCHED_CLASS(fair)
-```
-
-
-调度器会放到单独的段里面
-```c
-#define DEFINE_SCHED_CLASS(name) \
-const struct sched_class name##_sched_class \
-	__aligned(__alignof__(struct sched_class)) \
-	__section(&#34;__&#34; #name &#34;_sched_class&#34;)
-```
+## 参考
+1. ![Linux进程管理 (9)实时调度类分析，以及FIFO和RR对比实验](https://www.cnblogs.com/arnoldlu/p/9025981.html)
 
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/0ec2c86/  
+> URL: https://psuvtk.github.io/posts/0ec2c86/  
 

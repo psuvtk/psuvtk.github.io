@@ -87,5 +87,5 @@ FILE :: `include\linux\init.h`
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/7.spi_nor/  
+> URL: https://psuvtk.github.io/posts/7.spi_nor/  
 

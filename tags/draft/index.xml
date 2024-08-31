@@ -1,22 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Draft - Tag - </title>
-    <link>http://localhost:1313/tags/draft/</link>
+    <link>https://psuvtk.github.io/tags/draft/</link>
     <description>Draft - Tag | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Aug 2024 22:52:50 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/draft/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Aug 2024 22:52:50 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/tags/draft/" rel="self" type="application/rss+xml" /><item>
   <title>理解Linux内核抢占</title>
-  <link>http://localhost:1313/posts/80ff57e/</link>
+  <link>https://psuvtk.github.io/posts/80ff57e/</link>
   <pubDate>Sat, 31 Aug 2024 22:52:50 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>http://localhost:1313/posts/80ff57e/</guid>
+  <guid>https://psuvtk.github.io/posts/80ff57e/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Linux 内核同步原语</title>
-  <link>http://localhost:1313/posts/df58b61/</link>
+  <link>https://psuvtk.github.io/posts/df58b61/</link>
   <pubDate>Tue, 29 Nov 2022 00:00:00 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>http://localhost:1313/posts/df58b61/</guid>
+  <guid>https://psuvtk.github.io/posts/df58b61/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>
