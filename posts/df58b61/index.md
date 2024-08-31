@@ -1,5 +1,12 @@
-# 同步原语
+# Linux 内核同步原语
 
+
+&lt;!--more--&gt;
+---
+title: &#34;&#34;
+date: 2022-11-29T01:01:47&#43;08:00
+draft: false
+---
 
 
 与中断例程之间的同步：禁止中断
@@ -20,6 +27,6 @@ SMP 才需要
 
 ---
 
-> Author: Kristoffer  
-> URL: http://localhost:1313/posts/15.-%E5%86%85%E6%A0%B8%E5%90%8C%E6%AD%A5%E5%8E%9F%E8%AF%AD/  
+> Author:   
+> URL: https://psuvtk.github.io/posts/df58b61/  
 
