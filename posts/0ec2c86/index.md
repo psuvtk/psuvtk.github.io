@@ -156,7 +156,7 @@ int main()
 
 
 ## 参考
-1. ![Linux进程管理 (9)实时调度类分析，以及FIFO和RR对比实验](https://www.cnblogs.com/arnoldlu/p/9025981.html)
+1. [Linux进程管理 (9)实时调度类分析，以及FIFO和RR对比实验](https://www.cnblogs.com/arnoldlu/p/9025981.html)
 
 ---
 
