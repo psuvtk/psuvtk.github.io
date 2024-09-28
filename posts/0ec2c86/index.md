@@ -45,19 +45,19 @@ Tested on 4Core@Ubuntu-24.04-VirtualBox
 
 实验预期:
 
-![](../../images/Snipaste_2024-08-31_23-54-12.png)
+![](../../images/Snipaste_2024-08-31_23-54-12.png &#34;2rr_bindcore3&#34;)
 
 
 
 实验: 2个SCHED_FIFO任务, 均绑定到核3
 
-![](../../images/Snipaste_2024-09-01_00-01-02.png)
+![](../../images/Snipaste_2024-09-01_00-01-02.png &#34;2fifo_bindcore3&#34;)
 
 
 
 实验: 1个SCHED_RR任务, 1个SCHED_FIFO任务, 均绑定到核3
 
-![](../../images/Snipaste_2024-09-01_00-08-05.png)
+![](../../images/Snipaste_2024-09-01_00-08-05.png &#34;1rr_1fifo_bindcore3&#34;)
 
 
 实验代码
