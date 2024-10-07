@@ -3,7 +3,15 @@
     <title>Draft - Category - </title>
     <link>http://localhost:1313/categories/draft/</link>
     <description>Draft - Category | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 04 Sep 2024 23:59:42 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/draft/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 09 Sep 2024 23:51:14 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/draft/" rel="self" type="application/rss+xml" /><item>
+  <title>RISC-V多核启动流程</title>
+  <link>http://localhost:1313/posts/f70f43f/</link>
+  <pubDate>Mon, 09 Sep 2024 23:51:14 &#43;0800</pubDate>
+  <author>Kristoffer</author>
+  <guid>http://localhost:1313/posts/f70f43f/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>MAC报文格式与LSW原理</title>
   <link>http://localhost:1313/posts/dced61b/</link>
   <pubDate>Wed, 04 Sep 2024 23:59:42 &#43;0800</pubDate>
