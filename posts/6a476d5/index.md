@@ -36,6 +36,6 @@
 
 ---
 
-> Author:   
-> URL: https://psuvtk.github.io/posts/6a476d5/  
+> Author: Kristoffer  
+> URL: http://localhost:1313/posts/6a476d5/  
 

@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>SCHED_RR - Tag - </title>
-    <link>https://psuvtk.github.io/tags/sched_rr/</link>
+    <link>http://localhost:1313/tags/sched_rr/</link>
     <description>SCHED_RR - Tag | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Aug 2024 22:54:52 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/tags/sched_rr/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 31 Aug 2024 22:54:52 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/sched_rr/" rel="self" type="application/rss+xml" /><item>
   <title>图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)</title>
-  <link>https://psuvtk.github.io/posts/0ec2c86/</link>
+  <link>http://localhost:1313/posts/0ec2c86/</link>
   <pubDate>Sat, 31 Aug 2024 22:54:52 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/0ec2c86/</guid>
+  <guid>http://localhost:1313/posts/0ec2c86/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

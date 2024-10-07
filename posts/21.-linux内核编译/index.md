@@ -36,5 +36,5 @@ sudo apt install zsh git curl vim
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/21.-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/  
+> URL: http://localhost:1313/posts/21.-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/  
 

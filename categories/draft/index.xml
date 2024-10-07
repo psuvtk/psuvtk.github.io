@@ -1,22 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Draft - Category - </title>
-    <link>https://psuvtk.github.io/categories/draft/</link>
+    <link>http://localhost:1313/categories/draft/</link>
     <description>Draft - Category | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 08 Sep 2024 15:10:09 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/categories/draft/" rel="self" type="application/rss+xml" /><item>
-  <title>搬家物品</title>
-  <link>https://psuvtk.github.io/posts/088d9b3/</link>
-  <pubDate>Sun, 08 Sep 2024 15:10:09 &#43;0800</pubDate>
-  <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/088d9b3/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 04 Sep 2024 23:59:42 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/categories/draft/" rel="self" type="application/rss+xml" /><item>
   <title>MAC报文格式与LSW原理</title>
-  <link>https://psuvtk.github.io/posts/dced61b/</link>
+  <link>http://localhost:1313/posts/dced61b/</link>
   <pubDate>Wed, 04 Sep 2024 23:59:42 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/dced61b/</guid>
+  <guid>http://localhost:1313/posts/dced61b/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

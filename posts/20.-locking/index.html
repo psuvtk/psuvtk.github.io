@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -12,7 +12,7 @@
   <meta itemprop="description" content="如何死锁? ABBA 同线程多次调用不可重入锁 可重入与不可重入 用户态与内核态 库函数与锁 死锁 形成死锁的必要条件 互斥条件 不可剥夺条件 请求与保持条件 循环等待">
   <meta itemprop="datePublished" content="2023-02-09T23:36:47+08:00">
   <meta itemprop="dateModified" content="2023-04-16T22:07:32+08:00">
-  <meta itemprop="wordCount" content="183"><meta property="og:url" content="https://psuvtk.github.io/posts/20.-locking/">
+  <meta itemprop="wordCount" content="183"><meta property="og:url" content="http://localhost:1313/posts/20.-locking/">
   <meta property="og:title" content="锁">
   <meta property="og:description" content="如何死锁? ABBA 同线程多次调用不可重入锁 可重入与不可重入 用户态与内核态 库函数与锁 死锁 形成死锁的必要条件 互斥条件 不可剥夺条件 请求与保持条件 循环等待">
   <meta property="og:locale" content="en">
@@ -27,7 +27,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://psuvtk.github.io/posts/20.-locking/" /><link rel="prev" href="https://psuvtk.github.io/posts/18.-rtos%E4%B8%8Elinux/" /><link rel="next" href="https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/20.-locking/" /><link rel="prev" href="http://localhost:1313/posts/18.-rtos%E4%B8%8Elinux/" /><link rel="next" href="http://localhost:1313/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -37,9 +37,9 @@
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/psuvtk.github.io\/posts\/20.-locking\/"
+      "@id": "http:\/\/localhost:1313\/posts\/20.-locking\/"
     },"genre": "posts","wordcount":  183 ,
-    "url": "https:\/\/psuvtk.github.io\/posts\/20.-locking\/","datePublished": "2023-02-09T23:36:47+08:00","dateModified": "2023-04-16T22:07:32+08:00","publisher": {
+    "url": "http:\/\/localhost:1313\/posts\/20.-locking\/","datePublished": "2023-02-09T23:36:47+08:00","dateModified": "2023-04-16T22:07:32+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"author": {
         "@type": "Person",
@@ -232,9 +232,9 @@
           </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/20.-locking/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://psuvtk.github.io/posts/20.-locking/" data-title="锁"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://psuvtk.github.io/posts/20.-locking/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://psuvtk.github.io/posts/20.-locking/" data-title="锁"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/20.-locking/" data-title="锁"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/20.-locking/"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/20.-locking/" data-title="锁"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>

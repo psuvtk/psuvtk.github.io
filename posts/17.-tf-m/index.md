@@ -30,5 +30,5 @@ https://docs.mcuboot.com/design.html
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/17.-tf-m/  
+> URL: http://localhost:1313/posts/17.-tf-m/  
 

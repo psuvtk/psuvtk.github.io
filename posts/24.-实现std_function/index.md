@@ -104,5 +104,5 @@ int main ()
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/24.-%E5%AE%9E%E7%8E%B0std_function/  
+> URL: http://localhost:1313/posts/24.-%E5%AE%9E%E7%8E%B0std_function/  
 

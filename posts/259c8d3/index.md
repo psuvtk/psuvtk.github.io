@@ -8,19 +8,26 @@
 
 
 ## 工作相关
+---
 1. L2相关业务
 2. xxx融合
 
 
 ## 技能提升
+---
 1. TBD: Bootlin相关材料
 2. TBD: SMMU在Linux内核实现与使用
 3. TBD: 抢占
+3.
 
 
+## 生活
+---
+1. 买车
+2. 办理护照
 
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/posts/259c8d3/  
+> URL: http://localhost:1313/posts/259c8d3/  
 

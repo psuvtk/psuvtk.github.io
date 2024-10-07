@@ -12,5 +12,5 @@ LuaS ==
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/12.-lua/  
+> URL: http://localhost:1313/posts/12.-lua/  
 

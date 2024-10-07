@@ -5,9 +5,9 @@
 
 [TOC]
 
-阅读大型源码项目除传统的Souce Insight、Scitools Understand等付费PC端工具，基于Web的[{OpenGrok](https://oracle.github.io/opengrok/) 和[Elixir Cross Reference](https://elixir.bootlin.com/)也是相当惊艳，方便躺在床上用ipad阅读源代码。作为开源工具，不仅免费而且支持用户自己搭建。如下为{OpenGrok的界面:
+阅读大型源码项目除传统的Souce Insight、Scitools Understand等付费PC端工具，基于Web的 [{OpenGrok](https://oracle.github.io/opengrok/) 和 [Elixir Cross Reference](https://elixir.bootlin.com/) 也是相当惊艳，方便躺在床上用ipad阅读源代码。作为开源工具，不仅免费而且支持用户自己搭建。如下为{OpenGrok的界面:
 
-![](https://upload-images.jianshu.io/upload_images/4572693-4d729029d88ca196.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![w](https://upload-images.jianshu.io/upload_images/4572693-4d729029d88ca196.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 另外，二者都提供许多常见的大型项目([https://github.com/oracle/opengrok/wiki/Installations](https://github.com/oracle/opengrok/wiki/Installations)
 以及[https://elixir.bootlin.com/](https://elixir.bootlin.com/))，足够使用并且免除动手搭建的麻烦。但毕竟是国外网站，偶尔访问速度上不去，故自己动手搭建一套还是非常有用的。OpenGrok的源码方式安装还是蛮麻烦的，所以使用官方的Docker镜像并且自己写了个[小脚本](https://github.com/psuvtk/install_opengrok_docker)方便进行管理。
@@ -208,6 +208,6 @@ f7632745dfe1   opengrok/docker:1.5.12   &#34;/scripts/start.sh&#34;   2 months a
 
 ---
 
-> Author:   
-> URL: https://psuvtk.github.io/posts/76052be/  
+> Author: Kristoffer  
+> URL: http://localhost:1313/posts/76052be/  
 

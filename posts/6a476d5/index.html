@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -13,7 +13,7 @@
   <meta itemprop="datePublished" content="2024-08-31T22:47:05+08:00">
   <meta itemprop="dateModified" content="2024-08-31T22:47:05+08:00">
   <meta itemprop="wordCount" content="164">
-  <meta itemprop="keywords" content="可重入,线程安全"><meta property="og:url" content="https://psuvtk.github.io/posts/6a476d5/">
+  <meta itemprop="keywords" content="可重入,线程安全"><meta property="og:url" content="http://localhost:1313/posts/6a476d5/">
   <meta property="og:title" content="可重入性(Reentrancy)与线程安全(Thread-Safety)">
   <meta property="og:description" content="Kristoffer&#39;s Blog">
   <meta property="og:locale" content="en">
@@ -30,7 +30,7 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://psuvtk.github.io/posts/6a476d5/" /><link rel="prev" href="https://psuvtk.github.io/posts/259c8d3/" /><link rel="next" href="https://psuvtk.github.io/posts/80ff57e/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/6a476d5/" /><link rel="prev" href="http://localhost:1313/posts/259c8d3/" /><link rel="next" href="http://localhost:1313/posts/80ff57e/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -40,11 +40,14 @@
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "https:\/\/psuvtk.github.io\/posts\/6a476d5\/"
+      "@id": "http:\/\/localhost:1313\/posts\/6a476d5\/"
     },"genre": "posts","keywords": "可重入, 线程安全","wordcount":  164 ,
-    "url": "https:\/\/psuvtk.github.io\/posts\/6a476d5\/","datePublished": "2024-08-31T22:47:05+08:00","dateModified": "2024-08-31T22:47:05+08:00","publisher": {
+    "url": "http:\/\/localhost:1313\/posts\/6a476d5\/","datePublished": "2024-08-31T22:47:05+08:00","dateModified": "2024-08-31T22:47:05+08:00","publisher": {
       "@type": "Organization",
-      "name": ""},"description": ""
+      "name": ""},"author": {
+        "@type": "Person",
+        "name": "Kristoffer"
+      },"description": ""
   }
   </script></head>
   <body data-header-desktop="sticky" data-header-mobile="auto"><script>(window.localStorage?.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('data-theme', 'dark');</script><div class="wrapper" data-page-style="normal"><header class="desktop animate__faster" id="header-desktop">
@@ -149,7 +152,7 @@
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>可重入性(Reentrancy)与线程安全(Thread-Safety)</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/linux/" class="post-category" title="Category - Linux"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div><div class="post-meta-line"><span title="published on 2024-08-31 22:47:05"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-31">2024-08-31</time></span>&nbsp;<span title="164 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+      Kristoffer</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/linux/" class="post-category" title="Category - Linux"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> Linux</a></span></div><div class="post-meta-line"><span title="published on 2024-08-31 22:47:05"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-08-31">2024-08-31</time></span>&nbsp;<span title="164 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 200 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -225,9 +228,9 @@
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/6a476d5/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://psuvtk.github.io/posts/6a476d5/" data-title="可重入性(Reentrancy)与线程安全(Thread-Safety)" data-hashtags="可重入,线程安全"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://psuvtk.github.io/posts/6a476d5/" data-hashtag="可重入"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://psuvtk.github.io/posts/6a476d5/" data-title="可重入性(Reentrancy)与线程安全(Thread-Safety)"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/6a476d5/" data-title="可重入性(Reentrancy)与线程安全(Thread-Safety)" data-hashtags="可重入,线程安全"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/6a476d5/" data-hashtag="可重入"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/6a476d5/" data-title="可重入性(Reentrancy)与线程安全(Thread-Safety)"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>

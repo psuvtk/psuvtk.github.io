@@ -46,7 +46,7 @@ Big Endian   :      |         Byte0         |         Byte1         |         By
 
 ## 实例
 
-然后看相同的格式如何在不同的大小端机器上面定义, 此处用IPv4报文头格式举例：
+然后看相同的格式如何在不同的大小端机器上面定义, 此处用IPv4报文头格式举例（一般从左到右标注MSB-&gt;LSB, 此处可以理解为从左到右为数据包BIT流到达的顺序）：
 ```
 0                   1                   2                   3   
 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 
@@ -185,5 +185,5 @@ struct C: 0x44443321
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/419e98c/  
+> URL: http://localhost:1313/posts/419e98c/  
 
