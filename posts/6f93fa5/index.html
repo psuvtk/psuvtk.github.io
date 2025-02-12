@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -63,6 +63,36 @@ target_link_libraries(csgo
 
 # 安装
 
+启动构建
+  
+    
+  
+统一的构建命令
+
+
+1
+2
+
+
+cmake -S . -B build
+cmake --build build --target install
+
+old style
+
+
+1
+2
+3
+4
+5
+
+
+mkdir -p build 
+cd build
+cmake ..
+make 
+make install 
+
 " /><meta name="keywords" content='cmake' />
   <meta itemprop="name" content="CMake备忘">
   <meta itemprop="description" content="进阶技巧 碰到就学习，有用就记住
@@ -70,18 +100,22 @@ FetchContent https://cmake.org/cmake/help/latest/module/FetchContent.html
 Modern CMake https://hsf-training.github.io/hsf-training-cmake-webpage/aio/index.html
 https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
 https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
-常用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 cmake_minimum_required(VERSION 3.11) project(ProjectName) target_link_libraries(ProjectName libarchive) target_include_directories(ProjectName ${CMAKE_SOURCE_DIR}/include) # 链接静态库 target_link_libraries(csgo ${CMAKE_SOURCE_DIR}/libarchive_static.a ) # 安装 ">
+常用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 cmake_minimum_required(VERSION 3.11) project(ProjectName) target_link_libraries(ProjectName libarchive) target_include_directories(ProjectName ${CMAKE_SOURCE_DIR}/include) # 链接静态库 target_link_libraries(csgo ${CMAKE_SOURCE_DIR}/libarchive_static.a ) # 安装 启动构建 统一的构建命令
+1 2 cmake -S . -B build cmake --build build --target install old style
+1 2 3 4 5 mkdir -p build cd build cmake .. make make install ">
   <meta itemprop="datePublished" content="2024-10-07T20:56:39+08:00">
   <meta itemprop="dateModified" content="2024-10-07T20:56:39+08:00">
-  <meta itemprop="wordCount" content="58">
-  <meta itemprop="keywords" content="Cmake"><meta property="og:url" content="http://localhost:1313/posts/6f93fa5/">
+  <meta itemprop="wordCount" content="98">
+  <meta itemprop="keywords" content="Cmake"><meta property="og:url" content="https://psuvtk.github.io/posts/6f93fa5/">
   <meta property="og:title" content="CMake备忘">
   <meta property="og:description" content="进阶技巧 碰到就学习，有用就记住
 FetchContent https://cmake.org/cmake/help/latest/module/FetchContent.html
 Modern CMake https://hsf-training.github.io/hsf-training-cmake-webpage/aio/index.html
 https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
 https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
-常用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 cmake_minimum_required(VERSION 3.11) project(ProjectName) target_link_libraries(ProjectName libarchive) target_include_directories(ProjectName ${CMAKE_SOURCE_DIR}/include) # 链接静态库 target_link_libraries(csgo ${CMAKE_SOURCE_DIR}/libarchive_static.a ) # 安装 ">
+常用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 cmake_minimum_required(VERSION 3.11) project(ProjectName) target_link_libraries(ProjectName libarchive) target_include_directories(ProjectName ${CMAKE_SOURCE_DIR}/include) # 链接静态库 target_link_libraries(csgo ${CMAKE_SOURCE_DIR}/libarchive_static.a ) # 安装 启动构建 统一的构建命令
+1 2 cmake -S . -B build cmake --build build --target install old style
+1 2 3 4 5 mkdir -p build cd build cmake .. make make install ">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -96,11 +130,13 @@ FetchContent https://cmake.org/cmake/help/latest/module/FetchContent.html
 Modern CMake https://hsf-training.github.io/hsf-training-cmake-webpage/aio/index.html
 https://gist.github.com/mbinna/c61dbb39bca0e4fb7d1f73b0d66a4fd1
 https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
-常用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 cmake_minimum_required(VERSION 3.11) project(ProjectName) target_link_libraries(ProjectName libarchive) target_include_directories(ProjectName ${CMAKE_SOURCE_DIR}/include) # 链接静态库 target_link_libraries(csgo ${CMAKE_SOURCE_DIR}/libarchive_static.a ) # 安装 ">
+常用 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 cmake_minimum_required(VERSION 3.11) project(ProjectName) target_link_libraries(ProjectName libarchive) target_include_directories(ProjectName ${CMAKE_SOURCE_DIR}/include) # 链接静态库 target_link_libraries(csgo ${CMAKE_SOURCE_DIR}/libarchive_static.a ) # 安装 启动构建 统一的构建命令
+1 2 cmake -S . -B build cmake --build build --target install old style
+1 2 3 4 5 mkdir -p build cd build cmake .. make make install ">
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/posts/6f93fa5/" /><link rel="prev" href="http://localhost:1313/posts/7398491/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://psuvtk.github.io/posts/6f93fa5/" /><link rel="prev" href="https://psuvtk.github.io/posts/7398491/" /><link rel="next" href="https://psuvtk.github.io/posts/8e0d8d2/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
@@ -110,9 +146,9 @@ https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
     "inLanguage": "en",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http:\/\/localhost:1313\/posts\/6f93fa5\/"
-    },"genre": "posts","keywords": "cmake","wordcount":  58 ,
-    "url": "http:\/\/localhost:1313\/posts\/6f93fa5\/","datePublished": "2024-10-07T20:56:39+08:00","dateModified": "2024-10-07T20:56:39+08:00","publisher": {
+      "@id": "https:\/\/psuvtk.github.io\/posts\/6f93fa5\/"
+    },"genre": "posts","keywords": "cmake","wordcount":  98 ,
+    "url": "https:\/\/psuvtk.github.io\/posts\/6f93fa5\/","datePublished": "2024-10-07T20:56:39+08:00","dateModified": "2024-10-07T20:56:39+08:00","publisher": {
       "@type": "Organization",
       "name": ""},"description": ""
   }
@@ -219,7 +255,7 @@ https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
     <div class="header"><h1 class="single-title animate__animated animate__flipInX"><span title="Repost" class="icon-repost"><i class="fa-solid fa-share fa-fw" aria-hidden="true"></i></span><span>CMake备忘</span>
       </h1></div><div class="post-meta">
       <div class="post-meta-line"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
-      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E5%B7%A5%E7%A8%8B/" class="post-category" title="Category - 工程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 工程</a></span></div><div class="post-meta-line"><span title="published on 2024-10-07 20:56:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-07">2024-10-07</time></span>&nbsp;<span title="58 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
+      Anonymous</span></span><span class="post-included-in">&nbsp;included in <a href="/categories/%E5%B7%A5%E7%A8%8B/" class="post-category" title="Category - 工程"><i class="fa-regular fa-folder fa-fw" aria-hidden="true"></i> 工程</a></span></div><div class="post-meta-line"><span title="published on 2024-10-07 20:56:39"><i class="fa-solid fa-calendar-days fa-fw me-1" aria-hidden="true"></i><time datetime="2024-10-07">2024-10-07</time></span>&nbsp;<span title="98 words"><i class="fa-solid fa-pencil-alt fa-fw me-1" aria-hidden="true"></i>About 100 words</span>&nbsp;<span><i class="fa-regular fa-clock fa-fw me-1" aria-hidden="true"></i>One minute</span>&nbsp;</div>
     </div><div class="details toc" id="toc-static" data-kept="false">
         <div class="details-summary toc-title">
           <span>Contents</span>
@@ -234,6 +270,7 @@ https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
     </li>
     <li><a href="#modern-cmake">Modern CMake</a></li>
     <li><a href="#常用">常用</a></li>
+    <li><a href="#启动构建">启动构建</a></li>
   </ul>
 </nav></div>
       </div><div class="content" id="content"><h2 id="进阶技巧" class="heading-element"><span>进阶技巧</span>
@@ -292,6 +329,36 @@ https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
 </span></span></span><span class="line"><span class="cl"><span class="err">
 </span></span></span><span class="line"><span class="cl"><span class="err">#</span> <span class="err">安装</span></span></span></code></pre></td></tr></table>
 </div>
+</div><h2 id="启动构建" class="heading-element"><span>启动构建</span>
+  <a href="#%e5%90%af%e5%8a%a8%e6%9e%84%e5%bb%ba" class="heading-mark">
+    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
+  </a>
+</h2><p>统一的构建命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">cmake -S . -B build
+</span></span><span class="line"><span class="cl">cmake --build build --target install</span></span></code></pre></td></tr></table>
+</div>
+</div><p>old style</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir -p build 
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> build
+</span></span><span class="line"><span class="cl">cmake ..
+</span></span><span class="line"><span class="cl">make 
+</span></span><span class="line"><span class="cl">make install </span></span></code></pre></td></tr></table>
+</div>
 </div></div><div class="post-footer" id="post-footer">
   <div class="post-info">
     <div class="post-info-line">
@@ -300,9 +367,9 @@ https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
       </div></div><div class="post-info-line">
         <div class="post-info-md"><span><a href="/posts/6f93fa5/index.md" title="Read Markdown" class="link-to-markdown">Read Markdown</a></span></div>
         <div class="post-info-share">
-          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="http://localhost:1313/posts/6f93fa5/" data-title="CMake备忘" data-hashtags="cmake"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://localhost:1313/posts/6f93fa5/" data-hashtag="cmake"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
-  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://localhost:1313/posts/6f93fa5/" data-title="CMake备忘"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
+          <span><a href="javascript:void(0);" title="Share on X" data-sharer="twitter" data-url="https://psuvtk.github.io/posts/6f93fa5/" data-title="CMake备忘" data-hashtags="cmake"><i class="fa-brands fa-x-twitter fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://psuvtk.github.io/posts/6f93fa5/" data-hashtag="cmake"><i class="fa-brands fa-facebook-square fa-fw" aria-hidden="true"></i></a>
+  <a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://psuvtk.github.io/posts/6f93fa5/" data-title="CMake备忘"><i class="fa-brands fa-weibo fa-fw" aria-hidden="true"></i></a>
   </span>
         </div>
       </div></div>
@@ -314,7 +381,8 @@ https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
     </section>
   </div>
 
-  <div class="post-nav"><a href="/posts/7398491/" class="post-nav-item" rel="prev" title="HUGO 本博客部署"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>HUGO 本博客部署</a></div>
+  <div class="post-nav"><a href="/posts/7398491/" class="post-nav-item" rel="prev" title="HUGO 本博客部署"><i class="fa-solid fa-angle-left fa-fw" aria-hidden="true"></i>HUGO 本博客部署</a>
+      <a href="/posts/8e0d8d2/" class="post-nav-item" rel="next" title="Queue Intf">Queue Intf<i class="fa-solid fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article>
 
@@ -322,7 +390,7 @@ https://cliutils.gitlab.io/modern-cmake/chapters/intro/dodonot.html
       <div class="toc-content" id="toc-content-auto"></div></aside></main><footer class="footer">
     <div class="footer-container"><div class="footer-line powered">Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreferrer" title="Hugo 0.132.2"><img class="hugo-icon" src="/images/hugo.min.svg" alt="Hugo logo" /> Hugo</a> | Theme - <a href="https://github.com/hugo-fixit/FixIt" target="_blank" rel="external" title="FixIt v0.3.9"><img class="fixit-icon" src="/images/fixit.min.svg" alt="FixIt logo" /> FixIt</a>
         </div><div class="footer-line copyright" itemscope itemtype="http://schema.org/CreativeWork"><i class="fa-regular fa-copyright fa-fw" aria-hidden="true"></i>
-            <span itemprop="copyrightYear">2024</span><span class="author" itemprop="copyrightHolder">
+            <span itemprop="copyrightYear">2025</span><span class="author" itemprop="copyrightHolder">
               <a href="/">Kristoffer</a></span></div></div>
   </footer></div><div class="widgets"><div class="fixed-buttons animate__faster d-none"><div class="fixed-button back-to-top" role="button" aria-label="Back to Top"><i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i><span class="variant-numeric d-none">0%</span>
         </div></div><div id="mask"></div><div class="reading-progress-bar" style="left: 0;top: 0;"></div><noscript>

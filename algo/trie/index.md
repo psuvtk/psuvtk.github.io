@@ -87,5 +87,5 @@ ANS: 高位为1 数值越大
 ---
 
 > Author:   
-> URL: http://localhost:1313/algo/trie/  
+> URL: https://psuvtk.github.io/algo/trie/  
 

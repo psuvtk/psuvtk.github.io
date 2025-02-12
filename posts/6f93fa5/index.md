@@ -48,11 +48,29 @@ target_link_libraries(csgo
 ```
 
 
+## 启动构建
+
+统一的构建命令
+```bash
+cmake -S . -B build
+cmake --build build --target install
+```
+
+old style
+```bash
+mkdir -p build 
+cd build
+cmake ..
+make 
+make install 
+```
+
+
 &lt;!--more--&gt;
 
 
 ---
 
 > Author:   
-> URL: http://localhost:1313/posts/6f93fa5/  
+> URL: https://psuvtk.github.io/posts/6f93fa5/  
 

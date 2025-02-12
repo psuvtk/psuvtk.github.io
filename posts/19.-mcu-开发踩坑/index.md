@@ -16,5 +16,5 @@
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/  
+> URL: https://psuvtk.github.io/posts/19.-mcu-%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/  
 

@@ -16,5 +16,5 @@
 ---
 
 > Author:   
-> URL: http://localhost:1313/posts/7398491/  
+> URL: https://psuvtk.github.io/posts/7398491/  
 
