@@ -3,7 +3,15 @@
     <title>All Posts - </title>
     <link>https://psuvtk.github.io/posts/</link>
     <description>All Posts | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 18 Feb 2025 00:29:49 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 25 Feb 2025 21:57:23 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>健身笔记</title>
+  <link>https://psuvtk.github.io/posts/37836c6/</link>
+  <pubDate>Tue, 25 Feb 2025 21:57:23 &#43;0800</pubDate>
+  <author>Kristoffer</author>
+  <guid>https://psuvtk.github.io/posts/37836c6/</guid>
+  <description><![CDATA[2025 里程碑: 1、体脂降低 1、前水平 2、悬垂直举腿 2、支架L支撑 2、低团 3、分腿俄挺 4、并腿俄挺 20250225 俯卧撑一口气可以做30个啦 标准俯卧撑: 30 反手引]]></description>
+</item>
+<item>
   <title>想法</title>
   <link>https://psuvtk.github.io/posts/4ec752e/</link>
   <pubDate>Wed, 12 Feb 2025 21:34:35 &#43;0800</pubDate>
@@ -352,14 +360,6 @@ CA</p>
   <pubDate>Sat, 31 Aug 2024 22:54:52 &#43;0800</pubDate>
   <author>Kristoffer</author>
   <guid>https://psuvtk.github.io/posts/0ec2c86/</guid>
-  <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>理解Linux内核抢占</title>
-  <link>https://psuvtk.github.io/posts/80ff57e/</link>
-  <pubDate>Sat, 31 Aug 2024 22:52:50 &#43;0800</pubDate>
-  <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/80ff57e/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>
