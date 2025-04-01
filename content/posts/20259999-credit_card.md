@@ -46,8 +46,8 @@ repost:
 
 ![Snipaste_2025-03-23_00-43-36.png](../../images/credit_card/Snipaste_2025-03-23_00-43-36.png)
 
-### 2025
 
+### 2025
 ![doi.png](../../images/credit_card/doi.png)
 
 
