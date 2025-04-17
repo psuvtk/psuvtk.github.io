@@ -16,5 +16,5 @@
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/18.-rtos%E4%B8%8Elinux/  
+> URL: http://localhost:1313/posts/18.-rtos%E4%B8%8Elinux/  
 

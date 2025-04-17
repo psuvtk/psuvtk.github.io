@@ -72,5 +72,5 @@ make install
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/posts/6f93fa5/  
+> URL: http://localhost:1313/posts/6f93fa5/  
 

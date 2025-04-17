@@ -39,5 +39,5 @@
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/20.-locking/  
+> URL: http://localhost:1313/posts/20.-locking/  
 

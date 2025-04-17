@@ -38,5 +38,5 @@
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/posts/4ec752e/  
+> URL: http://localhost:1313/posts/4ec752e/  
 

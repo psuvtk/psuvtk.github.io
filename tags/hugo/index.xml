@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>HUGO - Tag - </title>
-    <link>https://psuvtk.github.io/tags/hugo/</link>
+    <link>http://localhost:1313/tags/hugo/</link>
     <description>HUGO - Tag | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Oct 2024 20:41:19 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 07 Oct 2024 20:41:19 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/hugo/" rel="self" type="application/rss+xml" /><item>
   <title>HUGO 本博客部署</title>
-  <link>https://psuvtk.github.io/posts/7398491/</link>
+  <link>http://localhost:1313/posts/7398491/</link>
   <pubDate>Mon, 07 Oct 2024 20:41:19 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/7398491/</guid>
+  <guid>http://localhost:1313/posts/7398491/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

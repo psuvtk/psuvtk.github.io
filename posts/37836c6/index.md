@@ -135,5 +135,5 @@ T2服务生托举、T2引体向上、T1杠铃弯举、T0哑铃交替弯举
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/37836c6/  
+> URL: http://localhost:1313/posts/37836c6/  
 

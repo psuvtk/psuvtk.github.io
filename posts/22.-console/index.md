@@ -12,5 +12,5 @@ ptmx、pts
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/22.-console/  
+> URL: http://localhost:1313/posts/22.-console/  
 

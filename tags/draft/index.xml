@@ -1,22 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
     <title>Draft - Tag - </title>
-    <link>https://psuvtk.github.io/tags/draft/</link>
+    <link>http://localhost:1313/tags/draft/</link>
     <description>Draft - Tag | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Feb 2025 21:34:35 &#43;0800</lastBuildDate><atom:link href="https://psuvtk.github.io/tags/draft/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 12 Feb 2025 21:34:35 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/tags/draft/" rel="self" type="application/rss+xml" /><item>
   <title>想法</title>
-  <link>https://psuvtk.github.io/posts/4ec752e/</link>
+  <link>http://localhost:1313/posts/4ec752e/</link>
   <pubDate>Wed, 12 Feb 2025 21:34:35 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/4ec752e/</guid>
+  <guid>http://localhost:1313/posts/4ec752e/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Queue Intf</title>
-  <link>https://psuvtk.github.io/posts/8e0d8d2/</link>
+  <link>http://localhost:1313/posts/8e0d8d2/</link>
   <pubDate>Wed, 04 Dec 2024 21:20:37 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/8e0d8d2/</guid>
+  <guid>http://localhost:1313/posts/8e0d8d2/</guid>
   <description><![CDATA[<h2 id="heading" class="heading-element"><span></span>
   <a href="#heading" class="heading-mark">
     <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
@@ -71,26 +71,26 @@
 </item>
 <item>
   <title>MAC报文格式与LSW原理</title>
-  <link>https://psuvtk.github.io/posts/dced61b/</link>
+  <link>http://localhost:1313/posts/dced61b/</link>
   <pubDate>Wed, 04 Sep 2024 23:59:42 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/dced61b/</guid>
+  <guid>http://localhost:1313/posts/dced61b/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>理解Linux内核抢占</title>
-  <link>https://psuvtk.github.io/posts/80ff57e/</link>
+  <link>http://localhost:1313/posts/80ff57e/</link>
   <pubDate>Sat, 31 Aug 2024 22:52:50 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/80ff57e/</guid>
+  <guid>http://localhost:1313/posts/80ff57e/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
   <title>Linux 内核同步原语</title>
-  <link>https://psuvtk.github.io/posts/df58b61/</link>
+  <link>http://localhost:1313/posts/df58b61/</link>
   <pubDate>Tue, 29 Nov 2022 00:00:00 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>https://psuvtk.github.io/posts/df58b61/</guid>
+  <guid>http://localhost:1313/posts/df58b61/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

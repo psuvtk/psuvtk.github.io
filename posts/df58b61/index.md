@@ -28,5 +28,5 @@ SMP 才需要
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/posts/df58b61/  
+> URL: http://localhost:1313/posts/df58b61/  
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html itemscope itemtype="http://schema.org/WebPage" lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.132.2">
+	<meta name="generator" content="Hugo 0.132.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     
       <meta name="theme" content='FixIt v0.3.9'>
     
@@ -12,8 +12,8 @@
 <meta name="author-link" content="">
 <meta name="description" content="Kristoffer&#39;s Blog" /><meta name="keywords" content='linux' />
   <meta itemprop="description" content="Kristoffer&#39;s Blog">
-  <meta itemprop="datePublished" content="2025-03-17T23:27:00+08:00">
-  <meta itemprop="dateModified" content="2025-03-17T23:27:00+08:00"><meta property="og:url" content="https://psuvtk.github.io/">
+  <meta itemprop="datePublished" content="2025-04-14T21:51:11+08:00">
+  <meta itemprop="dateModified" content="2025-04-14T21:51:11+08:00"><meta property="og:url" content="http://localhost:1313/">
   <meta property="og:description" content="Kristoffer&#39;s Blog">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="website">
@@ -23,14 +23,14 @@
 <meta name="application-name" content="FixIt">
 <meta name="apple-mobile-web-app-title" content="FixIt"><meta name="theme-color" data-light="#f8f8f8" data-dark="#252627" content="#f8f8f8"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="https://psuvtk.github.io/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="canonical" href="http://localhost:1313/" /><link rel="alternate" href="/index.xml" type="application/rss+xml" title="">
   <link rel="feed" href="/index.xml" type="application/rss+xml" title=""><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.removeAttribute('onload');this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "WebSite",
-    "url": "https:\/\/psuvtk.github.io\/","inLanguage": "en","author": {
+    "url": "http:\/\/localhost:1313\/","inLanguage": "en","author": {
         "@type": "Person",
         "name": "Kristoffer"
       },"description": "Kristoffer's Blog","name": ""
@@ -132,7 +132,12 @@
   </div>
   <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
-  </div><main class="container"><div class="page home posts"><article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/24.-%E5%AE%9E%E7%8E%B0std_function/">实现std::function</a>
+  </div><main class="container"><div class="page home posts"><article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/26.-uio_map/">UIO 用户态驱动</a>
+  </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
+      Kristoffer</span></span>&nbsp;<span class="post-publish" title='2023-06-11 00:02:47'>published on <time datetime="2023-06-11">2023-06-11</time></span></div><div class="content">__uio_register_device</div><div class="post-footer">
+    <a href="/posts/26.-uio_map/">Read More</a></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><h2 class="single-title" itemprop="name headline"><a href="/posts/24.-%E5%AE%9E%E7%8E%B0std_function/">实现std::function</a>
   </h2><div class="post-meta"><span class="post-author"><span class="author"><i class="fa-solid fa-user-circle" aria-hidden="true"></i>
       Kristoffer</span></span>&nbsp;<span class="post-publish" title='2023-04-11 00:02:47'>published on <time datetime="2023-04-11">2023-04-11</time></span></div><div class="content">1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 #include &lt;iostream&gt; #include &lt;functional&gt; int myprint() { std::cout &lt;&lt; __func__ &lt;&lt; std::endl; return 1; } namespace Mico { template&lt;typename RetType, typename... Args&gt; class Functional {}; template&lt;typename RetType, typename... Args&gt; class Functional&lt;RetType(Args...)&gt;</div><div class="post-footer">
     <a href="/posts/24.-%E5%AE%9E%E7%8E%B0std_function/">Read More</a></div>

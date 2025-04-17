@@ -135,5 +135,5 @@ __primary_swtich
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/life/%E4%B8%AD%E6%96%AD%E5%AD%90%E7%B3%BB%E7%BB%9F/  
+> URL: http://localhost:1313/life/%E4%B8%AD%E6%96%AD%E5%AD%90%E7%B3%BB%E7%BB%9F/  
 

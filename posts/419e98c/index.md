@@ -185,5 +185,5 @@ struct C: 0x44443321
 ---
 
 > Author: Kristoffer  
-> URL: https://psuvtk.github.io/posts/419e98c/  
+> URL: http://localhost:1313/posts/419e98c/  
 

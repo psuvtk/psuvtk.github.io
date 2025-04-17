@@ -10,5 +10,5 @@
 ---
 
 > Author:   
-> URL: https://psuvtk.github.io/life/soc%E6%A1%88%E4%BE%8B/  
+> URL: http://localhost:1313/life/soc%E6%A1%88%E4%BE%8B/  
 
