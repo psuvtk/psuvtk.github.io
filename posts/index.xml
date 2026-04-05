@@ -3,21 +3,29 @@
     <title>All Posts - </title>
     <link>http://localhost:1313/posts/</link>
     <description>All Posts | </description>
-    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 10 Aug 2025 16:59:00 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 05 Apr 2026 13:04:42 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+  <title>安全启动</title>
+  <link>http://localhost:1313/posts/ba1ac48/</link>
+  <pubDate>Sun, 05 Apr 2026 13:04:42 &#43;0800</pubDate>
+  <author>Kristoffer</author>
+  <guid>http://localhost:1313/posts/ba1ac48/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
+  <title>2026 面试总结</title>
+  <link>http://localhost:1313/posts/259c8d3/</link>
+  <pubDate>Tue, 31 Mar 2026 22:42:42 &#43;0800</pubDate>
+  <author>Kristoffer</author>
+  <guid>http://localhost:1313/posts/259c8d3/</guid>
+  <description><![CDATA[]]></description>
+</item>
+<item>
   <title>Windows应用(非Web)连接外网</title>
   <link>http://localhost:1313/posts/40f0159/</link>
   <pubDate>Mon, 14 Apr 2025 21:51:11 &#43;0800</pubDate>
   <author>Kristoffer</author>
   <guid>http://localhost:1313/posts/40f0159/</guid>
   <description><![CDATA[网页： Google Chrome浏览器 + Google上网助手(GHelper)插件 本地应用：Google Chrome浏览器 + Google上网助手(GHe]]></description>
-</item>
-<item>
-  <title>记账</title>
-  <link>http://localhost:1313/posts/088d9b3/</link>
-  <pubDate>Mon, 17 Mar 2025 23:27:00 &#43;0800</pubDate>
-  <author>Kristoffer</author>
-  <guid>http://localhost:1313/posts/088d9b3/</guid>
-  <description><![CDATA[]]></description>
 </item>
 <item>
   <title>健身笔记</title>
@@ -34,64 +42,6 @@
   <author>Kristoffer</author>
   <guid>http://localhost:1313/posts/4ec752e/</guid>
   <description><![CDATA[]]></description>
-</item>
-<item>
-  <title>Queue Intf</title>
-  <link>http://localhost:1313/posts/8e0d8d2/</link>
-  <pubDate>Wed, 04 Dec 2024 21:20:37 &#43;0800</pubDate>
-  <author>Kristoffer</author>
-  <guid>http://localhost:1313/posts/8e0d8d2/</guid>
-  <description><![CDATA[<h2 id="heading" class="heading-element"><span></span>
-  <a href="#heading" class="heading-mark">
-    <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg>
-  </a>
-</h2><table>
-<thead>
-<tr>
-<th>接口</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>创建</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>删除</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>出队</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>入队</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>| 查询 |||</p>]]></description>
 </item>
 <item>
   <title>CMake备忘</title>
@@ -204,19 +154,19 @@
   <description><![CDATA[]]></description>
 </item>
 <item>
-  <title>RISC-V多核启动流程</title>
-  <link>http://localhost:1313/posts/f70f43f/</link>
-  <pubDate>Mon, 09 Sep 2024 23:51:14 &#43;0800</pubDate>
+  <title>MAC报文格式与LSW原理</title>
+  <link>http://localhost:1313/posts/dced61b/</link>
+  <pubDate>Wed, 04 Sep 2024 23:59:42 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>http://localhost:1313/posts/f70f43f/</guid>
+  <guid>http://localhost:1313/posts/dced61b/</guid>
   <description><![CDATA[]]></description>
 </item>
 <item>
-  <title>搬家物品</title>
-  <link>http://localhost:1313/posts/088d9b3/</link>
-  <pubDate>Sun, 08 Sep 2024 15:10:09 &#43;0800</pubDate>
+  <title>图解Linux系统RT调度(SCHED_FIFO与SCHED_RR)</title>
+  <link>http://localhost:1313/posts/0ec2c86/</link>
+  <pubDate>Sat, 31 Aug 2024 22:54:52 &#43;0800</pubDate>
   <author>Kristoffer</author>
-  <guid>http://localhost:1313/posts/088d9b3/</guid>
+  <guid>http://localhost:1313/posts/0ec2c86/</guid>
   <description><![CDATA[]]></description>
 </item>
 </channel>

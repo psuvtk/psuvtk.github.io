@@ -7,5 +7,5 @@ __uio_register_device
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/26.-uio_map/  
+> URL: https://psuvtk.github.io/posts/26.-uio_map/  
 

@@ -13,7 +13,7 @@
       <link>http://localhost:1313/life/soc%E6%A1%88%E4%BE%8B/</link>
       <pubDate>Wed, 12 Jun 2024 20:48:47 +0800</pubDate>
       <guid>http://localhost:1313/life/soc%E6%A1%88%E4%BE%8B/</guid>
-      <description>PMBUS 时序被打断 原因：判断写结束使用FIFO为空进行判断，但实际上FIFO为空并不能保证时序完全被打出 正确的方式是使用控制器的BUSY状态进行判</description>
+      <description>PMBUS 时序被打断 常见原因： 1、调度打断 2、异常掉电 3、控制器状态判断错误 原因：判断写结束使用FIFO为空进行判断，但实际上FIFO为空并不能保证</description>
     </item>
     <item>
       <title>内核基础设施之XArray</title>
@@ -30,11 +30,11 @@
       <description>IRQ Domain 关于IRQ Domain的介绍: linux-6.1.23\Documentation\core-api\irq\irq-domain.rst IRQ 关联一个irq Domain, IRQ Chip 代码走读 GIC 初始化 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33</description>
     </item>
     <item>
-      <title>使用libarchive</title>
+      <title>工具库</title>
       <link>http://localhost:1313/life/libarchive/</link>
       <pubDate>Fri, 14 Jul 2023 00:02:47 +0800</pubDate>
       <guid>http://localhost:1313/life/libarchive/</guid>
-      <description>安装 msys2 (WIN + MinGW) 1 pacman -S libarchive 源码编译 TODO</description>
+      <description>压缩解压 libarchive lib</description>
     </item>
     <item>
       <title>啤酒!</title>
