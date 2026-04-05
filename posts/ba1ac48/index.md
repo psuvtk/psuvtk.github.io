@@ -23,5 +23,5 @@ EFUSE里面存储的信任根到底是什么？
 ---
 
 > Author:   
-> URL: http://localhost:1313/posts/ba1ac48/  
+> URL: https://psuvtk.github.io/posts/ba1ac48/  
 

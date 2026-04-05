@@ -16,5 +16,5 @@
 ---
 
 > Author: Kristoffer  
-> URL: http://localhost:1313/posts/19.-uart/  
+> URL: https://psuvtk.github.io/posts/19.-uart/  
 
